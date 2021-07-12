@@ -20,7 +20,6 @@ class UpdateRestaurantsTable extends Migration
                   ->references('id')
                   ->on('users')
                   ->onDelete('set null');
-
         });
     }
 
