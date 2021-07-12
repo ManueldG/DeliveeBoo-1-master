@@ -12,10 +12,27 @@ class CuisinesTableSeeder extends Seeder
      */
     public function run()
     {
-        Cuisine::create([
-            'type'=> 
-                'giapponese',
-             
-        ]);
+
+        $types = [
+            'italiano',
+            'giapponese',
+            'cinese',
+            'greco',
+            'messicano',
+            'indiano',
+            'pizza'
+        ];
+
+        foreach($types as $type) {
+            $new_cuisine = new Cuisine();
+
+            $new_cuisine->type = $type;
+            
+            $new_cuisine->save();
+        }
+
+
+
+
     }
 }
