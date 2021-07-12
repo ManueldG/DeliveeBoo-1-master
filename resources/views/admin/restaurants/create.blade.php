@@ -4,10 +4,10 @@
 
     <div class="container">
         <h1 class="mb-5">CREATE NEW RESTAURANT</h1>
-        
+
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                @if ($errors->any()) 
+                @if ($errors->any())
                     <div class="alert alert-danger mb-5">
                         <ul>
                             @foreach ($errors->all() as $error)
@@ -15,7 +15,7 @@
                             @endforeach
                         </ul>
                     </div>
-                @endif                
+                @endif
                 <form action="{{ route('admin.restaurants.store') }}" method="POST">
                     @csrf
                     @method('POST')
@@ -49,7 +49,7 @@
                         @enderror
                     </div>
 
-                    
+
                     <div class="mb-3">
                         <label for="cap" class="form-label">CAP*</label>
                         <input type="text" class="form-control @error('cap') is-invalid @enderror" id="cap" name="cap" value="{{ old('cap') }}">
@@ -57,7 +57,7 @@
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-                    
+
                     <div class="mb-3">
                         <label for="phone_number" class="form-label">Phone Number*</label>
                         <input type="text" class="form-control @error('phone_number') is-invalid @enderror" id="phone_number" name="phone_number" value="{{ old('phone_number') }}">
@@ -65,12 +65,16 @@
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
+
                     {{-- CUISINES --}}
                     <h5 class="mb-3">Cuisines*</h5>
+
                     <div class="mb-3 @error('cuisines') border border-danger @enderror">
                         @foreach ($cuisines as $cuisine)
                             <span class="d-inline-block mr-3">
-                                <input type="checkbox" name="cuisines[]" id="cuisine{{ $loop->iteration }}" value="{{$cuisine->id}}" @if (in_array($cuisine->id, old('cuisines', []))) checked @endif>
+                                <input type="checkbox" name="cuisines[]" id="cuisine{{ $loop->iteration }}"
+                                value="{{$cuisine->id}}"
+                                @if (in_array($cuisine->id, old('cuisines', []))) checked @endif>
                                 <label for="cuisine{{ $loop->iteration }}">
                                 {{$cuisine->type}}</label>
                             </span>
@@ -87,7 +91,7 @@
                         </div>
                         <input type="text" class="form-control" name="image" id="image">
                         @error('image')
-                        <div>{{$message}}</div>                        
+                        <div>{{$message}}</div>
                         @enderror
                     </div>
 
