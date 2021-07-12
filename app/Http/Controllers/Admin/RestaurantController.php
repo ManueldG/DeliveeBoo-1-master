@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use App\Restaurant;
 use App\Cuisine;
+use App\User;
 
 class RestaurantController extends Controller
 {
@@ -17,8 +19,8 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-
-        $restaurants = Restaurant::all();
+        $user = Auth::user();
+        $restaurants = Restaurant::find($user->restaurants)->first();
 
         return view('admin.restaurants.index', compact('restaurants'));
 
@@ -31,10 +33,11 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        
+        $restaurants = Restaurant::all();
+        $user = User::all();
         $cuisines = Cuisine::all();
 
-        return view('admin.restaurants.create', compact('cuisines'));
+        return view('admin.restaurants.create', compact('cuisines','restaurants', 'user'));
     }
 
     /**
@@ -53,12 +56,16 @@ class RestaurantController extends Controller
             'city' => 'required',
             'cap' => 'required|max:5',
             'phone_number' => 'required|max:20',
-            'cuisines' => 'required'
+            'cuisines' => 'required',
+            'user_id' => 'exists:user,id'
         ]);
 
         $data = $request->all();
 
         $new_restaurant = new Restaurant();
+        
+        $user = Auth::user();
+        $data['user_id'] = $user['id'];
 
         $new_restaurant->fill($data);
 

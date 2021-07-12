@@ -12,7 +12,7 @@ class RestaurantsTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 2; $i++) {
+/*         for ($i = 0; $i < 2; $i++) {
 
             $new_restaurant = new Restaurant();
 
@@ -26,7 +26,7 @@ class RestaurantsTableSeeder extends Seeder
 
             $new_restaurant->save();
 
-        }
+        } */
     }
 }
 
