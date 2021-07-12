@@ -12,15 +12,21 @@ class OrdersTableSeeder extends Seeder
      */
     public function run()
     {
-        Order::create( [
-            'customer_name'=>'ciao',
-            'customer_last_name'=>'Ciao',
-            'customer_email'=>'ciao@gmail.com',
-            'customers_phone'=>'3336668899',
-            'customer_address'=>'via ciao 22',
-            'date'=>'021-07-09 10:39:21',
-            'scheduled_delivery' => '021-07-09 10:39:21',
-            'tot' => '22.50',
-        ]);
+        for ($i = 0; $i < 5; $i++) {
+
+            $new_order = new Order();
+
+            $new_order->customer_name = 'Customer name' . ($i + 1);
+            $new_order->customer_last_name = 'Customer last name' . ($i + 1);
+            $new_order->customer_email = 'lorem@email.com';
+            $new_order->customer_phone = '123456789';
+            $new_order->customer_address = 'via del customer';
+            $new_order->date = '2021-07-12 08:03:30';
+            $new_order->scheduled_delivery = '2021-07-12 10:03:30';
+            $new_order->tot = 99.99;
+
+            $new_order->save();
+
+        }
     }
 }

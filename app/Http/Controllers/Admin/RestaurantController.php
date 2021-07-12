@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Restaurant;
 
 class RestaurantController extends Controller
 {
@@ -14,7 +15,11 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        //
+
+        $restaurants = Restaurant::all();
+
+        return view('admin.restaurants.index', compact('restaurants'));
+
     }
 
     /**
@@ -46,7 +51,14 @@ class RestaurantController extends Controller
      */
     public function show($id)
     {
-        //
+        
+        $restaurant = Restaurant::find($id);
+
+        if(!$restaurant) {
+            abort(404);
+        }
+        return view('admin.restaurants.show', compact('restaurant'));
+
     }
 
     /**

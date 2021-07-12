@@ -12,17 +12,21 @@ class RestaurantsTableSeeder extends Seeder
      */
     public function run()
     {
-        Restaurant::create( [
-            'name'=>'ciao',
-            'description'=>'Ciao',
-            'image'=>'https://i.picsum.photos/id/35/200/300.jpg?hmac=No1hMogzX_PUqgWDfLRCc4wGPYTIeviBhJbzjqskoMA',
-            'address'=>'via dalle fratte 69',
-            'city'=>'Rome',
-            'cap'=>'00144',
-            'phone_number' => '066878528',
+        for ($i = 0; $i < 5; $i++) {
 
+            $new_restaurant = new Restaurant();
 
-        ]);
+            $new_restaurant->name = 'Ristorante prova ' . ($i + 1);
+            $new_restaurant->description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, alias fuga. Dolorem nisi placeat ab nam provident, accusamus, quibusdam debitis laboriosam numquam, porro adipisci sapiente animi tempora? Minus, in pariatur.';
+            $new_restaurant->image = 'https://picsum.photos/500/600';
+            $new_restaurant->address = 'Via dalle Fratte';
+            $new_restaurant->city = 'Frascati';
+            $new_restaurant->cap = '00012';
+            $new_restaurant->phone_number = '123457869578';
+
+            $new_restaurant->save();
+
+        }
     }
 }
 
