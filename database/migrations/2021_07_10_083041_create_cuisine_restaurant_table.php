@@ -14,12 +14,20 @@ class CreateCuisineRestaurantTable extends Migration
     public function up()
     {
         Schema::create('cuisine_restaurant', function (Blueprint $table) {
+
             $table->id();
-            
+
             $table->unsignedBigInteger('cuisine_id');
-            $table->foreign('cuisine_id')->references('id')->on('cuisines');
+            $table->foreign('cuisine_id')
+                  ->references('id')
+                  ->on('cuisines')
+                  ->onDelete('cascade');
+
             $table->unsignedBigInteger('restaurant_id');
-            $table->foreign('restaurant_id')->references('id')->on('restaurants');
+            $table->foreign('restaurant_id')
+                  ->references('id')
+                  ->on('restaurants')
+                  ->onDelete('cascade');
         });
     }
 
