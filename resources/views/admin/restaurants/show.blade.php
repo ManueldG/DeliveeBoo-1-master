@@ -7,7 +7,12 @@
         <header>
             <a href="{{ route('admin.restaurants.index') }}">Torna a Indice Ristoranti</a>
             <h2 class="my-5">{{ $restaurant->name }}</h2>
-            
+            @if (count($restaurant->cuisines) > 0)
+            <h4>Tipologie cucine</h4>
+            @foreach ($restaurant->cuisines as $cuisine)
+                <span class="badge badge-primary">{{$cuisine->type}}</span>
+            @endforeach
+        @endif 
         </header>
 
         <div class="row">
