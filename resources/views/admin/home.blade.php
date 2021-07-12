@@ -15,10 +15,21 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+<<<<<<< HEAD
 
+=======
+                    <div class="mt-3">
+                        <a class="btn btn-primary mr-2" href="{{ route('admin.restaurants.create') }}">Inserisci il tuo ristorante</a>
+
+                        <a class="btn btn-warning" href="{{ route('admin.restaurants.index') }}">Vai a Indice Ristoranti</a>
+                    </div>                    
+>>>>>>> 0dc9f0e52435981d9cad52cd015c188cecdab2e7
                 </div>
             </div>
         </div>
     </div>
+
+
+
 </div>
 @endsection

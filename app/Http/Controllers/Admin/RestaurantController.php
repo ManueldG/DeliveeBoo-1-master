@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 use App\Restaurant;
+use App\Cuisine;
 
 class RestaurantController extends Controller
 {
@@ -29,7 +31,10 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+        
+        $cuisines = Cuisine::all();
+
+        return view('admin.restaurants.create', compact('cuisines'));
     }
 
     /**
@@ -40,7 +45,31 @@ class RestaurantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required|unique:restaurants',
+            'description' => 'nullable',
+            'image' => 'nullable',
+            'address' => 'required',
+            'city' => 'required',
+            'cap' => 'required|max:5',
+            'phone_number' => 'required|max:20',
+            'cuisines' => 'required'
+        ]);
+
+        $data = $request->all();
+
+        $new_restaurant = new Restaurant();
+
+        $new_restaurant->fill($data);
+
+        $new_restaurant->save();
+
+        if(array_key_exists('cuisines', $data)) {
+            $new_restaurant->cuisines()->attach($data['cuisines']);
+        }
+        
+        return redirect()->route('admin.restaurants.show', $new_restaurant->id);
+
     }
 
     /**

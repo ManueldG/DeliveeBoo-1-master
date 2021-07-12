@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Restaurant extends Model
 {
-    protected $fillable=['name','description','visibility','price','image','ingredients'];
+
+    protected $fillable = ['name', 'description', 'image', 'address', 'city', 'cap', 'phone_number'];        
 
     public function plates(){
         return $this->hasMany('App\Plate');
