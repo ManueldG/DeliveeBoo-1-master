@@ -47,7 +47,7 @@ class PlateController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            //'visibility' => 'required',
+            'visibility' => 'nullable',
             'price' => 'required',
             'image' => 'nullable',
         ],[
