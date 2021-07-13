@@ -20,9 +20,11 @@ class Restaurant extends Model
     public function orders(){
         return $this->hasMany('App\Order');
     }
-     public function cuisines(){
+
+    public function cuisines(){
         return $this->belongsToMany('App\Cuisine');
 
     }
+
 }
 
