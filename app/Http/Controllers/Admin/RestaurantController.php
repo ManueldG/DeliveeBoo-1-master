@@ -56,14 +56,18 @@ class RestaurantController extends Controller
             'city' => 'required',
             'cap' => 'required|max:5',
             'phone_number' => 'required|max:20',
-            'cuisines' => 'required',
+            'cuisines' => 'nullable|exists:cuisines,id',
             'user_id' => 'exists:user,id'
+        ],[
+            'required' => ' The :attribute is required.!!!!!!!',
+            'unique' => ' The :attribute is already taken',
+            'max' => 'Max :max characters allowed '
         ]);
 
         $data = $request->all();
 
         $new_restaurant = new Restaurant();
-        
+
         $user = Auth::user();
         $data['user_id'] = $user['id'];
 
@@ -74,7 +78,7 @@ class RestaurantController extends Controller
         if(array_key_exists('cuisines', $data)) {
             $new_restaurant->cuisines()->attach($data['cuisines']);
         }
-        
+
         return redirect()->route('admin.restaurants.show', $new_restaurant->id);
 
     }
@@ -87,7 +91,7 @@ class RestaurantController extends Controller
      */
     public function show($id)
     {
-        
+
         $restaurant = Restaurant::find($id);
 
         if(!$restaurant) {
