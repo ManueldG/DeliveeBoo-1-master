@@ -49,7 +49,7 @@ class RestaurantController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:restaurants',
+            'name' => 'required|unique:restaurants|max:30',
             'description' => 'nullable',
             'image' => 'nullable',
             'address' => 'required',
@@ -109,7 +109,14 @@ class RestaurantController extends Controller
      */
     public function edit($id)
     {
-        //
+        $restaurant = Restaurant::find($id);
+        $cuisines = Cuisine::all();
+
+        if(!$restaurant){
+            abort(404);
+        }
+
+        return view('admin.restaurants.edit', compact('restaurant', 'cuisines'));
     }
 
     /**
@@ -121,7 +128,37 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => [
+                'required',
+                'max:30',
+                Rule::unique('restaurants')->ignore('id'),
+            ],
+            'description' => 'nullable',
+            'image' => 'nullable',
+            'address' => 'required',
+            'city' => 'required',
+            'cap' => 'required|max:5',
+            'phone_number' => 'required|max:20',
+            'cuisines' => 'nullable|exists:cuisines,id',
+            'user_id' => 'exists:user,id',
+        ],[
+            'required' => ' The :attribute is required.!!!!!!!',
+            'unique' => ' The :attribute is already taken',
+            'max' => 'Max :max characters allowed '
+        ]);
+
+        $data = $request->all();
+        $restaurant = Restaurant::find($id);
+
+        if(array_key_exists('cuisines', $data)){
+            $restaurant->cuisines()->sync($data['cuisines']);
+        } else { 
+            $restaurant->cuisines()->detach();
+        }
+
+        $restaurant->update($data);
+        return redirect()->route('admin.restaurants.show', $restaurant->id);
     }
 
     /**
@@ -132,6 +169,8 @@ class RestaurantController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $restaurant = Restaurant::find($id);
+        $restaurant->delete();
+        return redirect()->route('admin.restaurants.index')->with('deleted', $restaurant->name);
     }
 }

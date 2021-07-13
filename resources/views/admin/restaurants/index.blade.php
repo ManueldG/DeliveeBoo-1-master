@@ -22,8 +22,16 @@
                         <td>
                             <a class="btn btn-success" href="{{ route('admin.restaurants.show', $restaurant->id)}}">SHOW</a>
                         </td>
-                        <td>EDIT</td>
-                        <td>DELETE</td>
+                        <td>
+                            <a class="btn btn-warning" href="{{route('admin.restaurants.edit', $restaurant->id)}}">EDIT</a>
+                        </td>
+                        <td>
+                            <form class="delete-post-form" action="{{route('admin.restaurants.destroy', $restaurant->id)}}" method="POST">
+                                @csrf    
+                                @method('DELETE')
+                                <input class="btn btn-danger" type="submit" value="DELETE">
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
