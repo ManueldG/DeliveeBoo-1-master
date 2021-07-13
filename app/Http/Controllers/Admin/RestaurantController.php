@@ -94,7 +94,8 @@ class RestaurantController extends Controller
     {
 
         $restaurant = Restaurant::find($id);
-        $plates = Plate::all();
+        $plates = Plate::all()->where('restaurant_id', $restaurant->id);
+        //dd($restaurant);
 
         if(!$restaurant) {
             abort(404);
