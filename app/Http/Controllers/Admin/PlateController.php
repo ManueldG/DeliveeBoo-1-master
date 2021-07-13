@@ -17,7 +17,7 @@ class PlateController extends Controller
      */
     public function index()
     {
-        
+       
     }
 
     /**
@@ -54,10 +54,11 @@ class PlateController extends Controller
         ]);
 
         $restaurant = Restaurant::all();
-
         $data = $request->all();
 
         $new_plate = new Plate();
+        dd($restaurant);
+        $data['restaurant_id'] = $restaurant[0]->id;
 
         $new_plate->fill($data);
 
