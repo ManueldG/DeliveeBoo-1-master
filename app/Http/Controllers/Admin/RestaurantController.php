@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\Rule;
 use App\Restaurant;
+use App\Plate;
 use App\Cuisine;
 use App\User;
 
@@ -20,7 +21,7 @@ class RestaurantController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $restaurants = Restaurant::find($user->restaurants);
+        $restaurants = Restaurant::where('user_id', auth()->id())->get();
 
         return view('admin.restaurants.index', compact('restaurants'));
 
@@ -93,11 +94,12 @@ class RestaurantController extends Controller
     {
 
         $restaurant = Restaurant::find($id);
+        $plates = Plate::all();
 
         if(!$restaurant) {
             abort(404);
         }
-        return view('admin.restaurants.show', compact('restaurant'));
+        return view('admin.restaurants.show', compact('restaurant', 'plates'));
 
     }
 

@@ -21,7 +21,7 @@ class PlatesTableSeeder extends Seeder
             $new_plate->visibility = true;
             $new_plate->price = 20.00;
             $new_plate->image = '';
-            $new_plate->ingredients = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque nam quasi nobis doloremque incidunt quisquam praesentium voluptatibus, optio porro, qui, perspiciatis eaque distinctio. Illo magni et cum id quod praesentium.';
+            
 
             $new_plate->save();
 

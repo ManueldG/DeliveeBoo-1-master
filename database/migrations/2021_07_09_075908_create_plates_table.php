@@ -18,15 +18,9 @@ class CreatePlatesTable extends Migration
 
             $table->string('name',50)->nullable(false);
             $table->text('description')->nullable();
-            $table->boolean('visibility')->nullable(false);
+            $table->boolean('visibility')->default(0);
             $table->float('price',4,2)->nullable(false);
             $table->string('image')->nullable();
-            $table->string('ingredients')->nullable();
-
-
-
-
-
 
             $table->timestamps();
         });

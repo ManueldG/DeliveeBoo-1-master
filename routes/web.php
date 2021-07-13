@@ -21,8 +21,10 @@ Route::prefix('admin')->namespace('Admin')->middleware('auth')->name('admin.')->
     Route::get('/home', 'HomeController@index')->name('home');
     
     Route::resource('/restaurants', 'RestaurantController');
+
+    Route::resource('/plates', 'PlateController');
 });
 
 Route::get('{any?}', function () {
-    return view('admin.home');
+    return view('guest.home');
 })->where('any', '.*');
