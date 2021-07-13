@@ -24,10 +24,11 @@ class CuisinesTableSeeder extends Seeder
         ];
 
         foreach($types as $type) {
+
             $new_cuisine = new Cuisine();
 
             $new_cuisine->type = $type;
-            
+
             $new_cuisine->save();
         }
 
