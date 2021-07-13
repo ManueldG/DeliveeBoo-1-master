@@ -17,10 +17,7 @@ class PlateController extends Controller
      */
     public function index()
     {
-        // $restaurant = Restaurant::all();
-        // $plates = Plate::all();
-
-        // return view('admin.plates.index', compact('restaurant', 'plates'));
+        
     }
 
     /**
@@ -56,18 +53,17 @@ class PlateController extends Controller
             'max' => 'Max :max characters allowed '
         ]);
 
+        $restaurant = Restaurant::all();
+
         $data = $request->all();
 
         $new_plate = new Plate();
-        $restaurant = Restaurant::all();
-        //dd($restaurant);
-        //$data ['restaurant_id'] = $restaurant->id;
 
         $new_plate->fill($data);
 
         $new_plate->save();
 
-        return redirect()->route('admin.restaurants.index');
+        return redirect()->route('admin.restaurants.show', $restaurant->id);
     }
 
     /**
