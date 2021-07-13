@@ -33,43 +33,23 @@
                          <textarea name="description" id="description" rows="6" class="form-control  @error('description') is-invalid @enderror">{{ old('description') }}</textarea>
                     </div>
 
-                    <div class="mb-3">
-                        {{-- <label for="visibility" class="form-label">Visibility*</label>
-                        <label for="visibility">Yes</label>
-                        <input type="radio" class="form-check @error('visibility') is-invalid @enderror" id="visibility" name="visibility" value="{{ old('visibility') }}">
-                        <label for="visibility">No</label>
-                        <input type="radio" class="@error('visibility') is-invalid @enderror" id="visibility" name="visibility" value="{{ old('visibility') }}"> --}}
-                        
-                        {{-- <div class="form-check">
-                            <input class="form-check-input" type="radio" name="visibility" id="visibility">
-                            <label class="form-check-label" for="visibility">
-                                Yes
-                            </label>
-                            </div>
-                            <div class="form-check">
-                            <input class="form-check-input" type="radio" name="visibility" id="visibility1" checked>
-                            <label class="form-check-label" for="visibility1">
-                                No
-                            </label>
-                            </div>
-                        @error('visibility')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
+                    {{-- <div class="mb-3">
+                        <div class="custom-control custom-switch">
+                        <input type="checkbox" class="custom-control-input" id="visibility" value="1">
+                        <label class="custom-control-label" for="visibility">Toggle this switch element</label>
                     </div> --}}
 
-                    <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="visibility" value="1">
-                    <label class="custom-control-label" for="visibility">Toggle this switch element</label>
+                    <div class="form-group">
+                        <label for="visibility">Visibility</label>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input @error('visibility') is-invalid @enderror" name="visibility" id="visibility0" value="0" {{ old('visibility') == 0 ? 'checked' : '' }}>
+                            <label for="visibility0" class="form-check-label">No</label>
+                        </div>
+                        <div class="form-check">
+                            <input type="radio" class="form-check-input @error('visibility') is-invalid @enderror" name="visibility" id="visibility1" value="1" {{ old('visibility') == 1 ? 'checked' : '' }}>
+                            <label for="visibility1" class="form-check-label">Sì</label>
+                        </div>
                     </div>
-                    {{-- {{dd($plates)}} --}}
-
-                    {{-- <input type="radio"  id="visibility1" name="visibility" value="0"  {{ ($plates->visibility=="0")? "checked" : "" }} >OFF</label>
-                    <input type="radio" id="visibility2" name="visibility" value="1" {{ ($plates->visibility=="1")? "checked" : "" }} >ON</label> --}}
-
-                    {{ Form::radio('theme', 'default', true, ['id' => 'theme1']) }}
-                    {{ Form::label('theme1', 'Group 1 (default)'])}}
-
-
 
                     <div class="mb-3">
                         <label for="price" class="form-label">Price*</label>
