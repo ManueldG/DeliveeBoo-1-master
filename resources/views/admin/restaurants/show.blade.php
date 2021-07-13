@@ -25,7 +25,15 @@
         </div>
 
         <div class="mt-5">
-
+            <a class="btn btn-primary mb-5" href="{{ route('admin.plates.create')}}">Crea il tuo piatto</a>
+            <h3>I nostri piatti</h3>
+            <ul class="mb-5 list-group">
+                {{-- {{dd($plate)}} --}}
+                @foreach ($plates as $plate)
+                <li class="list-group-item">{{$plate->name}}</li>
+                    
+                @endforeach
+            </ul>
             <h3>Contatti</h3>
             <ul class="list-group">
                 <li class="list-group-item"><strong>Via:</strong> {{ $restaurant->address }}</li>

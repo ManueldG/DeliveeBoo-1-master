@@ -47,7 +47,7 @@ class PlateController extends Controller
         $request->validate([
             'name' => 'required',
             'description' => 'required',
-            // git
+            //'visibility' => 'required',
             'price' => 'required',
             'image' => 'nullable',
         ],[
@@ -60,12 +60,14 @@ class PlateController extends Controller
 
         $new_plate = new Plate();
         $restaurant = Restaurant::all();
+        //dd($restaurant);
+        //$data ['restaurant_id'] = $restaurant->id;
 
         $new_plate->fill($data);
 
         $new_plate->save();
 
-        return redirect()->route('admin.restaurants.show', $restaurant->id);
+        return redirect()->route('admin.restaurants.index');
     }
 
     /**
