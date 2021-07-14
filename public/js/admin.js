@@ -37459,13 +37459,13 @@ if (btnCreate) {
       alert("Insert a phone number");
     } else if (phone_number.length > 20) {
       alert('Phone number is too long');
-      el.preventDefault();
     }
-    /* const cuisine = document.querySelectorAll("cuisines");
-    if (!cuisine.checked) {
-        alert("Please select a cuisine");
-    } */
 
+    var cuisine = document.querySelectorAll("cuisines");
+
+    if (!cuisine.checked) {
+      alert("Please select a cuisine"); //el.preventDefault();
+    }
   });
 }
 
