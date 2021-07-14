@@ -30,8 +30,12 @@
             <ul class="mb-5 list-group">
                 {{-- {{dd($plate)}} --}}
                 @foreach ($plates as $plate)
-                <li class="list-group-item">{{$plate->name}}</li>
-                    
+                <li class="list-group-item">
+                   <strong>Name plate: </strong> 
+                   <a href="{{ route('admin.plates.show', $plate->id)}}">
+                       {{$plate->name}}
+                    </a>
+                </li>
                 @endforeach
             </ul>
             <h3>Contatti</h3>

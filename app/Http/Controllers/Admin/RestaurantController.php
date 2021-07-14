@@ -60,7 +60,7 @@ class RestaurantController extends Controller
             'cuisines' => 'required|exists:cuisines,id',
             'user_id' => 'exists:user,id'
         ],[
-            'required' => ' The :attribute is required.!!!!!!!',
+            'required' => ' The :attribute is required !!',
             'unique' => ' The :attribute is already taken',
             'max' => 'Max :max characters allowed '
         ]);

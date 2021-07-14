@@ -32,16 +32,16 @@
                          <label for="description" class="form-label">Description</label>
                          <textarea name="description" id="description" rows="6" class="form-control  @error('description') is-invalid @enderror">{{ old('description') }}</textarea>
                     </div>
-
-                    <div class="mb-3">
+                    <div class="form-row">
+                    <div class="form-group col-md-6 mb-3">
                         <label for="address" class="form-label">Address*</label>
                         <input type="text" class="form-control @error('address') is-invalid @enderror" id="address" name="address" value="{{ old('address') }}">
                         @error('address')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-
-                    <div class="mb-3">
+                    
+                    <div class="mb-3 form-group col-md-4">
                         <label for="city" class="form-label">City*</label>
                         <input type="text" class="form-control @error('city') is-invalid @enderror" id="city" name="city" value="{{ old('city') }}">
                         @error('city')
@@ -50,12 +50,13 @@
                     </div>
 
 
-                    <div class="mb-3">
+                    <div class="mb-3 form-group col-md-2">
                         <label for="cap" class="form-label">CAP*</label>
                         <input type="text" class="form-control @error('cap') is-invalid @enderror" id="cap" name="cap" value="{{ old('cap') }}">
                         @error('cap')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
+                    </div>
                     </div>
 
                     <div class="mb-3">
@@ -69,7 +70,7 @@
                     {{-- CUISINES --}}
                     <h5 class="mb-3">Cuisines*</h5>
 
-                    <div class="mb-3 @error('cuisines') border border-danger @enderror">
+                    <div class="mb-3 @error('cuisines') text-danger @enderror">
                         @foreach ($cuisines as $cuisine)
                             <span class="d-inline-block mr-3">
                                 <input type="checkbox" name="cuisines[]" id="cuisine{{ $loop->iteration }}"

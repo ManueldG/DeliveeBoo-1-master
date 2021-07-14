@@ -79,7 +79,15 @@ class PlateController extends Controller
      */
     public function show($id)
     {
-        //
+        $plates = Plate::find($id);
+        $restaurants = Restaurant::all()->where('id', $plates->restaurant_id);
+
+        if(!$plates) {
+            abort(404);
+        }
+        return view('admin.plates.show', compact('restaurants', 'plates'));
+
+
     }
 
     /**
