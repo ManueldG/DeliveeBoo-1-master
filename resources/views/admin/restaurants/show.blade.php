@@ -17,7 +17,7 @@
 
         <div class="row">
             <div class="col-md-6">
-                <img class="img-fluid" src="{{$restaurant->image}}" alt="{{$restaurant->name}}">
+                <img class="img-fluid rounded" src="{{$restaurant->image}}" alt="{{$restaurant->name}}">
             </div>
             <div class="col-md-6">
                 {{ $restaurant->description }}

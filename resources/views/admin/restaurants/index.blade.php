@@ -3,7 +3,7 @@
 @section('content')
 
     <main class="container">
-        
+                     
         <table class="table mt-5">
             <thead>
                 <tr>
@@ -36,7 +36,9 @@
                 @endforeach
             </tbody>
         </table>
-
+        <div class="mt-5 row justify-content-md-center">
+             <a class="btn btn-primary mr-2" href="{{ route('admin.restaurants.create') }}">Add your restaurant</a>
+        </div> 
     </main>
 
 @endsection
