@@ -41,6 +41,9 @@
                         <li>
                             <a class="nav-link" href="{{ route('admin.restaurants.create') }}">Add restaurant</a>
                         </li>
+                        <li>
+                            <a class="nav-link" href="{{ route('admin.restaurants.index') }}">Show restaurant</a>
+                        </li>
                         
                     </ul>
 

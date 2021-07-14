@@ -16,7 +16,7 @@
 
                     {{ __('You are logged in!') }}
                     
-                    <div class="mt-3">
+                    <div class="mt-3 row justify-content-md-center">
                         <a class="btn btn-primary mr-2" href="{{ route('admin.restaurants.create') }}">Inserisci il tuo ristorante</a>
 
                         <a class="btn btn-warning" href="{{ route('admin.restaurants.index') }}">Vai a Indice Ristoranti</a>
