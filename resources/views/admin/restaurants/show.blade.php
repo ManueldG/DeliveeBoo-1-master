@@ -25,7 +25,7 @@
         </div>
 
         <div class="mt-5">
-            <a class="btn btn-primary mb-5" href="{{ route('admin.plates.create')}}">Crea il tuo piatto</a>
+            <a class="btn btn-primary mb-5" href="{{ route('admin.plates.create', ['id'=>$restaurant->id])}}">Crea il tuo piatto</a>
             <h3>I nostri piatti</h3>
             <ul class="mb-5 list-group">
                 {{-- {{dd($plate)}} --}}
