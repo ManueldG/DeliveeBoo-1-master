@@ -69,7 +69,7 @@
                     {{-- CUISINES --}}
                     <h5 class="mb-3">Cuisines*</h5>
 
-                    <div class="mb-3 @error('cuisines') border border-danger @enderror">
+                    <div class="mb-3 @error('cuisines') text-danger @enderror">
                         @foreach ($cuisines as $cuisine)
                             <span class="d-inline-block mr-3">
                                 <input type="checkbox" name="cuisines[]" id="cuisine{{ $loop->iteration }}"

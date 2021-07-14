@@ -42,12 +42,17 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-3 w-25">
                         <label for="price" class="form-label">Price*</label>
-                        <input type="number" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price') }}">
-                        @error('price')
-                            <div class="text-danger">{{ $message }}</div>
-                        @enderror
+                        <div class="input-group mb-2 mr-sm-2">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">€</div>
+                            </div>
+                            <input type="number" placeholder="0.00" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price') }}">
+                            @error('price')
+                                <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
                     </div>
 
                     {{-- PLATE IMAGE --}}
