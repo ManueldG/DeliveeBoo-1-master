@@ -71,7 +71,9 @@ if (btnRegister) {
             alert("Your password is too short");
         } else if (password !== confPassword) {
             alert("Your password does not match");
-            //e.preventDefault();
+        }
+        if ( btnRegister == false) {
+            e.preventDefault();
         }
     });
 }
@@ -107,8 +109,13 @@ if (btnCreate) {
         } else if (phone_number.length > 20) {
             alert('Phone number is too long');
         }   
-        /* const cuisine = document.getElementById("cuisine").value; */
-        //el.preventDefault();
+        const cuisine = document.querySelectorAll("cuisines");
+        if (!cuisine.checked) {
+            alert("Please select a cuisine");
+        }
+        if (btnCreate == false) {
+            el.preventDefault();
+        }
     });
 }
 
@@ -128,5 +135,8 @@ if (btnPlate) {
         if (price === "") {
             alert("Insert Plate price");
         }
-    })
+        if (btnPlate == false) {
+            ele.preventDefault();
+        }
+    });
 }
