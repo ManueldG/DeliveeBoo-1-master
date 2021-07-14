@@ -27,7 +27,7 @@
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
-
+                    
                     <div class="mb-3">
                          <label for="description" class="form-label">Description</label>
                          <textarea name="description" id="description" rows="6" class="form-control  @error('description') is-invalid @enderror">{{ old('description') }}</textarea>
