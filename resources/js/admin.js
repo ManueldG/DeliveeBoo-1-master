@@ -8,7 +8,7 @@ const delForm = document.querySelectorAll(".delete-post-form");
 //console.log(delForm);
 
 delForm.forEach(form => {
-    form.addEventListener("submit", function(e) {
+    form.addEventListener("submit", function (e) {
         const resp = confirm("You really want to delete this post?");
         console.log(resp);
 
@@ -32,7 +32,7 @@ delForm.forEach(form => {
 const btnRegister = document.getElementById("register");
 
 if (btnRegister) {
-    btnRegister.addEventListener("click", function(e) {
+    btnRegister.addEventListener("click", function (e) {
         const name = document.getElementById("name").value;
         if (name === "") {
             alert("Insert Name");
@@ -71,8 +71,6 @@ if (btnRegister) {
             alert("Your password is too short");
         } else if (password !== confPassword) {
             alert("Your password does not match");
-        }
-        if ( btnRegister == false) {
             e.preventDefault();
         }
     });
@@ -102,20 +100,18 @@ if (btnCreate) {
             alert("Insert cap");
         } else if (cap.length > 5) {
             alert('Cap is invalid');
-        }   
+        }
         const phone_number = document.getElementById("phone_number").value;
         if (phone_number === "") {
             alert("Insert a phone number");
         } else if (phone_number.length > 20) {
             alert('Phone number is too long');
-        }   
-        const cuisine = document.querySelectorAll("cuisines");
-        if (!cuisine.checked) {
-            alert("Please select a cuisine");
-        }
-        if (name == false || address == false || city == false || cap == false || phone_number == false || cuisine == false) {
             el.preventDefault();
         }
+        /* const cuisine = document.querySelectorAll("cuisines");
+        if (!cuisine.checked) {
+            alert("Please select a cuisine");
+        } */
     });
 }
 
@@ -134,8 +130,6 @@ if (btnPlate) {
         const price = document.getElementById("price").value;
         if (price === "") {
             alert("Insert Plate price");
-        }
-        if (btnPlate == false) {
             ele.preventDefault();
         }
     });
