@@ -37470,7 +37470,7 @@ if (btnCreate) {
       alert("Please select a cuisine");
     }
 
-    if (btnCreate == false) {
+    if (name == false || address == false || city == false || cap == false || phone_number == false || cuisine == false) {
       el.preventDefault();
     }
   });
@@ -37558,7 +37558,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\classe 30\Progetto Finale\DeliveeBoo\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/admin.js */"./resources/js/admin.js");
 
 
 /***/ })

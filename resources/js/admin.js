@@ -113,7 +113,7 @@ if (btnCreate) {
         if (!cuisine.checked) {
             alert("Please select a cuisine");
         }
-        if (btnCreate == false) {
+        if (name == false || address == false || city == false || cap == false || phone_number == false || cuisine == false) {
             el.preventDefault();
         }
     });
