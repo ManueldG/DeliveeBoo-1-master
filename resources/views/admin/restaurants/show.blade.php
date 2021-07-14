@@ -15,7 +15,7 @@
         @endif 
         </header>
 
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-md-6">
                 <img class="img-fluid rounded" src="{{$restaurant->image}}" alt="{{$restaurant->name}}">
             </div>
