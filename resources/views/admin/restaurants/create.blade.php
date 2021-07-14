@@ -73,7 +73,7 @@
                     <div class="mb-3 @error('cuisines') text-danger @enderror">
                         @foreach ($cuisines as $cuisine)
                             <span class="d-inline-block mr-3">
-                                <input type="checkbox" name="cuisines[]" id="cuisine{{ $loop->iteration }}"
+                                <input type="checkbox" name="cuisines[]" class="cuisines" id="cuisine{{ $loop->iteration }}"
                                 value="{{$cuisine->id}}"
                                 @if (in_array($cuisine->id, old('cuisines', []))) checked @endif>
                                 <label for="cuisine{{ $loop->iteration }}">
