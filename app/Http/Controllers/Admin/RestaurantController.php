@@ -57,7 +57,7 @@ class RestaurantController extends Controller
             'city' => 'required',
             'cap' => 'required|max:5',
             'phone_number' => 'required|max:20',
-            'cuisines' => 'nullable|exists:cuisines,id',
+            'cuisines' => 'required|exists:cuisines,id',
             'user_id' => 'exists:user,id'
         ],[
             'required' => ' The :attribute is required.!!!!!!!',
@@ -143,7 +143,7 @@ class RestaurantController extends Controller
             'city' => 'required',
             'cap' => 'required|max:5',
             'phone_number' => 'required|max:20',
-            'cuisines' => 'nullable|exists:cuisines,id',
+            'cuisines' => 'required|exists:cuisines,id',
             'user_id' => 'exists:user,id',
         ],[
             'required' => ' The :attribute is required.!!!!!!!',
