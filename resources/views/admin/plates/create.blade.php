@@ -35,21 +35,10 @@
                          <textarea name="description" id="description" rows="6" class="form-control  @error('description') is-invalid @enderror">{{ old('description') }}</textarea>
                     </div>
 
-                    {{-- <div class="mb-3">
-                        <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="visibility" value="1">
-                        <label class="custom-control-label" for="visibility">Toggle this switch element</label>
-                    </div> --}}
-
                     <div class="form-group">
-                        <label for="visibility">Visibility</label>
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input @error('visibility') is-invalid @enderror" name="visibility" id="visibility0" value="0" {{ old('visibility') == 0 ? 'checked' : '' }}>
-                            <label for="visibility0" class="form-check-label">No</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input @error('visibility') is-invalid @enderror" name="visibility" id="visibility1" value="1" {{ old('visibility') == 1 ? 'checked' : '' }}>
-                            <label for="visibility1" class="form-check-label">Sì</label>
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input @error('visibility') is-invalid @enderror" name="visibility" id="visibility1" value="1" {{ old('visibility') == 1 ? 'checked' : '' }}>
+                            <label for="visibility1" class="custom-control-label">Avaiable</label>
                         </div>
                     </div>
 
