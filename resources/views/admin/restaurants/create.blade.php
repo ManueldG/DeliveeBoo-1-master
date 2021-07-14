@@ -96,7 +96,7 @@
                         @enderror
                     </div>
 
-                    <button class="btn btn-primary" type="submit">Create restaurant</button>
+                    <button id="createRestaurant" class="btn btn-primary" type="submit">Create restaurant</button>
                 </form>
             </div>
         </div>
