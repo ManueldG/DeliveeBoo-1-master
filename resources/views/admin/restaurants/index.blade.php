@@ -3,7 +3,12 @@
 @section('content')
 
     <main class="container">
-                     
+        @if (session('deleted'))
+            <div class="alert alert-success">
+                <strong>{{ session('deleted') }}</strong>
+                deleted successfully.
+            </div>
+        @endif
         <table class="table mt-5">
             <thead>
                 <tr>

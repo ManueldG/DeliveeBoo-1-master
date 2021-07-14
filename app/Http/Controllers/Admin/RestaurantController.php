@@ -131,11 +131,12 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, $id)
     {
+       
         $request->validate([
             'name' => [
                 'required',
+                Rule::unique('restaurants')->ignore($id),
                 'max:30',
-                Rule::unique('restaurants')->ignore('id'),
             ],
             'description' => 'nullable',
             'image' => 'nullable',
@@ -146,12 +147,12 @@ class RestaurantController extends Controller
             'cuisines' => 'required|exists:cuisines,id',
             'user_id' => 'exists:user,id',
         ],[
-            'required' => ' The :attribute is required.!!!!!!!',
+            'required' => ' The :attribute is required !!',
             'unique' => ' The :attribute is already taken',
             'max' => 'Max :max characters allowed '
         ]);
 
-        $data = $request->all();
+         $data = $request->all();
         $restaurant = Restaurant::find($id);
 
         if(array_key_exists('cuisines', $data)){

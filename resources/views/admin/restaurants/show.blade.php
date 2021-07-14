@@ -15,7 +15,7 @@
         @endif 
         </header>
 
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-md-6">
                 <img class="img-fluid rounded" src="{{$restaurant->image}}" alt="{{$restaurant->name}}">
             </div>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="mt-5">
-            <a class="btn btn-primary mb-5" href="{{ route('admin.plates.create', ['id'=>$restaurant->id])}}">Crea il tuo piatto</a>
+            <a class="btn btn-primary mb-5" href="{{ route('admin.plates.create', ['id'=>$restaurant->id])}}">Create your plate</a>
             <h3>I nostri piatti</h3>
             <ul class="mb-5 list-group">
                 {{-- {{dd($plate)}} --}}
