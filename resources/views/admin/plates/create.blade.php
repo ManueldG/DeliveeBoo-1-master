@@ -66,7 +66,7 @@
                         @enderror
                     </div>
 
-                    <button class="btn btn-primary" type="submit">Create Plate</button>
+                    <button id="createPlate" class="btn btn-primary" type="submit">Create Plate</button>
                 </form>
             </div>
         </div>

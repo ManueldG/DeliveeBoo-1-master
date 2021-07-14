@@ -37417,6 +37417,90 @@ if (btnRegister) {
     } else if (password !== confPassword) {
       alert("Your password does not match");
     }
+
+    if (btnRegister == false) {
+      e.preventDefault();
+    }
+  });
+}
+
+var btnCreate = document.getElementById("createRestaurant");
+
+if (btnCreate) {
+  btnCreate.addEventListener("click", function (el) {
+    var name = document.getElementById("name").value;
+
+    if (name === "") {
+      alert("Insert Restaurant Name");
+    } else if (name.length > 30) {
+      alert("Name is too long");
+    }
+
+    var address = document.getElementById("address").value;
+
+    if (address === "") {
+      alert("Insert address");
+    }
+
+    var city = document.getElementById("city").value;
+
+    if (city === "") {
+      alert("Insert city");
+    }
+
+    var cap = document.getElementById("cap").value;
+
+    if (cap === "") {
+      alert("Insert cap");
+    } else if (cap.length > 5) {
+      alert('Cap is invalid');
+    }
+
+    var phone_number = document.getElementById("phone_number").value;
+
+    if (phone_number === "") {
+      alert("Insert a phone number");
+    } else if (phone_number.length > 20) {
+      alert('Phone number is too long');
+    }
+
+    var cuisine = document.querySelectorAll("cuisines");
+
+    if (!cuisine.checked) {
+      alert("Please select a cuisine");
+    }
+
+    if (btnCreate == false) {
+      el.preventDefault();
+    }
+  });
+}
+
+var btnPlate = document.getElementById("createPlate");
+
+if (btnPlate) {
+  btnPlate.addEventListener("click", function (ele) {
+    var name = document.getElementById("name").value;
+
+    if (name === "") {
+      alert("Insert Plate name");
+    }
+
+    var description = document.getElementById("description").value;
+
+    if (description === "") {
+      alert("Insert Plate description");
+    }
+
+    var price = document.getElementById("price").value;
+
+    if (price === "") {
+      alert("Insert Plate price");
+    }
+
+    if (btnPlate == false) {
+      ele.preventDefault();
+    }
   });
 }
 
@@ -37474,7 +37558,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\mauro\Desktop\Progetto finale\DeliveeBoo\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\classe 30\Progetto Finale\DeliveeBoo\resources\js\admin.js */"./resources/js/admin.js");
 
 
 /***/ })
