@@ -2,6 +2,7 @@
 
 @section('content')
 <main class="container">
+    {{-- <a href="{{ route('admin.restaurants.show', $plates->$restaurants)}}">Return at restaurant</a> --}}
     <h1>{{ $plates->name}}</h1>
 
      <div class="row mt-5">
