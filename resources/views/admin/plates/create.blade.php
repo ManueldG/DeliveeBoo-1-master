@@ -20,6 +20,8 @@
                     @csrf
                     @method('POST')
 
+                      
+                     <input type="hidden" name="restaurant_id" value="{{ $id }}"> 
                     <div class="mb-3">
                         <label for="name" class="form-label">Name*</label>
                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}">

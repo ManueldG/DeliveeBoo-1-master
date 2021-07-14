@@ -7,6 +7,7 @@ use App\Plate;
 use App\Restaurant;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class PlateController extends Controller
 {
@@ -27,10 +28,12 @@ class PlateController extends Controller
      */
     public function create()
     {
+
+        $id = $_GET['id'];
         $restaurants = Restaurant::all();
         $plates = Plate::all();
 
-        return view('admin.plates.create', compact('plates','restaurants'));
+        return view('admin.plates.create', compact('plates','restaurants', 'id'));
     }
 
     /**
@@ -43,6 +46,7 @@ class PlateController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'restaurant_id' => 'required',
             'description' => 'required',
             'visibility' => 'nullable',
             'price' => 'required',
@@ -53,18 +57,22 @@ class PlateController extends Controller
             'max' => 'Max :max characters allowed '
         ]);
 
-        $restaurant = Restaurant::all();
         $data = $request->all();
 
         $new_plate = new Plate();
-        dd($restaurant);
-        $data['restaurant_id'] = $restaurant[0]->id;
-
+        
         $new_plate->fill($data);
+        
+        $new_plate->restaurant_id = $data['restaurant_id'];
 
         $new_plate->save();
 
+<<<<<<< HEAD
         return redirect()->route('admin.restaurants.show', $restaurant->id);
+=======
+        return redirect()->route('admin.restaurants.index');
+    
+>>>>>>> 671ccf9716e809c1986fea8756134e602c7dc89b
     }
 
     /**
