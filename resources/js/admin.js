@@ -18,21 +18,10 @@ delForm.forEach(form => {
     });
 });
 
-// const valName = document.querySelectorAll(".btn");
-
-// valName.addEventListener("submit", function(e) {
-//     const resp = "You really want to delete this post?";
-//     console.log(resp);
-
-//     if (!resp) {
-//         e.preventDefault();
-//     }
-// });
-
 const btnRegister = document.getElementById("register");
 
 if (btnRegister) {
-    btnRegister.addEventListener("click", function (e) {
+    btnRegister.addEventListener("click", function (el) {
         const name = document.getElementById("name").value;
         if (name === "") {
             alert("Insert Name");
@@ -71,7 +60,7 @@ if (btnRegister) {
             alert("Your password is too short");
         } else if (password !== confPassword) {
             alert("Your password does not match");
-            e.preventDefault();
+            el.preventDefault();
         }
     });
 }
@@ -80,7 +69,7 @@ if (btnRegister) {
 const btnCreate = document.getElementById("createRestaurant");
 
 if (btnCreate) {
-    btnCreate.addEventListener("click", function (el) {
+    btnCreate.addEventListener("click", function (ele) {
         const name = document.getElementById("name").value;
         if (name === "") {
             alert("Insert Restaurant Name");
@@ -104,9 +93,10 @@ if (btnCreate) {
         const phone_number = document.getElementById("phone_number").value;
         if (phone_number === "") {
             alert("Insert a phone number");
+            ele.preventDefault();
         } else if (phone_number.length > 20) {
             alert('Phone number is too long');
-            el.preventDefault();
+            ele.preventDefault();
         }
         /* const cuisine = document.querySelectorAll("cuisines");
         if (!cuisine.checked) {
@@ -118,7 +108,7 @@ if (btnCreate) {
 const btnPlate = document.getElementById("createPlate");
 
 if (btnPlate) {
-    btnPlate.addEventListener("click", function (ele) {
+    btnPlate.addEventListener("click", function (elem) {
         const name = document.getElementById("name").value;
         if (name === "") {
             alert("Insert Plate name");
@@ -130,7 +120,7 @@ if (btnPlate) {
         const price = document.getElementById("price").value;
         if (price === "") {
             alert("Insert Plate price");
-            ele.preventDefault();
+            elem.preventDefault();
         }
     });
 }
