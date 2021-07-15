@@ -37454,12 +37454,12 @@ if (btnCreate) {
       alert('Phone number is too long');
       ele.preventDefault();
     }
-
-    var cuisine = document.querySelectorAll("cuisines");
-
+    /* const cuisine = document.querySelectorAll("cuisines");
     if (!cuisine.checked) {
-      alert("Please select a cuisine"); //el.preventDefault();
-    }
+        alert("Please select a cuisine");
+        el.preventDefault();
+    } */
+
   });
 }
 
