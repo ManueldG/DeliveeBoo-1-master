@@ -152,7 +152,7 @@ class RestaurantController extends Controller
             'max' => 'Max :max characters allowed '
         ]);
 
-         $data = $request->all();
+        $data = $request->all();
         $restaurant = Restaurant::find($id);
 
         if(array_key_exists('cuisines', $data)){
