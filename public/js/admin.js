@@ -37408,11 +37408,7 @@ if (btnRegister) {
       alert("Your password is too short");
     } else if (password !== confPassword) {
       alert("Your password does not match");
-<<<<<<< HEAD
-      e.preventDefault();
-=======
       el.preventDefault();
->>>>>>> f6058f0934b3d8dfa8eea330a2394bfb1981a826
     }
   });
 }
@@ -37458,16 +37454,12 @@ if (btnCreate) {
       alert('Phone number is too long');
       ele.preventDefault();
     }
-    /* const cuisine = document.querySelectorAll("cuisines");
+
+    var cuisine = document.querySelectorAll("cuisines");
+
     if (!cuisine.checked) {
-<<<<<<< HEAD
       alert("Please select a cuisine"); //el.preventDefault();
     }
-=======
-        alert("Please select a cuisine");
-    } */
-
->>>>>>> f6058f0934b3d8dfa8eea330a2394bfb1981a826
   });
 }
 
@@ -37491,11 +37483,7 @@ if (btnPlate) {
 
     if (price === "") {
       alert("Insert Plate price");
-<<<<<<< HEAD
-      ele.preventDefault();
-=======
       elem.preventDefault();
->>>>>>> f6058f0934b3d8dfa8eea330a2394bfb1981a826
     }
   });
 }
@@ -37554,7 +37542,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\classe 30\Progetto Finale\DeliveeBoo\resources\js\admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/admin.js */"./resources/js/admin.js");
 
 
 /***/ })
