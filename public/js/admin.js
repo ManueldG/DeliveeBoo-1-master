@@ -37360,19 +37360,11 @@ delForm.forEach(function (form) {
       e.preventDefault();
     }
   });
-}); // const valName = document.querySelectorAll(".btn");
-// valName.addEventListener("submit", function(e) {
-//     const resp = "You really want to delete this post?";
-//     console.log(resp);
-//     if (!resp) {
-//         e.preventDefault();
-//     }
-// });
-
+});
 var btnRegister = document.getElementById("register");
 
 if (btnRegister) {
-  btnRegister.addEventListener("click", function (e) {
+  btnRegister.addEventListener("click", function (el) {
     var name = document.getElementById("name").value;
 
     if (name === "") {
@@ -37416,10 +37408,7 @@ if (btnRegister) {
       alert("Your password is too short");
     } else if (password !== confPassword) {
       alert("Your password does not match");
-    }
-
-    if (btnRegister == false) {
-      e.preventDefault();
+      el.preventDefault();
     }
   });
 }
@@ -37427,7 +37416,7 @@ if (btnRegister) {
 var btnCreate = document.getElementById("createRestaurant");
 
 if (btnCreate) {
-  btnCreate.addEventListener("click", function (el) {
+  btnCreate.addEventListener("click", function (ele) {
     var name = document.getElementById("name").value;
 
     if (name === "") {
@@ -37460,26 +37449,23 @@ if (btnCreate) {
 
     if (phone_number === "") {
       alert("Insert a phone number");
+      ele.preventDefault();
     } else if (phone_number.length > 20) {
       alert('Phone number is too long');
+      ele.preventDefault();
     }
-
-    var cuisine = document.querySelectorAll("cuisines");
-
+    /* const cuisine = document.querySelectorAll("cuisines");
     if (!cuisine.checked) {
-      alert("Please select a cuisine");
-    }
+        alert("Please select a cuisine");
+    } */
 
-    if (name == false || address == false || city == false || cap == false || phone_number == false || cuisine == false) {
-      el.preventDefault();
-    }
   });
 }
 
 var btnPlate = document.getElementById("createPlate");
 
 if (btnPlate) {
-  btnPlate.addEventListener("click", function (ele) {
+  btnPlate.addEventListener("click", function (elem) {
     var name = document.getElementById("name").value;
 
     if (name === "") {
@@ -37496,10 +37482,7 @@ if (btnPlate) {
 
     if (price === "") {
       alert("Insert Plate price");
-    }
-
-    if (btnPlate == false) {
-      ele.preventDefault();
+      elem.preventDefault();
     }
   });
 }
@@ -37558,7 +37541,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\classe 30\Progetto Finale\DeliveeBoo\resources\js\admin.js */"./resources/js/admin.js");
 
 
 /***/ })
