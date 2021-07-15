@@ -37360,19 +37360,11 @@ delForm.forEach(function (form) {
       e.preventDefault();
     }
   });
-}); // const valName = document.querySelectorAll(".btn");
-// valName.addEventListener("submit", function(e) {
-//     const resp = "You really want to delete this post?";
-//     console.log(resp);
-//     if (!resp) {
-//         e.preventDefault();
-//     }
-// });
-
+});
 var btnRegister = document.getElementById("register");
 
 if (btnRegister) {
-  btnRegister.addEventListener("click", function (e) {
+  btnRegister.addEventListener("click", function (el) {
     var name = document.getElementById("name").value;
 
     if (name === "") {
@@ -37416,7 +37408,11 @@ if (btnRegister) {
       alert("Your password is too short");
     } else if (password !== confPassword) {
       alert("Your password does not match");
+<<<<<<< HEAD
       e.preventDefault();
+=======
+      el.preventDefault();
+>>>>>>> f6058f0934b3d8dfa8eea330a2394bfb1981a826
     }
   });
 }
@@ -37424,7 +37420,7 @@ if (btnRegister) {
 var btnCreate = document.getElementById("createRestaurant");
 
 if (btnCreate) {
-  btnCreate.addEventListener("click", function (el) {
+  btnCreate.addEventListener("click", function (ele) {
     var name = document.getElementById("name").value;
 
     if (name === "") {
@@ -37457,22 +37453,28 @@ if (btnCreate) {
 
     if (phone_number === "") {
       alert("Insert a phone number");
+      ele.preventDefault();
     } else if (phone_number.length > 20) {
       alert('Phone number is too long');
+      ele.preventDefault();
     }
-
-    var cuisine = document.querySelectorAll("cuisines");
-
+    /* const cuisine = document.querySelectorAll("cuisines");
     if (!cuisine.checked) {
+<<<<<<< HEAD
       alert("Please select a cuisine"); //el.preventDefault();
     }
+=======
+        alert("Please select a cuisine");
+    } */
+
+>>>>>>> f6058f0934b3d8dfa8eea330a2394bfb1981a826
   });
 }
 
 var btnPlate = document.getElementById("createPlate");
 
 if (btnPlate) {
-  btnPlate.addEventListener("click", function (ele) {
+  btnPlate.addEventListener("click", function (elem) {
     var name = document.getElementById("name").value;
 
     if (name === "") {
@@ -37489,7 +37491,11 @@ if (btnPlate) {
 
     if (price === "") {
       alert("Insert Plate price");
+<<<<<<< HEAD
       ele.preventDefault();
+=======
+      elem.preventDefault();
+>>>>>>> f6058f0934b3d8dfa8eea330a2394bfb1981a826
     }
   });
 }
@@ -37548,7 +37554,7 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/admin.js */"./resources/js/admin.js");
+module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\classe 30\Progetto Finale\DeliveeBoo\resources\js\admin.js */"./resources/js/admin.js");
 
 
 /***/ })
