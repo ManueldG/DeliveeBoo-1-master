@@ -30,12 +30,12 @@
 
                     <div class="mb-3">
                          <label for="description" class="form-label">Description</label>
-                         <textarea name="description" id="description" rows="6" class="form-control  @error('description') is-invalid @enderror">{{ old('description'), $plate->description }}</textarea>
+                         <textarea name="description" id="description" rows="6" class="form-control  @error('description') is-invalid @enderror"> {{ old('description', $plate->description) }} </textarea>
                     </div>
 
                     <div class="form-group">
                         <div class="custom-control custom-switch">
-                            <input type="checkbox" class="custom-control-input @error('visibility') is-invalid @enderror" name="visibility" id="visibility1" value="1" {{ old('visibility') == 1 ? 'checked' : '' }}>
+                            <input type="checkbox" class="custom-control-input @error('visibility') is-invalid @enderror" name="visibility" id="visibility1" value="1" {{ old('visibility', $plate->visibility) == 1 ? 'checked' : '' }}>
                             <label for="visibility1" class="custom-control-label">Avaiable</label>
                         </div>
                     </div>
@@ -46,7 +46,7 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text">€</div>
                             </div>
-                            <input type="number" placeholder="0.00" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price') }}">
+                            <input type="number" placeholder="0.00" step="0.01" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price', $plate->price) }}">
                             @error('price')
                                 <div class="text-danger">{{ $message }}</div>
                             @enderror
@@ -58,7 +58,7 @@
                         <div>
                             <label for="image" class="form-label">Plate Image</label>
                         </div>
-                        <input type="text" class="form-control" name="image" id="image">
+                        <input type="text" class="form-control" name="image" id="image" value="{{ old('price', $plate->image) }}">
                         @error('image')
                         <div>{{$message}}</div>
                         @enderror

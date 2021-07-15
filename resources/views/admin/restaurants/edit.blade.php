@@ -30,7 +30,7 @@
 
                     <div class="mb-3">
                          <label for="description" class="form-label">Description</label>
-                         <textarea name="description" id="description" rows="6" class="form-control  @error('description') is-invalid @enderror">{{ old('description'), $restaurant->description }}</textarea>
+                         <textarea name="description" id="description" rows="6" class="form-control  @error('description') is-invalid @enderror">{{ old('description', $restaurant->description) }}</textarea>
                     </div>
 
                     <div class="mb-3">
@@ -93,7 +93,7 @@
                         <div>
                             <label for="image" class="form-label">Restaurant Image</label>
                         </div>
-                        <input type="text" class="form-control" name="image" id="image">
+                        <input type="text" class="form-control" name="image" id="image" value="{{ old('price', $restaurant->image)}}">
                         @error('image')
                         <div>{{$message}}</div>
                         @enderror
