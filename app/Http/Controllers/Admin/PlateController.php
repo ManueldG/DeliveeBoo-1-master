@@ -6,8 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Plate;
 use App\Restaurant;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\User;
+use Illuminate\Validation\Rule;
+
 
 class PlateController extends Controller
 {
@@ -98,7 +98,13 @@ class PlateController extends Controller
      */
     public function edit($id)
     {
-        //
+        $plate = Plate::find($id);
+
+        if(!$plate){
+            abort(404);
+        }
+
+        return view('admin.plates.edit', compact('plate'));
     }
 
     /**
@@ -110,7 +116,25 @@ class PlateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => [
+                'required',
+                Rule::unique('restaurants')->ignore($id),
+                'max:30',
+            ],
+            'description' => 'nullable',
+            'image' => 'nullable',
+        ],[
+            'required' => ' The :attribute is required !!',
+            'unique' => ' The :attribute is already taken',
+            'max' => 'Max :max characters allowed '
+        ]);
+
+        $data = $request->all();
+        $plate = Plate::find($id);
+
+        $plate->update($data);
+        return redirect()->route('admin.plates.show', $plate->id);
     }
 
     /**
@@ -121,6 +145,8 @@ class PlateController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $plate = Plate::find($id);
+        $plate->delete();
+        return redirect()->route('admin.restaurants.index')->with('deleted', $plate->name);
     }
 }
