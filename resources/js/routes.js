@@ -3,6 +3,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import Home from './pages/Home.vue';
+import Restaurants from './pages/Restaurants.vue';
+import RestaurantDetail from './pages/RestaurantDetail.vue';
 import NotFound from './pages/NotFound.vue';
 
 //ATTIVAZIONE
@@ -15,6 +17,16 @@ const router = new VueRouter({
             path: '/',
             name: 'home',
             component: Home
+        },
+        {
+            path: '/restaurants',
+            name: 'restaurants',
+            component: Restaurants
+        },
+        {
+            path: '/restaurant/:name',
+            name: 'restaurant-detail',
+            component: RestaurantDetail
         },
         {
             path: '*',

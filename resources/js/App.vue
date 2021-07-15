@@ -1,12 +1,8 @@
 <template>
-    <v-app>
+    <div class="container">
         <Header/>
-
-        <main>
-            <router-view></router-view>
-        </main>
-    </v-app>
-        
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
