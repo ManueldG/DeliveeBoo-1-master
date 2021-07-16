@@ -1,4 +1,4 @@
-##Progetto DeliveeBoo in Laravel
+## Progetto DeliveeBoo in Laravel
 
 Gestione Ristoranti
 - [ambiente di prova GCP](http://lofty-generator-319112.appspot.com/).
