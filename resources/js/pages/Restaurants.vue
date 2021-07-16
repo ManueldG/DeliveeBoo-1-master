@@ -5,7 +5,8 @@
             <button @click="getRestaurants">Search</button>
         </div>
         <h1>Lista ristoranti</h1>
-        <article v-for="restaurant in restaurants" :key="restaurant.id">
+
+        <article v-for="restaurant in results" :key="restaurant.id">
             <h2>{{ restaurant.name }}</h2>
             <router-link
                 :to="{
@@ -46,18 +47,22 @@ export default {
                 .get(this.apiURL)
                 .then(res => {
                     this.restaurants = res.data;
+                    this.results = this.restaurants;
                 })
                 .catch(err => {
                     console.log(err);
                 });
             } else if(this.searchText !== ""){
-                var a = this.restaurants.filter((element) => {
+                var a = this.restaurants.filter((element)=>{
+
                     for (const item of element.cuisines) {
                         return item.type.includes(this.searchText)
+
                     }
                 });
-                console.log(a);
-                this.restaurants = a
+
+
+                this.results = a ;
             }
         }
     }
