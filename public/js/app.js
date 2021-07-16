@@ -2119,6 +2119,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2145,6 +2146,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       if (this.searchText === "") {
         axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiURL).then(function (res) {
           _this.restaurants = res.data;
+          _this.results = _this.restaurants;
         })["catch"](function (err) {
           console.log(err);
         });
@@ -2164,8 +2166,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             _iterator.f();
           }
         });
-        console.log(a);
-        this.restaurants = a;
+        this.results = a;
       }
     }
   }
@@ -38106,7 +38107,7 @@ var render = function() {
       _vm._v(" "),
       _c("h1", [_vm._v("Lista ristoranti")]),
       _vm._v(" "),
-      _vm._l(_vm.restaurants, function(restaurant) {
+      _vm._l(_vm.results, function(restaurant) {
         return _c(
           "article",
           { key: restaurant.id },
@@ -54130,8 +54131,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\ManueldG\DeliveeBoo-1\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\ManueldG\DeliveeBoo-1\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
