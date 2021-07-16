@@ -1,8 +1,8 @@
 <template>
     <div class="container">
         <div class="search-bar">
-            <input type="text" placeholder="Search" />
-            <!-- <button @click="search">Search</button> -->
+            <input type="text" v-model="searchText" placeholder="Search" />
+            <button @click="getRestaurants">Search</button>
         </div>
         <h1>Lista ristoranti</h1>
         <article v-for="restaurant in restaurants" :key="restaurant.id">
@@ -30,31 +30,36 @@ export default {
     data() {
         return {
             apiURL: "http://127.0.0.1:8000/api/restaurants",
-            restaurants: []
+            restaurants: [],
+            searchText: '',
+            listRestaurant: []
         };
     },
     created() {
         this.getRestaurants();
-        // this.getData();
     },
     methods: {
         getRestaurants() {
-            axios
+            if(this.searchText === ""){
+                axios
                 .get(this.apiURL)
                 .then(res => {
                     this.restaurants = res.data;
-                    console.log(this.restaurants);
-                    console.log(res);
                 })
                 .catch(err => {
                     console.log(err);
                 });
+            } else if(this.searchText !== ""){
+                this.restaurants.filter((element) => {
+                    for (const item of element.cuisines) {
+                        if(item.type.includes(this.searchText)){
+                            this.listRestaurant.push(item.type)
+                        };
+                    }
+                        console.log(this.listRestaurant);
+                });
+            }
         }
-        // getData(search) {
-        //     if (search !== "") {
-        //         axios.get(this.apiURL);
-        //     }
-        // }
     }
 };
 </script>

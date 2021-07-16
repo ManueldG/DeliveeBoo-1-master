@@ -2092,6 +2092,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_Cuisines_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Cuisines.vue */ "./resources/js/components/Cuisines.vue");
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 //
 //
 //
@@ -2123,29 +2129,49 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       apiURL: "http://127.0.0.1:8000/api/restaurants",
-      restaurants: []
+      restaurants: [],
+      searchText: '',
+      listRestaurant: []
     };
   },
   created: function created() {
-    this.getRestaurants(); // this.getData();
+    this.getRestaurants();
   },
   methods: {
     getRestaurants: function getRestaurants() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiURL).then(function (res) {
-        _this.restaurants = res.data;
-        console.log(_this.restaurants);
-        console.log(res);
-      })["catch"](function (err) {
-        console.log(err);
-      });
-    } // getData(search) {
-    //     if (search !== "") {
-    //         axios.get(this.apiURL);
-    //     }
-    // }
+      if (this.searchText === "") {
+        axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiURL).then(function (res) {
+          _this.restaurants = res.data;
+        })["catch"](function (err) {
+          console.log(err);
+        });
+      } else if (this.searchText !== "") {
+        this.restaurants.filter(function (element) {
+          var _iterator = _createForOfIteratorHelper(element.cuisines),
+              _step;
 
+          try {
+            for (_iterator.s(); !(_step = _iterator.n()).done;) {
+              var item = _step.value;
+
+              if (item.type.includes(_this.searchText)) {
+                _this.listRestaurant.push(item.type);
+              }
+
+              ;
+            }
+          } catch (err) {
+            _iterator.e(err);
+          } finally {
+            _iterator.f();
+          }
+
+          console.log(_this.listRestaurant);
+        });
+      }
+    }
   }
 });
 
@@ -38057,7 +38083,30 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _vm._m(0),
+      _c("div", { staticClass: "search-bar" }, [
+        _c("input", {
+          directives: [
+            {
+              name: "model",
+              rawName: "v-model",
+              value: _vm.searchText,
+              expression: "searchText"
+            }
+          ],
+          attrs: { type: "text", placeholder: "Search" },
+          domProps: { value: _vm.searchText },
+          on: {
+            input: function($event) {
+              if ($event.target.composing) {
+                return
+              }
+              _vm.searchText = $event.target.value
+            }
+          }
+        }),
+        _vm._v(" "),
+        _c("button", { on: { click: _vm.getRestaurants } }, [_vm._v("Search")])
+      ]),
       _vm._v(" "),
       _c("h1", [_vm._v("Lista ristoranti")]),
       _vm._v(" "),
@@ -38090,16 +38139,7 @@ var render = function() {
     2
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "search-bar" }, [
-      _c("input", { attrs: { type: "text", placeholder: "Search" } })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
