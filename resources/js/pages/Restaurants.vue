@@ -32,7 +32,8 @@ export default {
             apiURL: "http://127.0.0.1:8000/api/restaurants",
             restaurants: [],
             searchText: '',
-            listRestaurant: []
+            listRestaurant: [],
+            results: []
         };
     },
     created() {
@@ -50,14 +51,13 @@ export default {
                     console.log(err);
                 });
             } else if(this.searchText !== ""){
-                this.restaurants.filter((element) => {
+                var a = this.restaurants.filter((element) => {
                     for (const item of element.cuisines) {
-                        if(item.type.includes(this.searchText)){
-                            this.listRestaurant.push(item.type)
-                        };
+                        return item.type.includes(this.searchText)
                     }
-                        console.log(this.listRestaurant);
                 });
+                console.log(a);
+                this.restaurants = a
             }
         }
     }

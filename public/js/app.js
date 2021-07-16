@@ -2131,7 +2131,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       apiURL: "http://127.0.0.1:8000/api/restaurants",
       restaurants: [],
       searchText: '',
-      listRestaurant: []
+      listRestaurant: [],
+      results: []
     };
   },
   created: function created() {
@@ -2148,28 +2149,23 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           console.log(err);
         });
       } else if (this.searchText !== "") {
-        this.restaurants.filter(function (element) {
+        var a = this.restaurants.filter(function (element) {
           var _iterator = _createForOfIteratorHelper(element.cuisines),
               _step;
 
           try {
             for (_iterator.s(); !(_step = _iterator.n()).done;) {
               var item = _step.value;
-
-              if (item.type.includes(_this.searchText)) {
-                _this.listRestaurant.push(item.type);
-              }
-
-              ;
+              return item.type.includes(_this.searchText);
             }
           } catch (err) {
             _iterator.e(err);
           } finally {
             _iterator.f();
           }
-
-          console.log(_this.listRestaurant);
         });
+        console.log(a);
+        this.restaurants = a;
       }
     }
   }
