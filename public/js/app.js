@@ -2131,13 +2131,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       apiURL: "http://127.0.0.1:8000/api/restaurants",
       restaurants: [],
       searchText: '',
-      listRestaurant: [],
-      results: []
+      listRestaurant: []
     };
   },
   created: function created() {
     this.getRestaurants();
   },
+  computed: {},
   methods: {
     getRestaurants: function getRestaurants() {
       var _this = this;
