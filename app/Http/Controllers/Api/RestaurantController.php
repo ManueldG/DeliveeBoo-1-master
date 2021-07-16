@@ -9,7 +9,7 @@ use App\Restaurant;
 class RestaurantController extends Controller
 {
     public function index(){
-        $restaurants = Restaurant::all();
+        $restaurants = Restaurant::with(['cuisines'])->get();
 
         return response()->json($restaurants);
     }
