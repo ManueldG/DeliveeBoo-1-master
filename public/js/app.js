@@ -1918,7 +1918,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'App',
+  name: "App",
   components: {
     Header: _components_Header__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
@@ -1964,7 +1964,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Header'
+  name: "Header"
 });
 
 /***/ }),
@@ -2050,18 +2050,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'RestaurantDetail',
+  name: "RestaurantDetail",
   components: {
     Cuisines: _components_Cuisines_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
-      restaurant: ''
+      restaurant: ""
     };
   },
   created: function created() {
@@ -2072,7 +2070,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://127.0.0.1:8000/api/restaurants/".concat(this.$route.params.name)).then(function (res) {
-        _this.restaurant = res.data;
+        _this.restaurant = res.data; // console.log(this.restaurant);
       })["catch"](function (err) {
         console.log(err);
       });
@@ -2118,28 +2116,36 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Restaurants',
+  name: "Restaurants",
   components: {
     Cuisines: _components_Cuisines_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
+      apiURL: "http://127.0.0.1:8000/api/restaurants",
       restaurants: []
     };
   },
   created: function created() {
-    this.getRestaurants();
+    this.getRestaurants(); // this.getData();
   },
   methods: {
     getRestaurants: function getRestaurants() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('http://127.0.0.1:8000/api/restaurants').then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiURL).then(function (res) {
         _this.restaurants = res.data;
+        console.log(_this.restaurants);
+        console.log(res);
       })["catch"](function (err) {
         console.log(err);
       });
-    }
+    } // getData(search) {
+    //     if (search !== "") {
+    //         axios.get(this.apiURL);
+    //     }
+    // }
+
   }
 });
 
@@ -37875,7 +37881,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("header", { staticClass: "container" }, [
-      _c("h1", { staticClass: "btn btn-success" }, [_vm._v(" ciao")])
+      _c("h1", { staticClass: "btn btn-success" }, [_vm._v("DeliveeBoo")])
     ])
   }
 ]
@@ -37989,7 +37995,15 @@ var render = function() {
       _vm._v(" "),
       _c("p", [_vm._v(_vm._s(_vm.restaurant.description))]),
       _vm._v(" "),
-      _vm._m(0),
+      _c(
+        "div",
+        [
+          _c("h3", [_vm._v("I nostri piatti")]),
+          _vm._v(" "),
+          _c("Menus", { attrs: { menus: _vm.restaurant.menus } })
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("h3", [_vm._v("Contatti")]),
       _vm._v(" "),
@@ -38011,20 +38025,13 @@ var render = function() {
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("Phone number: ")]),
-          _vm._v(_vm._s(_vm.restaurant.phone_number))
+          _vm._v(_vm._s(_vm.restaurant.phone_number) + "\n            ")
         ])
       ])
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("h3", [_vm._v("I nostri piatti")])])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -38050,6 +38057,8 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
+      _vm._m(0),
+      _vm._v(" "),
       _c("h1", [_vm._v("Lista ristoranti")]),
       _vm._v(" "),
       _vm._l(_vm.restaurants, function(restaurant) {
@@ -38081,7 +38090,16 @@ var render = function() {
     2
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "search-bar" }, [
+      _c("input", { attrs: { type: "text", placeholder: "Search" } })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -53460,14 +53478,15 @@ module.exports = function(module) {
 /*!******************************!*\
   !*** ./resources/js/App.vue ***!
   \******************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _App_vue_vue_type_template_id_f348271a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./App.vue?vue&type=template&id=f348271a& */ "./resources/js/App.vue?vue&type=template&id=f348271a&");
 /* harmony import */ var _App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./App.vue?vue&type=script&lang=js& */ "./resources/js/App.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _App_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -53497,7 +53516,7 @@ component.options.__file = "resources/js/App.vue"
 /*!*******************************************************!*\
   !*** ./resources/js/App.vue?vue&type=script&lang=js& ***!
   \*******************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -54036,21 +54055,21 @@ __webpack_require__.r(__webpack_exports__);
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
-  mode: 'history',
+  mode: "history",
   routes: [{
-    path: '/',
-    name: 'home',
+    path: "/",
+    name: "home",
     component: _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }, {
-    path: '/restaurants',
-    name: 'restaurants',
+    path: "/restaurants",
+    name: "restaurants",
     component: _pages_Restaurants_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }, {
-    path: '/restaurant/:name',
-    name: 'restaurant-detail',
+    path: "/restaurant/:name",
+    name: "restaurant-detail",
     component: _pages_RestaurantDetail_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
   }, {
-    path: '*',
+    path: "*",
     component: _pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
   }]
 });
@@ -54076,8 +54095,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\mauro\Desktop\Progetto finale\DeliveeBoo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\mauro\Desktop\Progetto finale\DeliveeBoo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
