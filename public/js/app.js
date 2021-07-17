@@ -2119,6 +2119,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2145,11 +2146,12 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       if (this.searchText === "") {
         axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiURL).then(function (res) {
           _this.restaurants = res.data;
+          _this.results = _this.restaurants;
         })["catch"](function (err) {
           console.log(err);
         });
       } else if (this.searchText !== "") {
-        var a = this.restaurants.filter(function (element) {
+        var filteredRestaurant = this.restaurants.filter(function (element) {
           var _iterator = _createForOfIteratorHelper(element.cuisines),
               _step;
 
@@ -2164,8 +2166,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             _iterator.f();
           }
         });
-        console.log(a);
-        this.restaurants = a;
+        this.results = filteredRestaurant;
       }
     }
   }
@@ -38106,7 +38107,7 @@ var render = function() {
       _vm._v(" "),
       _c("h1", [_vm._v("Lista ristoranti")]),
       _vm._v(" "),
-      _vm._l(_vm.restaurants, function(restaurant) {
+      _vm._l(_vm.results, function(restaurant) {
         return _c(
           "article",
           { key: restaurant.id },
