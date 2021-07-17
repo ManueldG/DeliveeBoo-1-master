@@ -14,10 +14,6 @@
                 }"
                 >Restaurant Detail</router-link
             >
-<<<<<<< HEAD
-            <Cuisines :cuisines="restaurant.cuisines" />
-=======
->>>>>>> fb33aa192e8ad8c01cb6b6a39f26582e0b2ee19e
         </article>
     </div>
 </template>
@@ -26,12 +22,6 @@
 import axios from "axios";
 export default {
     name: "Restaurants",
-<<<<<<< HEAD
-    components: {
-        Cuisines,
-    },
-=======
->>>>>>> fb33aa192e8ad8c01cb6b6a39f26582e0b2ee19e
     data() {
         return {
             apiURL: "http://127.0.0.1:8000/api/restaurants",

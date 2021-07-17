@@ -1926,6 +1926,28 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Cuisines.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Cuisines.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'Cuisines',
+  props: ['cuisines']
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Header.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Header.vue?vue&type=script&lang=js& ***!
@@ -1943,6 +1965,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Header"
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Plates.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Plates.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'Plates',
+  props: {
+    plates: Array
+  }
 });
 
 /***/ }),
@@ -1994,9 +2042,70 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/RestaurantDetail.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/pages/RestaurantDetail.vue: Unexpected token (35:0)\n\n\u001b[0m \u001b[90m 33 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mPlates\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m\"../components/Plates.vue\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 34 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mCuisines\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m\"../components/Cuisines.vue\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 36 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mMenus\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m\"../components/Menus.vue\"\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 37 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 38 |\u001b[39m \u001b[33m>>>\u001b[39m\u001b[33m>>>\u001b[39m\u001b[33m>\u001b[39m fb33aa192e8ad8c01cb6b6a39f26582e0b2ee19e\u001b[0m\n    at Parser._raise (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:816:17)\n    at Parser.raiseWithData (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:809:17)\n    at Parser.raise (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:770:17)\n    at Parser.unexpected (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:9893:16)\n    at Parser.parseExprAtom (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11307:20)\n    at Parser.parseExprSubscripts (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10881:23)\n    at Parser.parseUpdate (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10861:21)\n    at Parser.parseMaybeUnary (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10839:23)\n    at Parser.parseExprOps (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10696:23)\n    at Parser.parseMaybeConditional (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10670:23)\n    at Parser.parseMaybeAssign (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10633:21)\n    at Parser.parseExpressionBase (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10573:23)\n    at /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10567:39\n    at Parser.allowInAnd (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12328:16)\n    at Parser.parseExpression (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10567:17)\n    at Parser.parseStatementContent (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12665:23)\n    at Parser.parseStatement (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12534:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:13123:25)\n    at Parser.parseBlockBody (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:13114:10)\n    at Parser.parseProgram (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12457:10)\n    at Parser.parseTopLevel (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12448:25)\n    at Parser.parse (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:14175:10)\n    at parse (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:14227:38)\n    at parser (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/core/lib/parser/index.js:52:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/core/lib/transformation/normalize-file.js:82:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/core/lib/transformation/index.js:29:50)\n    at run.next (<anonymous>)\n    at Function.transform (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/core/lib/transform.js:25:41)\n    at transform.next (<anonymous>)\n    at step (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/gensync/index.js:261:32)\n    at /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/gensync/index.js:273:13\n    at async.call.result.err.err (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/gensync/index.js:223:11)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _components_Plates_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Plates.vue */ "./resources/js/components/Plates.vue");
+/* harmony import */ var _components_Cuisines_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Cuisines.vue */ "./resources/js/components/Cuisines.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "RestaurantDetail",
+  components: {
+    Plates: _components_Plates_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    Cuisines: _components_Cuisines_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      restaurant: ""
+    };
+  },
+  created: function created() {
+    this.getRestaurantDetail();
+  },
+  methods: {
+    getRestaurantDetail: function getRestaurantDetail() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://127.0.0.1:8000/api/restaurants/".concat(this.$route.params.name)).then(function (res) {
+        _this.restaurant = res.data; // console.log(this.restaurant);
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    }
+  }
+});
 
 /***/ }),
 
@@ -2005,9 +2114,85 @@ throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/Restaurants.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/pages/Restaurants.vue: Unexpected token (29:0)\n\n\u001b[0m \u001b[90m 27 |\u001b[39m \u001b[36mexport\u001b[39m \u001b[36mdefault\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 28 |\u001b[39m     name\u001b[33m:\u001b[39m \u001b[32m\"Restaurants\"\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 29 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 30 |\u001b[39m     components\u001b[33m:\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 31 |\u001b[39m         \u001b[33mCuisines\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 32 |\u001b[39m     }\u001b[33m,\u001b[39m\u001b[0m\n    at Parser._raise (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:816:17)\n    at Parser.raiseWithData (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:809:17)\n    at Parser.raise (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:770:17)\n    at Parser.unexpected (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:9893:16)\n    at Parser.parseIdentifierName (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12106:18)\n    at Parser.parseIdentifier (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12084:23)\n    at Parser.parseMaybePrivateName (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11378:19)\n    at Parser.parsePropertyName (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11898:151)\n    at Parser.parsePropertyDefinition (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11783:22)\n    at Parser.parseObjectLike (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11699:25)\n    at Parser.parseExprAtom (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11223:23)\n    at Parser.parseExprSubscripts (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10881:23)\n    at Parser.parseUpdate (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10861:21)\n    at Parser.parseMaybeUnary (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10839:23)\n    at Parser.parseExprOps (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10696:23)\n    at Parser.parseMaybeConditional (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10670:23)\n    at Parser.parseMaybeAssign (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10633:21)\n    at /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10595:39\n    at Parser.allowInAnd (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12328:16)\n    at Parser.parseMaybeAssignAllowIn (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10595:17)\n    at Parser.parseExportDefaultExpression (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:13746:24)\n    at Parser.parseExport (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:13656:31)\n    at Parser.parseStatementContent (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12640:27)\n    at Parser.parseStatement (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12534:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:13123:25)\n    at Parser.parseBlockBody (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:13114:10)\n    at Parser.parseProgram (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12457:10)\n    at Parser.parseTopLevel (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12448:25)\n    at Parser.parse (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:14175:10)\n    at parse (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:14227:38)\n    at parser (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/core/lib/parser/index.js:52:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/core/lib/transformation/normalize-file.js:82:38)\n    at normalizeFile.next (<anonymous>)\n    at run (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/core/lib/transformation/index.js:29:50)\n    at run.next (<anonymous>)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it["return"] != null) it["return"](); } finally { if (didErr) throw err; } } }; }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "Restaurants",
+  data: function data() {
+    return {
+      apiURL: "http://127.0.0.1:8000/api/restaurants",
+      restaurants: [],
+      searchText: '',
+      listRestaurant: [],
+      results: []
+    };
+  },
+  created: function created() {
+    this.getRestaurants();
+  },
+  methods: {
+    getRestaurants: function getRestaurants() {
+      var _this = this;
+
+      if (this.searchText === "") {
+        axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiURL).then(function (res) {
+          _this.restaurants = res.data;
+          _this.results = _this.restaurants;
+        })["catch"](function (err) {
+          console.log(err);
+        });
+      } else if (this.searchText !== "") {
+        var filteredRestaurant = this.restaurants.filter(function (element) {
+          var _iterator = _createForOfIteratorHelper(element.cuisines),
+              _step;
+
+          try {
+            for (_iterator.s(); !(_step = _iterator.n()).done;) {
+              var item = _step.value;
+              return item.type.includes(_this.searchText);
+            }
+          } catch (err) {
+            _iterator.e(err);
+          } finally {
+            _iterator.f();
+          }
+        });
+        this.results = filteredRestaurant;
+      }
+    }
+  }
+});
 
 /***/ }),
 
@@ -37686,6 +37871,38 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Cuisines.vue?vue&type=template&id=13383ccc&":
+/*!***********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Cuisines.vue?vue&type=template&id=13383ccc& ***!
+  \***********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    _vm._l(_vm.cuisines, function(cuisine) {
+      return _c("span", { key: "cuisine-" + cuisine.id }, [
+        _vm._v(_vm._s(cuisine.type) + " ")
+      ])
+    }),
+    0
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Header.vue?vue&type=template&id=1f42fb90&":
 /*!*********************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Header.vue?vue&type=template&id=1f42fb90& ***!
@@ -37713,6 +37930,38 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Plates.vue?vue&type=template&id=220a4070&":
+/*!*********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Plates.vue?vue&type=template&id=220a4070& ***!
+  \*********************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    _vm._l(_vm.plates, function(plate) {
+      return _c("span", { key: "plate-" + plate.id }, [
+        _vm._v("\n        " + _vm._s(plate.name) + "\n    ")
+      ])
+    }),
+    0
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -37766,7 +38015,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "container" }, [
-      _c("h1", [_vm._v("sei un coglione trova la pagina giusta")]),
+      _c("h1", [_vm._v("trova la pagina giusta")]),
       _vm._v(" "),
       _c("h2", [_vm._v("page not found 404")]),
       _vm._v(" "),
@@ -37827,13 +38076,8 @@ var render = function() {
         "div",
         [
           _c("h3", [_vm._v("I nostri piatti")]),
-          _vm._v("\n<<<<<<< HEAD\n                "),
-          _c("Menus", { attrs: { menus: _vm.restaurant.menus } }),
-          _vm._v("\n=======\n                "),
-          _c("Plates", { attrs: { plates: _vm.restaurant.plates } }),
-          _vm._v(
-            "\n>>>>>>> fb33aa192e8ad8c01cb6b6a39f26582e0b2ee19e\n            "
-          )
+          _vm._v(" "),
+          _c("Plates", { attrs: { plates: _vm.restaurant.plates } })
         ],
         1
       ),
@@ -37858,7 +38102,7 @@ var render = function() {
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("Phone number: ")]),
-          _vm._v(_vm._s(_vm.restaurant.phone_number) + "\n                ")
+          _vm._v(_vm._s(_vm.restaurant.phone_number) + "\n            ")
         ])
       ])
     ])
@@ -37935,11 +38179,6 @@ var render = function() {
                 }
               },
               [_vm._v("Restaurant Detail")]
-            ),
-            _vm._v("\n<<<<<<< HEAD\n            "),
-            _c("Cuisines", { attrs: { cuisines: restaurant.cuisines } }),
-            _vm._v(
-              "\n=======\n>>>>>>> fb33aa192e8ad8c01cb6b6a39f26582e0b2ee19e\n        "
             )
           ],
           1
@@ -53464,6 +53703,75 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/js/components/Cuisines.vue":
+/*!**********************************************!*\
+  !*** ./resources/js/components/Cuisines.vue ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Cuisines_vue_vue_type_template_id_13383ccc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Cuisines.vue?vue&type=template&id=13383ccc& */ "./resources/js/components/Cuisines.vue?vue&type=template&id=13383ccc&");
+/* harmony import */ var _Cuisines_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Cuisines.vue?vue&type=script&lang=js& */ "./resources/js/components/Cuisines.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Cuisines_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Cuisines_vue_vue_type_template_id_13383ccc___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Cuisines_vue_vue_type_template_id_13383ccc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Cuisines.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Cuisines.vue?vue&type=script&lang=js&":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/Cuisines.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Cuisines_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Cuisines.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Cuisines.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Cuisines_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Cuisines.vue?vue&type=template&id=13383ccc&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/Cuisines.vue?vue&type=template&id=13383ccc& ***!
+  \*****************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cuisines_vue_vue_type_template_id_13383ccc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Cuisines.vue?vue&type=template&id=13383ccc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Cuisines.vue?vue&type=template&id=13383ccc&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cuisines_vue_vue_type_template_id_13383ccc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Cuisines_vue_vue_type_template_id_13383ccc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Header.vue":
 /*!********************************************!*\
   !*** ./resources/js/components/Header.vue ***!
@@ -53528,6 +53836,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_template_id_1f42fb90___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_template_id_1f42fb90___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/Plates.vue":
+/*!********************************************!*\
+  !*** ./resources/js/components/Plates.vue ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Plates_vue_vue_type_template_id_220a4070___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Plates.vue?vue&type=template&id=220a4070& */ "./resources/js/components/Plates.vue?vue&type=template&id=220a4070&");
+/* harmony import */ var _Plates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Plates.vue?vue&type=script&lang=js& */ "./resources/js/components/Plates.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Plates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Plates_vue_vue_type_template_id_220a4070___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Plates_vue_vue_type_template_id_220a4070___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/Plates.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/Plates.vue?vue&type=script&lang=js&":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/Plates.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Plates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Plates.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Plates.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Plates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/Plates.vue?vue&type=template&id=220a4070&":
+/*!***************************************************************************!*\
+  !*** ./resources/js/components/Plates.vue?vue&type=template&id=220a4070& ***!
+  \***************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Plates_vue_vue_type_template_id_220a4070___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Plates.vue?vue&type=template&id=220a4070& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Plates.vue?vue&type=template&id=220a4070&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Plates_vue_vue_type_template_id_220a4070___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Plates_vue_vue_type_template_id_220a4070___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
