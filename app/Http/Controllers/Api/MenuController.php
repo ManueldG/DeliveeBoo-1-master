@@ -10,9 +10,9 @@ use Illuminate\Http\Request;
 class MenuController extends Controller
 {
     public function index(){
-        $menus = Plate::all();
+        $plates = Plate::all();
 
-        return response()->json($menus);
+        return response()->json($plates);
     }
 
     // public function show($name){

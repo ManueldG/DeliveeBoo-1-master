@@ -5,7 +5,6 @@
             <button @click="getRestaurants">Search</button>
         </div>
         <h1>Lista ristoranti</h1>
-
         <article v-for="restaurant in results" :key="restaurant.id">
             <h2>{{ restaurant.name }}</h2>
             <router-link
@@ -15,19 +14,14 @@
                 }"
                 >Restaurant Detail</router-link
             >
-            <!-- <Cuisines :cuisines="restaurant.cuisines" /> -->
         </article>
     </div>
 </template>
 
 <script>
 import axios from "axios";
-import Cuisines from "../components/Cuisines.vue";
 export default {
     name: "Restaurants",
-    components: {
-        Cuisines
-    },
     data() {
         return {
             apiURL: "http://127.0.0.1:8000/api/restaurants",

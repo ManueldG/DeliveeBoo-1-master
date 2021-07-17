@@ -10,7 +10,7 @@
             <p>{{ restaurant.description }}</p>
             <div>
                 <h3>I nostri piatti</h3>
-                <!-- <Menus :menus="restaurant.menus" /> -->
+                <Plates :plates="restaurant.plates" />
             </div>
             <h3>Contatti</h3>
             <ul>
@@ -26,14 +26,14 @@
 </template>
 
 <script>
+import Plates from "../components/Plates.vue";
 import Cuisines from "../components/Cuisines.vue";
-/* import Menus from "../components/Menus.vue"; */
 import axios from "axios";
 export default {
     name: "RestaurantDetail",
     components: {
+        Plates,
         Cuisines,
-        /* Menus, */
     },
     data() {
         return {
