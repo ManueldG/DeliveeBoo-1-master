@@ -26,7 +26,7 @@ import Cuisines from "../components/Cuisines.vue";
 export default {
     name: "Restaurants",
     components: {
-        Cuisines
+        Cuisines,
     },
     data() {
         return {

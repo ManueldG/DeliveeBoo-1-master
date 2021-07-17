@@ -37966,19 +37966,17 @@ var render = function() {
     { staticClass: "container" },
     _vm._l(_vm.menus, function(menu) {
       return _c("div", { key: "menu-" + menu.id, staticClass: "card" }, [
-        menu.plate.visibility == 1
-          ? _c("div", [
-              _c("h3", [_vm._v("Name: " + _vm._s(menu.plate.name))]),
-              _vm._v(" "),
-              _c("div", [
-                _c("img", { attrs: { src: menu.plate.image, alt: menu.name } })
-              ]),
-              _vm._v(" "),
-              _c("p", [_vm._v(_vm._s(menu.plate.description))]),
-              _vm._v(" "),
-              _c("div", [_vm._v("Price: " + _vm._s(menu.plate.price))])
-            ])
-          : _vm._e()
+        _c("div", [
+          _c("h3", [_vm._v("Name: " + _vm._s(menu.name))]),
+          _vm._v(" "),
+          _c("div", [
+            _c("img", { attrs: { src: menu.image, alt: menu.name } })
+          ]),
+          _vm._v(" "),
+          _c("p", [_vm._v(_vm._s(menu.description))]),
+          _vm._v(" "),
+          _c("div", [_vm._v("Price: " + _vm._s(menu.price))])
+        ])
       ])
     }),
     0

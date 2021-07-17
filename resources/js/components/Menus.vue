@@ -1,11 +1,11 @@
 <template>
     <div class="container">
         <div class="card" v-for="menu in menus" :key="`menu-${menu.id}`">
-            <div v-if="menu.plate.visibility == 1">
-                <h3>Name: {{ menu.plate.name }}</h3>
-                <div><img :src="menu.plate.image" :alt="menu.name"></div>
-                <p>{{ menu.plate.description }}</p>
-                <div>Price: {{ menu.plate.price}}</div>
+            <div>
+                <h3>Name: {{ menu.name }}</h3>
+                <div><img :src="menu.image" :alt="menu.name"></div>
+                <p>{{ menu.description }}</p>
+                <div>Price: {{ menu.price}}</div>
             </div>
         </div>
     </div>

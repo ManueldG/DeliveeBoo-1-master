@@ -11,14 +11,14 @@ class MenuController extends Controller
 {
     public function index(){
         $menus = Plate::all();
-
+        
         return response()->json($menus);
     }
 
-    // public function show($name){
+   /*  public function show($name){
 
-    //     $menu = Plate::where('name', $name)->with(['cuisines'])->first();
+        $menu = Plate::where('name', $name)->with(['plates'])->first();
 
-    //     return response()->json($menu);
-    // }
+        return response()->json($menu);
+    } */
 }
