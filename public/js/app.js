@@ -2051,11 +2051,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+/* import Menus from "../components/Menus.vue"; */
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "RestaurantDetail",
   components: {
     Cuisines: _components_Cuisines_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
+    /* Menus, */
+
   },
   data: function data() {
     return {
@@ -38018,15 +38022,7 @@ var render = function() {
       _vm._v(" "),
       _c("p", [_vm._v(_vm._s(_vm.restaurant.description))]),
       _vm._v(" "),
-      _c(
-        "div",
-        [
-          _c("h3", [_vm._v("I nostri piatti")]),
-          _vm._v(" "),
-          _c("Menus", { attrs: { menus: _vm.restaurant.menus } })
-        ],
-        1
-      ),
+      _vm._m(0),
       _vm._v(" "),
       _c("h3", [_vm._v("Contatti")]),
       _vm._v(" "),
@@ -38054,7 +38050,14 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [_c("h3", [_vm._v("I nostri piatti")])])
+  }
+]
 render._withStripped = true
 
 
@@ -38125,9 +38128,7 @@ var render = function() {
                 }
               },
               [_vm._v("Restaurant Detail")]
-            ),
-            _vm._v(" "),
-            _c("Cuisines", { attrs: { cuisines: restaurant.cuisines } })
+            )
           ],
           1
         )
@@ -54131,8 +54132,13 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! C:\Users\mauro\Desktop\Progetto finale\DeliveeBoo\resources\js\app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! C:\Users\mauro\Desktop\Progetto finale\DeliveeBoo\resources\sass\app.scss */"./resources/sass/app.scss");
+=======
+    __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/app.js */"./resources/js/app.js");
+    module.exports = __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/sass/app.scss */"./resources/sass/app.scss");
+>>>>>>> d8bdef0d1d708657191d33d25643b3f822b54b47
 
 
 /***/ })
