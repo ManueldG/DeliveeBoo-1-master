@@ -10,7 +10,11 @@
             <p>{{ restaurant.description }}</p>
             <div>
                 <h3>I nostri piatti</h3>
+<<<<<<< HEAD
                 <Menus :menus="restaurant.menus" />
+=======
+                <Plates :plates="restaurant.plates" />
+>>>>>>> fb33aa192e8ad8c01cb6b6a39f26582e0b2ee19e
             </div>
             <h3>Contatti</h3>
             <ul>
@@ -26,14 +30,22 @@
 </template>
 
 <script>
+import Plates from "../components/Plates.vue";
 import Cuisines from "../components/Cuisines.vue";
+<<<<<<< HEAD
 import Menus from "../components/Menus.vue";
+=======
+>>>>>>> fb33aa192e8ad8c01cb6b6a39f26582e0b2ee19e
 import axios from "axios";
 export default {
     name: "RestaurantDetail",
     components: {
+        Plates,
         Cuisines,
+<<<<<<< HEAD
         Menus,
+=======
+>>>>>>> fb33aa192e8ad8c01cb6b6a39f26582e0b2ee19e
     },
     data() {
         return {
