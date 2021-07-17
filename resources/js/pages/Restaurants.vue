@@ -57,7 +57,6 @@ export default {
 
                     for (const item of element.cuisines) {
                         return item.type.includes(this.searchText)
-
                     }
                 });
 
