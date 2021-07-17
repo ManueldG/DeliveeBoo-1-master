@@ -1,13 +1,18 @@
 <template>
-    <h1>footer</h1>
+    <footer>
+        <h1>footer</h1>
+    </footer>
 </template>
 
 <script>
 export default {
-    name: 'Footer'
-}
+    name: "Footer"
+};
 </script>
 
-<style>
-
+<style scoped lang="scss">
+footer {
+    height: 100px;
+    background: white;
+}
 </style>

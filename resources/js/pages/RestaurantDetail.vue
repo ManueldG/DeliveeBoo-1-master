@@ -1,26 +1,29 @@
 <template>
     <div class="container">
         <h1 v-if="restaurant">Dettagli: {{ restaurant.name }}</h1>
-        <div>
-            <h2>Tipologie di cucine:</h2>
+        <div class="mar">
+            <h2 class="mb">Tipologie di cucine:</h2>
             <Cuisines :cuisines="restaurant.cuisines" />
         </div>
-        <div>
+        <div class="mar">
             <img :src="restaurant.image" :alt="restaurant.name" />
-            <p>{{ restaurant.description }}</p>
+            <p class="mar">{{ restaurant.description }}</p>
             <div>
-                <h3>I nostri piatti</h3>
+                <h3 class="mb">I nostri piatti</h3>
                 <Plates :plates="restaurant.plates" />
             </div>
-            <h3>Contatti</h3>
-            <ul>
-                <li><strong>Address: </strong>{{ restaurant.address }}</li>
-                <li><strong>City: </strong>{{ restaurant.city }}</li>
-                <li><strong>Cap: </strong>{{ restaurant.cap }}</li>
-                <li>
-                    <strong>Phone number: </strong>{{ restaurant.phone_number }}
-                </li>
-            </ul>
+            <div class="mar">
+                <h3>Contatti</h3>
+                <ul>
+                    <li><strong>Address: </strong>{{ restaurant.address }}</li>
+                    <li><strong>City: </strong>{{ restaurant.city }}</li>
+                    <li><strong>Cap: </strong>{{ restaurant.cap }}</li>
+                    <li>
+                        <strong>Phone number: </strong
+                        >{{ restaurant.phone_number }}
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </template>
@@ -33,7 +36,7 @@ export default {
     name: "RestaurantDetail",
     components: {
         Plates,
-        Cuisines,
+        Cuisines
     },
     data() {
         return {
@@ -61,4 +64,16 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped lang="scss">
+.mar {
+    margin: 20px 0;
+
+    img {
+        border-radius: 5px;
+    }
+}
+
+.mb {
+    margin-bottom: 10px;
+}
+</style>
