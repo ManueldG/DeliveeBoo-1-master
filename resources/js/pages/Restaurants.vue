@@ -53,7 +53,7 @@ export default {
                     console.log(err);
                 });
             } else if(this.searchText !== ""){
-                var a = this.restaurants.filter((element)=>{
+                var filteredRestaurant = this.restaurants.filter((element)=>{
 
                     for (const item of element.cuisines) {
                         return item.type.includes(this.searchText)
@@ -62,7 +62,7 @@ export default {
                 });
 
 
-                this.results = a ;
+                this.results = filteredRestaurant;
             }
         }
     }

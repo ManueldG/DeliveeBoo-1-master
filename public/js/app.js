@@ -2132,13 +2132,13 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       apiURL: "http://127.0.0.1:8000/api/restaurants",
       restaurants: [],
       searchText: '',
-      listRestaurant: []
+      listRestaurant: [],
+      results: []
     };
   },
   created: function created() {
     this.getRestaurants();
   },
-  computed: {},
   methods: {
     getRestaurants: function getRestaurants() {
       var _this = this;
@@ -2151,7 +2151,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           console.log(err);
         });
       } else if (this.searchText !== "") {
-        var a = this.restaurants.filter(function (element) {
+        var filteredRestaurant = this.restaurants.filter(function (element) {
           var _iterator = _createForOfIteratorHelper(element.cuisines),
               _step;
 
@@ -2166,7 +2166,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
             _iterator.f();
           }
         });
-        this.results = a;
+        this.results = filteredRestaurant;
       }
     }
   }
@@ -54131,8 +54131,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\ManueldG\DeliveeBoo-1\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\ManueldG\DeliveeBoo-1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
