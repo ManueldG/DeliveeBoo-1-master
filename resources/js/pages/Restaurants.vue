@@ -15,7 +15,7 @@
                 }"
                 >Restaurant Detail</router-link
             >
-            <Cuisines :cuisines="restaurant.cuisines" />
+            <!-- <Cuisines :cuisines="restaurant.cuisines" /> -->
         </article>
     </div>
 </template>

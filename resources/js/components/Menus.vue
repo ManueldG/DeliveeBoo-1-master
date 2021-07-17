@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="card" v-for="menu in menus" :key="menu.id">
+        <div class="card" v-for="menu in menus" :key="`menu-${menu.id}`">
             <div v-if="menu.visibility == 1">
                 <h3>Name: {{ menu.name }}</h3>
                 <div><img :src="menu.image" :alt="menu.name"></div>
