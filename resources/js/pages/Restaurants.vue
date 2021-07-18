@@ -54,7 +54,9 @@ export default {
             } else if (this.searchText !== "") {
                 var filteredRestaurant = this.restaurants.filter(element => {
                     for (const item of element.cuisines) {
-                        return item.type.includes(this.searchText);
+                        if (item.type.includes(this.searchText))
+                            return item.type;
+
                     }
                 });
 
