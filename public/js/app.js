@@ -2241,7 +2241,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           try {
             for (_iterator.s(); !(_step = _iterator.n()).done;) {
               var item = _step.value;
-              return item.type.includes(_this.searchText);
+              if (item.type.includes(_this.searchText)) return item.type;
             }
           } catch (err) {
             _iterator.e(err);
@@ -55468,7 +55468,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _pages_Home_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/Home.vue */ "./resources/js/pages/Home.vue");
 /* harmony import */ var _pages_Restaurants_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Restaurants.vue */ "./resources/js/pages/Restaurants.vue");
 /* harmony import */ var _pages_RestaurantDetail_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/RestaurantDetail.vue */ "./resources/js/pages/RestaurantDetail.vue");
@@ -55481,8 +55481,8 @@ __webpack_require__.r(__webpack_exports__);
 
  //ATTIVAZIONE
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
-var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_6__["default"]);
+var router = new vue_router__WEBPACK_IMPORTED_MODULE_6__["default"]({
   mode: "history",
   routes: [{
     path: "/",
@@ -55523,8 +55523,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\mauro\Desktop\Progetto finale\DeliveeBoo\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\mauro\Desktop\Progetto finale\DeliveeBoo\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! K:\corsi\DeliveeBoo\Manuel\DeliveeBoo-1\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! K:\corsi\DeliveeBoo\Manuel\DeliveeBoo-1\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

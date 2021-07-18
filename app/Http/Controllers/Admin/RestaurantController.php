@@ -92,12 +92,15 @@ class RestaurantController extends Controller
      */
     public function show($id)
     {
-
+        $user = Auth::user();
         $restaurant = Restaurant::find($id);
         $plates = Plate::all()->where('restaurant_id', $restaurant->id);
-        //dd($restaurant);
 
-        if(!$restaurant) {
+
+        //dump($user->id);
+
+
+        if(!$restaurant||($restaurant->user_id!==$user->id)) {
             abort(404);
         }
         return view('admin.restaurants.show', compact('restaurant', 'plates'));
@@ -131,7 +134,7 @@ class RestaurantController extends Controller
      */
     public function update(Request $request, $id)
     {
-       
+
         $request->validate([
             'name' => [
                 'required',
@@ -157,7 +160,7 @@ class RestaurantController extends Controller
 
         if(array_key_exists('cuisines', $data)){
             $restaurant->cuisines()->sync($data['cuisines']);
-        } else { 
+        } else {
             $restaurant->cuisines()->detach();
         }
 
