@@ -55543,8 +55543,13 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
 __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/app.js */"./resources/js/app.js");
 module.exports = __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/sass/app.scss */"./resources/sass/app.scss");
+=======
+__webpack_require__(/*! C:\Users\Utente\Desktop\classe 30\Progetto Finale\DeliveeBoo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\Utente\Desktop\classe 30\Progetto Finale\DeliveeBoo\resources\sass\app.scss */"./resources/sass/app.scss");
+>>>>>>> 5165fdc7990014a38a311e48addfe4a2debe3ac6
 
 
 /***/ })
