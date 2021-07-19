@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <h1>Homepage</h1>
-            <ul v-for="cuisine in cuisines" :key="`cuisine-${cuisine.id}`">
+            <ul v-for="cuisine in cuisines" :key="cuisine.id">
                 <li>
                     <label :for="cuisine.type">{{cuisine.type}}</label>
                     <input type="checkbox" :id="cuisine.type" :value="cuisine.type">

@@ -39021,7 +39021,7 @@ var render = function() {
       _c("h1", [_vm._v("Homepage")]),
       _vm._v(" "),
       _vm._l(_vm.cuisines, function(cuisine) {
-        return _c("ul", { key: "cuisine-" + cuisine.id }, [
+        return _c("ul", { key: cuisine.id }, [
           _c("li", [
             _c("label", { attrs: { for: cuisine.type } }, [
               _vm._v(_vm._s(cuisine.type))
@@ -55374,8 +55374,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\ManueldG\Desktop\deploy\DeliveeBoo-1\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\ManueldG\Desktop\deploy\DeliveeBoo-1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
