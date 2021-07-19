@@ -8,6 +8,11 @@
                 <a href="/restaurants">Restaurant List</a>
             </li>
         </ul>
+        <ul>
+            <li>
+                <a href="/admin">Admin</a>
+            </li>
+        </ul>
     </header>
 </template>
 
@@ -22,6 +27,8 @@ header {
     background: white;
     margin-bottom: 50px;
     line-height: 3;
+    display: flex;
+    justify-content: space-between;
 
     ul {
         list-style: none;
