@@ -4,9 +4,6 @@
             <li>
                 <a href="/">DeliveeBoo</a>
             </li>
-            <li>
-                <a href="/restaurants">Restaurant List</a>
-            </li>
         </ul>
         <ul>
             <li>
