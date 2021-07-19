@@ -7,15 +7,9 @@
                     <input type="checkbox" :id="cuisine.type" :value="cuisine.type">
                 </li>
             </ul>
-        <article v-for="restaurant in results" :key="restaurant.id">
+        <article v-for="restaurant in restaurants" :key="`res-${restaurant.id}`">
             <h2>{{ restaurant.name }}</h2>
-            <router-link
-                :to="{
-                    name: 'restaurant-detail',
-                    params: { name: restaurant.name }
-                }"
-                >Restaurant Detail</router-link
-            >
+            <router-link :to="{name: 'restaurant-detail', params: { name: restaurant.name }}">Restaurant Detail</router-link>
         </article>
     </div>
 </template>
@@ -40,40 +34,37 @@ export default {
     },
     created() {
         this.getRestaurants();
-        axios
-        .get("http://127.0.0.1:8000/api/cuisines")
-        .then(res =>{
-            this.cuisines = res.data
-        })
-        .catch(err =>{
-            console.log(err);
-        });
+        this.getCuisines();
     },
     methods: {
-      getRestaurants() {
-            if (this.SearchText == '') {
-                axios
-                    .get(this.apiURL)
-                    .then(res => {
-                        this.restaurants = res.data;
-                        this.results = this.restaurants;
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    });
-            } else if (this.searchText !== "") {
-                var filteredRestaurant = this.restaurants.filter(element => {
-                    for (const item of element.cuisines) {
-                        if (item.type.includes(this.searchText))
-                            return item.type;
+            getRestaurants() {
+            axios
+                .get('http://127.0.0.1:8000/api/restaurants')
+                .then(res => {
+                    this.restaurants = res.data;
 
-                    }
+                    /* this.restaurants.forEach(restaurant => {
+                        restaurant.types.forEach(type => {
+                            if(!this.types.includes(type.name)){
+                                this.types.push(type.name);
+                            }
+                        });
+                    }); */
+                })
+                .catch(err => {
+                    console.log(err);
                 });
-
-                this.results = filteredRestaurant;
-            }
+        },
+        getCuisines() {
+            axios
+                .get("http://127.0.0.1:8000/api/cuisines")
+                .then(res =>{
+                    this.cuisines = res.data
+                })
+                .catch(err =>{
+                    console.log(err);
+                });
         }
-        
     }
 };
 </script>
