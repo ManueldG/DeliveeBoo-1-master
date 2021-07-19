@@ -2090,11 +2090,6 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2106,22 +2101,30 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     return {
       apiURL: "http://127.0.0.1:8000/api/restaurants",
       restaurants: [],
-      searchText: "",
       listRestaurant: [],
-      results: []
+      searchText: '',
+      results: [],
+      cuisines: []
     };
   },
   created: function created() {
+    var _this = this;
+
     this.getRestaurants();
+    axios__WEBPACK_IMPORTED_MODULE_0___default.a.get("http://127.0.0.1:8000/api/cuisines").then(function (res) {
+      _this.cuisines = res.data;
+    })["catch"](function (err) {
+      console.log(err);
+    });
   },
   methods: {
     getRestaurants: function getRestaurants() {
-      var _this = this;
+      var _this2 = this;
 
-      if (this.searchText === "") {
+      if (this.SearchText == '') {
         axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiURL).then(function (res) {
-          _this.restaurants = res.data;
-          _this.results = _this.restaurants;
+          _this2.restaurants = res.data;
+          _this2.results = _this2.restaurants;
         })["catch"](function (err) {
           console.log(err);
         });
@@ -2133,7 +2136,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           try {
             for (_iterator.s(); !(_step = _iterator.n()).done;) {
               var item = _step.value;
-              if (item.type.includes(_this.searchText)) return item.type;
+              if (item.type.includes(_this2.searchText)) return item.type;
             }
           } catch (err) {
             _iterator.e(err);
@@ -39037,43 +39040,22 @@ var render = function() {
     "div",
     { staticClass: "container" },
     [
-      _c("div", { staticClass: "search-bar" }, [
-        _c("input", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.searchText,
-              expression: "searchText"
-            }
-          ],
-          attrs: { type: "text", placeholder: "Search for cuisine" },
-          domProps: { value: _vm.searchText },
-          on: {
-            keyup: function($event) {
-              if (
-                !$event.type.indexOf("key") &&
-                _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
-              ) {
-                return null
-              }
-              return _vm.getRestaurants.apply(null, arguments)
-            },
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.searchText = $event.target.value
-            }
-          }
-        }),
-        _vm._v(" "),
-        _c("button", { on: { click: _vm.getRestaurants } }, [_vm._v("Search")])
-      ]),
-      _vm._v(" "),
       _c("h1", [_vm._v("Homepage")]),
       _vm._v(" "),
-      _c("Cuisines", { attrs: { cuisines: _vm.cuisines } }),
+      _vm._l(_vm.cuisines, function(cuisine) {
+        return _c("ul", { key: "cuisine-" + cuisine.id }, [
+          _c("li", [
+            _c("label", { attrs: { for: cuisine.type } }, [
+              _vm._v(_vm._s(cuisine.type))
+            ]),
+            _vm._v(" "),
+            _c("input", {
+              attrs: { type: "checkbox", id: cuisine.type },
+              domProps: { value: cuisine.type }
+            })
+          ])
+        ])
+      }),
       _vm._v(" "),
       _vm._l(_vm.results, function(restaurant) {
         return _c(

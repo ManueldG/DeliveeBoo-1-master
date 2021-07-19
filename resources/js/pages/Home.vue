@@ -1,17 +1,12 @@
 <template>
     <div class="container">
-        <div class="search-bar">
-            <input
-                type="text"
-                v-model="searchText"
-                placeholder="Search for cuisine"
-                @keyup.enter="getRestaurants"
-            />
-            <button @click="getRestaurants">Search</button>
-        </div>
         <h1>Homepage</h1>
-            <Cuisines :cuisines="cuisines"/>
-        
+            <ul v-for="cuisine in cuisines" :key="`cuisine-${cuisine.id}`">
+                <li>
+                    <label :for="cuisine.type">{{cuisine.type}}</label>
+                    <input type="checkbox" :id="cuisine.type" :value="cuisine.type">
+                </li>
+            </ul>
         <article v-for="restaurant in results" :key="restaurant.id">
             <h2>{{ restaurant.name }}</h2>
             <router-link
@@ -37,17 +32,26 @@ export default {
         return {
             apiURL: "http://127.0.0.1:8000/api/restaurants",
             restaurants: [],
-            searchText: "",
             listRestaurant: [],
-            results: []
+            searchText: '',
+            results: [],
+            cuisines: [],
         };
     },
     created() {
         this.getRestaurants();
+        axios
+        .get("http://127.0.0.1:8000/api/cuisines")
+        .then(res =>{
+            this.cuisines = res.data
+        })
+        .catch(err =>{
+            console.log(err);
+        });
     },
     methods: {
-        getRestaurants() {
-            if (this.searchText === "") {
+      getRestaurants() {
+            if (this.SearchText == '') {
                 axios
                     .get(this.apiURL)
                     .then(res => {
@@ -69,6 +73,7 @@ export default {
                 this.results = filteredRestaurant;
             }
         }
+        
     }
 };
 </script>
