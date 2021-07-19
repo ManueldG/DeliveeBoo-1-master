@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Restaurant;
+use Illuminate\Support\Facades\DB;
 
 class RestaurantController extends Controller
 {
@@ -14,9 +15,21 @@ class RestaurantController extends Controller
         return response()->json($restaurants);
     }
 
-    public function show($name){
+    public function show($type){
 
-        $restaurant = Restaurant::where('name', $name)->with(['cuisines','plates'])->first();
+
+
+        //$restaurant = Restaurant::where('name', $name)->with(['cuisines','plates'])->first();
+
+        $restaurant = DB::table('cuisine_restaurant')
+            ->join('restaurants', 'restaurants.id', '=', 'cuisine_restaurant.restaurant_id')
+            ->join('cuisines', 'cuisines.id', '=', 'cuisine_restaurant.cuisine_id')
+            ->select('*')
+            ->where('type','like',$type)
+            ->get();
+
+        //$restaurant = Restaurant::where('name', $name)->with(['cuisines','plates'])->first();
+
 
         return response()->json($restaurant);
     }
