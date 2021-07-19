@@ -117,8 +117,13 @@ class RestaurantController extends Controller
     {
         $restaurant = Restaurant::find($id);
         $cuisines = Cuisine::all();
+        $user = Auth::user();
 
         if(!$restaurant){
+            abort(404);
+        }
+
+        if(!$restaurant||($restaurant->user_id!==$user->id)) {
             abort(404);
         }
 
