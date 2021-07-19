@@ -19,7 +19,7 @@ Route::namespace('Api')->group(function() {
     Route::get('/restaurants', 'RestaurantController@index');
     Route::get('/restaurants/{cuisine?}', 'RestaurantController@show');
     //Route::get('/restaurants/{name?}/plates/{plate?}/cuisine/{cuisine?}', 'RestaurantController@show');
-    //Route::get('/cuisines', 'CuisineController@index');
+    Route::get('/cuisines', 'CuisineController@index');
     //Route::get('/plates', 'MenuController@index');
 
 
