@@ -9,10 +9,10 @@
         </ul>
         <ul>
             <li class="nav-dx">
-                <a href="/admin"><i class="fas fa-shopping-cart"></i>Log In</a>
+                <a href="/admin"><i class="fas fa-shopping-cart"></i>Cart</a>
             </li>
             <li class="nav-dx">
-                <a href="/admin"><i class="fas fa-home"></i>Cart</a>
+                <a href="/admin"><i class="fas fa-home"></i>Log In</a>
             </li>
         </ul>
     </header>
@@ -26,8 +26,6 @@ export default {
 
 <style scoped lang="scss">
 header {
-    max-width: 1200px;
-    margin: 0 auto;
     background: white;
     margin-bottom: 50px;
     line-height: 3;

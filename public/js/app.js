@@ -10672,7 +10672,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header[data-v-1f42fb90] {\n  max-width: 1200px;\n  margin: 0 auto;\n  background: white;\n  margin-bottom: 50px;\n  line-height: 3;\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px solid #ccc;\n}\nheader ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n}\nheader ul li[data-v-1f42fb90] {\n  padding-right: 15px;\n}\nheader ul li img[data-v-1f42fb90] {\n  width: 150px;\n}\nheader ul li a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #000;\n}\nheader ul .nav-dx[data-v-1f42fb90] {\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  padding: 0 15px;\n  margin-right: 10px;\n}\nheader ul .nav-dx i[data-v-1f42fb90] {\n  margin-right: 10px;\n  color: #00a396;\n}", ""]);
+exports.push([module.i, "header[data-v-1f42fb90] {\n  background: white;\n  margin-bottom: 50px;\n  line-height: 3;\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px solid #ccc;\n}\nheader ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n}\nheader ul li[data-v-1f42fb90] {\n  padding-right: 15px;\n}\nheader ul li img[data-v-1f42fb90] {\n  width: 150px;\n}\nheader ul li a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #000;\n}\nheader ul .nav-dx[data-v-1f42fb90] {\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  padding: 0 15px;\n  margin-right: 10px;\n}\nheader ul .nav-dx i[data-v-1f42fb90] {\n  margin-right: 10px;\n  color: #00a396;\n}", ""]);
 
 // exports
 
@@ -42982,14 +42982,14 @@ var staticRenderFns = [
         _c("li", { staticClass: "nav-dx" }, [
           _c("a", { attrs: { href: "/admin" } }, [
             _c("i", { staticClass: "fas fa-shopping-cart" }),
-            _vm._v("Log In")
+            _vm._v("Cart")
           ])
         ]),
         _vm._v(" "),
         _c("li", { staticClass: "nav-dx" }, [
           _c("a", { attrs: { href: "/admin" } }, [
             _c("i", { staticClass: "fas fa-home" }),
-            _vm._v("Cart")
+            _vm._v("Log In")
           ])
         ])
       ])
