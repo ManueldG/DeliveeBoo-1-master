@@ -55,10 +55,6 @@ export default {
                 .then(res => {
                     this.restaurant = res.data;
                      console.log(this.restaurant);
-
-
-
-
                 })
                 .catch(err => {
                     console.log(err);
@@ -71,12 +67,10 @@ export default {
 <style scoped lang="scss">
 .mar {
     margin: 20px 0;
-
     img {
         border-radius: 5px;
     }
 }
-
 .mb {
     margin-bottom: 10px;
 }

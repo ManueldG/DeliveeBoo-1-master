@@ -8,7 +8,10 @@
                     type="checkbox"
                     :id="cuisine.type"
                     :value="cuisine.type"
+                    v-model="temp[cuisine.type]"
                 />
+
+
             </li>
         </ul>
         <article
@@ -42,7 +45,9 @@ export default {
             listRestaurant: [],
             searchText: "",
             results: [],
-            cuisines: []
+            cuisines: [],
+            temp: []
+
         };
     },
     created() {
@@ -52,7 +57,7 @@ export default {
     methods: {
         getRestaurants() {
             axios
-                .get("http://127.0.0.1:8000/api/restaurants")
+                .get(this.apiURL)
                 .then(res => {
                     this.restaurants = res.data;
 
@@ -70,7 +75,7 @@ export default {
         },
         getCuisines() {
             axios
-                .get("http://127.0.0.1:8000/api/cuisines")
+                .get("http://127.0.0.1:8000/api/cuisines/")
                 .then(res => {
                     this.cuisines = res.data;
                 })
