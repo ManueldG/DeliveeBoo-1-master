@@ -1,13 +1,11 @@
 <template>
-    <div class="card">
+    <div class="menu">
         <ul
             class="plate-card"
             v-for="plate in plates"
             :key="`plate-${plate.id}`"
         >
-            <li>
-                <img :src="plate.image" :alt="plate.name" />
-            </li>
+            <img :src="plate.image" :alt="plate.name" />
             <li>
                 {{ plate.name }}
             </li>
@@ -35,7 +33,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.card {
+.menu {
     display: flex;
     flex-wrap: wrap;
     .plate-card {
@@ -44,9 +42,10 @@ export default {
         margin-right: 10px;
         padding: 20px;
         border-radius: 15px;
+        border: 1px solid #ccc;
         img {
             width: 100%;
-            height: 100px;
+            height: 200px;
         }
     }
 }
