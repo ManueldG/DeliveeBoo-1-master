@@ -68,6 +68,7 @@
 </template>
 
 <script>
+import braintree from "braintree-web";
 export default {
     name: 'Payment',
         data() {
@@ -98,7 +99,7 @@ export default {
     mounted() {
         braintree.client
             .create({
-                authorization: "sandbox_w3mbmmkd_mgtff9zhgfck2nfm"
+                authorization: "sandbox_ykgytk45_6mhmdsyyhy26bc24"
             })
             .then(clientInstance => {
                 let options = {
