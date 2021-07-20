@@ -1,15 +1,28 @@
 <template>
     <div class="container">
         <h1>Homepage</h1>
-            <ul v-for="cuisine in cuisines" :key="cuisine.id">
-                <li>
-                    <label :for="cuisine.type">{{cuisine.type}}</label>
-                    <input type="checkbox" :id="cuisine.type" :value="cuisine.type">
-                </li>
-            </ul>
-        <article v-for="restaurant in restaurants" :key="`res-${restaurant.id}`">
+        <ul v-for="cuisine in cuisines" :key="cuisine.id">
+            <li>
+                <label :for="cuisine.type">{{ cuisine.type }}</label>
+                <input
+                    type="checkbox"
+                    :id="cuisine.type"
+                    :value="cuisine.type"
+                />
+            </li>
+        </ul>
+        <article
+            v-for="restaurant in restaurants"
+            :key="`res-${restaurant.id}`"
+        >
             <h2>{{ restaurant.name }}</h2>
-            <router-link :to="{name: 'restaurant-detail', params: { name: restaurant.id }}">Restaurant Detail</router-link>
+            <router-link
+                :to="{
+                    name: 'restaurant-detail',
+                    params: { name: restaurant.id }
+                }"
+                >Restaurant Detail</router-link
+            >
         </article>
     </div>
 </template>
@@ -20,16 +33,16 @@ import Cuisines from "../components/Cuisines.vue";
 export default {
     name: "Home",
     components: {
-        Cuisines,
+        Cuisines
     },
     data() {
         return {
             apiURL: "http://127.0.0.1:8000/api/restaurants",
             restaurants: [],
             listRestaurant: [],
-            searchText: '',
+            searchText: "",
             results: [],
-            cuisines: [],
+            cuisines: []
         };
     },
     created() {
@@ -37,9 +50,9 @@ export default {
         this.getCuisines();
     },
     methods: {
-            getRestaurants() {
+        getRestaurants() {
             axios
-                .get('http://127.0.0.1:8000/api/restaurants')
+                .get("http://127.0.0.1:8000/api/restaurants")
                 .then(res => {
                     this.restaurants = res.data;
 
@@ -58,10 +71,10 @@ export default {
         getCuisines() {
             axios
                 .get("http://127.0.0.1:8000/api/cuisines")
-                .then(res =>{
-                    this.cuisines = res.data
+                .then(res => {
+                    this.cuisines = res.data;
                 })
-                .catch(err =>{
+                .catch(err => {
                     console.log(err);
                 });
         }
@@ -70,22 +83,18 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.container {
-    height: 80vh;
+.search-bar {
+    display: flex;
+    justify-content: flex-end;
+}
 
-    .search-bar {
-        display: flex;
-        justify-content: flex-end;
-    }
+h1 {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
 
-    h1 {
-        margin: 20px;
-        display: flex;
-        justify-content: center;
-    }
-
-    h2 {
-        margin: 10px 0;
-    }
+h2 {
+    margin: 10px 0;
 }
 </style>
