@@ -6,7 +6,6 @@ import Home from "./pages/Home.vue";
 import Payment from "./pages/Payment.vue";
 import RestaurantDetail from "./pages/RestaurantDetail.vue";
 import Carrello from "./pages/Carrello.vue";
-import Pagamento from "./pages/Pagamento.vue";
 import NotFound from "./pages/NotFound.vue";
 
 //ATTIVAZIONE
@@ -34,11 +33,6 @@ const router = new VueRouter({
             path: "/carrello",
             name: "Carrello",
             component: Carrello
-        },
-        {
-            path: "/pagamento",
-            name: "pagamento",
-            component: Pagamento
         },
         {
             path: "*",
