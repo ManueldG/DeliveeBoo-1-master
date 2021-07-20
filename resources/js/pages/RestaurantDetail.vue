@@ -10,7 +10,7 @@
             <p class="mar">{{ restaurant.description }}</p>
             <div>
                 <h3 class="mb">I nostri piatti</h3>
-                <Plates :plates="restaurant.plates" />
+                <Plates :plates="restaurant" />
             </div>
             <div class="mar">
                 <h3>Contatti</h3>
@@ -50,11 +50,15 @@ export default {
         getRestaurantDetail() {
             axios
                 .get(
-                    `http://127.0.0.1:8000/api/restaurants/${this.$route.params.name}`
+                    `http://127.0.0.1:8000/api/plates/${this.$route.params.name}`
                 )
                 .then(res => {
                     this.restaurant = res.data;
-                    // console.log(this.restaurant);
+                     console.log(this.restaurant);
+
+
+
+
                 })
                 .catch(err => {
                     console.log(err);

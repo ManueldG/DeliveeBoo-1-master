@@ -2217,8 +2217,9 @@ __webpack_require__.r(__webpack_exports__);
     getRestaurantDetail: function getRestaurantDetail() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://127.0.0.1:8000/api/restaurants/".concat(this.$route.params.name)).then(function (res) {
-        _this.restaurant = res.data; // console.log(this.restaurant);
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://127.0.0.1:8000/api/plates/".concat(this.$route.params.name)).then(function (res) {
+        _this.restaurant = res.data;
+        console.log(_this.restaurant);
       })["catch"](function (err) {
         console.log(err);
       });
@@ -39048,7 +39049,7 @@ var render = function() {
                 attrs: {
                   to: {
                     name: "restaurant-detail",
-                    params: { name: restaurant.name }
+                    params: { name: restaurant.id }
                   }
                 }
               },
@@ -39157,7 +39158,7 @@ var render = function() {
         [
           _c("h3", { staticClass: "mb" }, [_vm._v("I nostri piatti")]),
           _vm._v(" "),
-          _c("Plates", { attrs: { plates: _vm.restaurant.plates } })
+          _c("Plates", { attrs: { plates: _vm.restaurant } })
         ],
         1
       ),
