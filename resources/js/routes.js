@@ -3,6 +3,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import Home from "./pages/Home.vue";
+import Payment from "./pages/Payment.vue";
 import RestaurantDetail from "./pages/RestaurantDetail.vue";
 import NotFound from "./pages/NotFound.vue";
 
@@ -16,6 +17,11 @@ const router = new VueRouter({
             path: "/",
             name: "home",
             component: Home
+        },
+        {
+            path: "/payment",
+            name: "payment",
+            component: Payment
         },
         {
             path: "/restaurant/:name",
