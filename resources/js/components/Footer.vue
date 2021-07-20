@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <div class="tab container">
+        <div class="tab">
             <div class="tab-card">
                 <h5>Scopri deliveroo</h5>
                 <a href="/">Investitori</a>
@@ -26,7 +26,6 @@
                 <h5>Porta Deliveroo con te</h5>
                 <a href="/">Investitori</a>
                 <a href="/">Investitori</a>
-                <fa icon="dove" />
             </div>
         </div>
     </footer>
@@ -48,6 +47,8 @@ footer {
     .tab {
         display: flex;
         margin-top: 5px;
+        max-width: 1200px;
+        margin: 0 auto;
 
         .tab-card {
             display: flex;

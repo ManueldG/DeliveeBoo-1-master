@@ -5066,6 +5066,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Footer"
 });
@@ -10594,7 +10621,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: \"Helvetica Neue\", Helvetica, \"Segoe UI\", Arial, freesans, sans-serif;\n}\nbody {\n  background: lightgray;\n}\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n  min-height: 100vh;\n}\nul {\n  list-style-type: none;\n}\nul li {\n  margin: 10px 0;\n}", ""]);
+exports.push([module.i, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: \"Nunito\", sans-serif;\n}\nbody {\n  background: lightgray;\n}\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n  min-height: 100vh;\n}\nul {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}\nul li {\n  margin: 10px 0;\n}", ""]);
 
 // exports
 
@@ -10632,7 +10659,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "footer[data-v-61a7c374] {\n  height: 100px;\n  background: white;\n}", ""]);
+exports.push([module.i, "footer[data-v-61a7c374] {\n  background: #2e3333;\n  color: #ffff;\n  height: 30%;\n  margin-top: 10px;\n}\nfooter .tab[data-v-61a7c374] {\n  display: flex;\n  margin-top: 5px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\nfooter .tab .tab-card[data-v-61a7c374] {\n  display: flex;\n  flex-direction: column;\n  flex-basis: calc(100% / 4 - 20px);\n  background: #434848;\n  padding: 24px;\n  margin: 20px 10px;\n  border-radius: 5px;\n}\nfooter .tab .tab-card a[data-v-61a7c374] {\n  color: #fff;\n  text-decoration: none;\n}\nfooter .tab .tab-card a[data-v-61a7c374]:hover {\n  color: #00a396;\n}", ""]);
 
 // exports
 
@@ -42856,7 +42883,55 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("footer", [_c("h1", [_vm._v("footer")])])
+    return _c("footer", [
+      _c("div", { staticClass: "tab" }, [
+        _c("div", { staticClass: "tab-card" }, [
+          _c("h5", [_vm._v("Scopri deliveroo")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Investitori")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Investitori")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Investitori")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Investitori")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Investitori")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "tab-card" }, [
+          _c("h5", [_vm._v("Note Legali")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Termini & Condizioni")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/" } }, [
+            _vm._v("Informativa sulla privacy")
+          ]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Cookies")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "tab-card" }, [
+          _c("h5", [_vm._v("Aiuto")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Contatti")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("FAQ")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Tipi di cucina")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Mappa del sito")])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "tab-card" }, [
+          _c("h5", [_vm._v("Porta Deliveroo con te")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Investitori")]),
+          _vm._v(" "),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Investitori")])
+        ])
+      ])
+    ])
   }
 ]
 render._withStripped = true
