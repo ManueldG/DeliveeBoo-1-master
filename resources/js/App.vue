@@ -23,8 +23,7 @@ export default {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans,
-        sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 body {
@@ -39,6 +38,8 @@ body {
 
 ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 
     li {
         margin: 10px 0;
