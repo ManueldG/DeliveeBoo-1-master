@@ -4,10 +4,10 @@
             <div class="tab-card">
                 <h5>Scopri deliveroo</h5>
                 <a href="/">Investitori</a>
-                <a href="/">Investitori</a>
-                <a href="/">Investitori</a>
-                <a href="/">Investitori</a>
-                <a href="/">Investitori</a>
+                <a href="/">Chi Siamo</a>
+                <a href="/">Ristoranti</a>
+                <a href="/">Altro</a>
+                <a href="/">Lavora con noi</a>
             </div>
             <div class="tab-card">
                 <h5>Note Legali</h5>
@@ -24,8 +24,17 @@
             </div>
             <div class="tab-card">
                 <h5>Porta Deliveroo con te</h5>
-                <a href="/">Investitori</a>
-                <a href="/">Investitori</a>
+                <img src="../img/banner.png" alt="" />
+            </div>
+        </div>
+        <div class="foot-bot">
+            <div class="social">
+                <span><i class="fab fa-facebook"></i></span>
+                <span><i class="fab fa-twitter"></i></span>
+                <span><i class="fab fa-instagram"></i></span>
+            </div>
+            <div class="deli">
+                <i class="far fa-copyright"></i> 2021 DeliveBoo
             </div>
         </div>
     </footer>
@@ -66,6 +75,37 @@ footer {
                     color: #00a396;
                 }
             }
+
+            img {
+                width: 130px;
+            }
+        }
+    }
+    .foot-bot {
+        display: flex;
+        justify-content: space-around;
+
+        .social {
+            font-size: 1.5rem;
+
+            i {
+                margin-right: 10px;
+                cursor: pointer;
+                transition: 0.3s;
+            }
+            .fa-facebook:hover {
+                color: #1877f2;
+            }
+            .fa-twitter:hover {
+                color: #55acee;
+            }
+            .fa-instagram:hover {
+                color: #f00075;
+            }
+        }
+
+        .deli {
+            color: #828585;
         }
     }
 }

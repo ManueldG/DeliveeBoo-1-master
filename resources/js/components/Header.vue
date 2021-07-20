@@ -2,12 +2,17 @@
     <header>
         <ul>
             <li>
-                <a href="/">DeliveBoo</a>
+                <a href="/">
+                    <img src="../img/delive.png" alt="" />
+                </a>
             </li>
         </ul>
         <ul>
-            <li>
-                <a href="/admin">Admin</a>
+            <li class="nav-dx">
+                <a href="/admin"><i class="fas fa-shopping-cart"></i>Log In</a>
+            </li>
+            <li class="nav-dx">
+                <a href="/admin"><i class="fas fa-home"></i>Cart</a>
             </li>
         </ul>
     </header>
@@ -21,11 +26,14 @@ export default {
 
 <style scoped lang="scss">
 header {
+    max-width: 1200px;
+    margin: 0 auto;
     background: white;
     margin-bottom: 50px;
     line-height: 3;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #ccc;
 
     ul {
         list-style: none;
@@ -34,8 +42,24 @@ header {
         li {
             padding-right: 15px;
 
+            img {
+                width: 150px;
+            }
             a {
                 text-decoration: none;
+                color: #000;
+            }
+        }
+
+        .nav-dx {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 0 15px;
+            margin-right: 10px;
+
+            i {
+                margin-right: 10px;
+                color: #00a396;
             }
         }
     }

@@ -5093,6 +5093,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Footer"
 });
@@ -5108,6 +5117,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -10659,7 +10673,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "footer[data-v-61a7c374] {\n  background: #2e3333;\n  color: #ffff;\n  height: 30%;\n  margin-top: 10px;\n}\nfooter .tab[data-v-61a7c374] {\n  display: flex;\n  margin-top: 5px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\nfooter .tab .tab-card[data-v-61a7c374] {\n  display: flex;\n  flex-direction: column;\n  flex-basis: calc(100% / 4 - 20px);\n  background: #434848;\n  padding: 24px;\n  margin: 20px 10px;\n  border-radius: 5px;\n}\nfooter .tab .tab-card a[data-v-61a7c374] {\n  color: #fff;\n  text-decoration: none;\n}\nfooter .tab .tab-card a[data-v-61a7c374]:hover {\n  color: #00a396;\n}", ""]);
+exports.push([module.i, "footer[data-v-61a7c374] {\n  background: #2e3333;\n  color: #ffff;\n  height: 30%;\n  margin-top: 10px;\n}\nfooter .tab[data-v-61a7c374] {\n  display: flex;\n  margin-top: 5px;\n  max-width: 1200px;\n  margin: 0 auto;\n}\nfooter .tab .tab-card[data-v-61a7c374] {\n  display: flex;\n  flex-direction: column;\n  flex-basis: calc(100% / 4 - 20px);\n  background: #434848;\n  padding: 24px;\n  margin: 20px 10px;\n  border-radius: 5px;\n}\nfooter .tab .tab-card a[data-v-61a7c374] {\n  color: #fff;\n  text-decoration: none;\n}\nfooter .tab .tab-card a[data-v-61a7c374]:hover {\n  color: #00a396;\n}\nfooter .tab .tab-card img[data-v-61a7c374] {\n  width: 130px;\n}\nfooter .foot-bot[data-v-61a7c374] {\n  display: flex;\n  justify-content: space-around;\n}\nfooter .foot-bot .social[data-v-61a7c374] {\n  font-size: 1.5rem;\n}\nfooter .foot-bot .social i[data-v-61a7c374] {\n  margin-right: 10px;\n  cursor: pointer;\n  transition: 0.3s;\n}\nfooter .foot-bot .social .fa-facebook[data-v-61a7c374]:hover {\n  color: #1877f2;\n}\nfooter .foot-bot .social .fa-twitter[data-v-61a7c374]:hover {\n  color: #55acee;\n}\nfooter .foot-bot .social .fa-instagram[data-v-61a7c374]:hover {\n  color: #f00075;\n}\nfooter .foot-bot .deli[data-v-61a7c374] {\n  color: #828585;\n}", ""]);
 
 // exports
 
@@ -10678,7 +10692,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header[data-v-1f42fb90] {\n  background: white;\n  margin-bottom: 50px;\n  line-height: 3;\n  display: flex;\n  justify-content: space-between;\n}\nheader ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n}\nheader ul li[data-v-1f42fb90] {\n  padding-right: 15px;\n}\nheader ul li a[data-v-1f42fb90] {\n  text-decoration: none;\n}", ""]);
+exports.push([module.i, "header[data-v-1f42fb90] {\n  max-width: 1200px;\n  margin: 0 auto;\n  background: white;\n  margin-bottom: 50px;\n  line-height: 3;\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px solid #ccc;\n}\nheader ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n}\nheader ul li[data-v-1f42fb90] {\n  padding-right: 15px;\n}\nheader ul li img[data-v-1f42fb90] {\n  width: 150px;\n}\nheader ul li a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #000;\n}\nheader ul .nav-dx[data-v-1f42fb90] {\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  padding: 0 15px;\n  margin-right: 10px;\n}\nheader ul .nav-dx i[data-v-1f42fb90] {\n  margin-right: 10px;\n  color: #00a396;\n}", ""]);
 
 // exports
 
@@ -42890,13 +42904,13 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("a", { attrs: { href: "/" } }, [_vm._v("Investitori")]),
           _vm._v(" "),
-          _c("a", { attrs: { href: "/" } }, [_vm._v("Investitori")]),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Chi Siamo")]),
           _vm._v(" "),
-          _c("a", { attrs: { href: "/" } }, [_vm._v("Investitori")]),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Ristoranti")]),
           _vm._v(" "),
-          _c("a", { attrs: { href: "/" } }, [_vm._v("Investitori")]),
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Altro")]),
           _vm._v(" "),
-          _c("a", { attrs: { href: "/" } }, [_vm._v("Investitori")])
+          _c("a", { attrs: { href: "/" } }, [_vm._v("Lavora con noi")])
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "tab-card" }, [
@@ -42926,9 +42940,22 @@ var staticRenderFns = [
         _c("div", { staticClass: "tab-card" }, [
           _c("h5", [_vm._v("Porta Deliveroo con te")]),
           _vm._v(" "),
-          _c("a", { attrs: { href: "/" } }, [_vm._v("Investitori")]),
+          _c("img", { attrs: { src: __webpack_require__(/*! ../img/banner.png */ "./resources/js/img/banner.png"), alt: "" } })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "foot-bot" }, [
+        _c("div", { staticClass: "social" }, [
+          _c("span", [_c("i", { staticClass: "fab fa-facebook" })]),
           _vm._v(" "),
-          _c("a", { attrs: { href: "/" } }, [_vm._v("Investitori")])
+          _c("span", [_c("i", { staticClass: "fab fa-twitter" })]),
+          _vm._v(" "),
+          _c("span", [_c("i", { staticClass: "fab fa-instagram" })])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "deli" }, [
+          _c("i", { staticClass: "far fa-copyright" }),
+          _vm._v(" 2021 DeliveBoo\n        ")
         ])
       ])
     ])
@@ -42964,11 +42991,27 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("header", [
       _c("ul", [
-        _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("DeliveBoo")])])
+        _c("li", [
+          _c("a", { attrs: { href: "/" } }, [
+            _c("img", { attrs: { src: __webpack_require__(/*! ../img/delive.png */ "./resources/js/img/delive.png"), alt: "" } })
+          ])
+        ])
       ]),
       _vm._v(" "),
       _c("ul", [
-        _c("li", [_c("a", { attrs: { href: "/admin" } }, [_vm._v("Admin")])])
+        _c("li", { staticClass: "nav-dx" }, [
+          _c("a", { attrs: { href: "/admin" } }, [
+            _c("i", { staticClass: "fas fa-shopping-cart" }),
+            _vm._v("Log In")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-dx" }, [
+          _c("a", { attrs: { href: "/admin" } }, [
+            _c("i", { staticClass: "fas fa-home" }),
+            _vm._v("Cart")
+          ])
+        ])
       ])
     ])
   }
@@ -59330,6 +59373,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Plates_vue_vue_type_template_id_220a4070_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/img/banner.png":
+/*!*************************************!*\
+  !*** ./resources/js/img/banner.png ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner.png?e5954d5865db5516b0c2bd50a67aa9cc";
+
+/***/ }),
+
+/***/ "./resources/js/img/delive.png":
+/*!*************************************!*\
+  !*** ./resources/js/img/delive.png ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/delive.png?0920308bdc3ba69b4b4b8c55221b39b0";
 
 /***/ }),
 
