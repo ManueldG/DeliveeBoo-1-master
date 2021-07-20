@@ -2,7 +2,7 @@
     <header>
         <ul>
             <li>
-                <a href="/">DeliveeBoo</a>
+                <a href="/">DeliveBoo</a>
             </li>
         </ul>
         <ul>
