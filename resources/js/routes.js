@@ -4,6 +4,7 @@ import VueRouter from "vue-router";
 
 import Home from "./pages/Home.vue";
 import RestaurantDetail from "./pages/RestaurantDetail.vue";
+import Carrello from "./pages/Carrello.vue";
 import NotFound from "./pages/NotFound.vue";
 
 //ATTIVAZIONE
@@ -21,6 +22,11 @@ const router = new VueRouter({
             path: "/restaurant/:name",
             name: "restaurant-detail",
             component: RestaurantDetail
+        },
+        {
+            path: "/restaurant/:name/carrello",
+            name: "Carrello",
+            component: Carrello
         },
         {
             path: "*",
