@@ -9,7 +9,7 @@
             </ul>
         <article v-for="restaurant in restaurants" :key="`res-${restaurant.id}`">
             <h2>{{ restaurant.name }}</h2>
-            <router-link :to="{name: 'restaurant-detail', params: { name: restaurant.name }}">Restaurant Detail</router-link>
+            <router-link :to="{name: 'restaurant-detail', params: { name: restaurant.id }}">Restaurant Detail</router-link>
         </article>
     </div>
 </template>

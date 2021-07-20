@@ -9,8 +9,9 @@ use Illuminate\Http\Request;
 
 class MenuController extends Controller
 {
-    public function index(){
-        $plates = Plate::all();
+    public function index($type){
+
+        $plates = Plate::where('restaurant_id','=',$type)->get();
 
         return response()->json($plates);
     }
