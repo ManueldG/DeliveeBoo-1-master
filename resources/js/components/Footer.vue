@@ -83,10 +83,13 @@ footer {
     }
     .foot-bot {
         display: flex;
-        justify-content: space-around;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: space-between;
 
         .social {
             font-size: 1.5rem;
+            margin-bottom: 15px;
 
             i {
                 margin-right: 10px;
