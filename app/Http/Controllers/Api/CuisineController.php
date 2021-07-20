@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class CuisineController extends Controller
 {
     public function index(){
-        $cuisines = Cuisine::all();
+        $cuisines = Cuisine::select('id','type')->get();
 
         return response()->json($cuisines);
     }
