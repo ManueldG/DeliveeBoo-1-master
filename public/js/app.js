@@ -2148,6 +2148,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2163,7 +2166,8 @@ __webpack_require__.r(__webpack_exports__);
       searchText: "",
       results: [],
       cuisines: [],
-      temp: []
+      temp: [],
+      query: ""
     };
   },
   created: function created() {
@@ -2174,7 +2178,8 @@ __webpack_require__.r(__webpack_exports__);
     getRestaurants: function getRestaurants() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiURL).then(function (res) {
+      console.log(this.apiURL + '/' + this.temp.join('-'));
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiURL + '/' + this.temp.join('-')).then(function (res) {
         _this.restaurants = res.data;
         /* this.restaurants.forEach(restaurant => {
             restaurant.types.forEach(type => {
@@ -39394,38 +39399,38 @@ var render = function() {
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.temp[cuisine.type],
-                  expression: "temp[cuisine.type]"
+                  value: _vm.temp,
+                  expression: "temp"
                 }
               ],
               attrs: { type: "checkbox", id: cuisine.type },
               domProps: {
                 value: cuisine.type,
-                checked: Array.isArray(_vm.temp[cuisine.type])
-                  ? _vm._i(_vm.temp[cuisine.type], cuisine.type) > -1
-                  : _vm.temp[cuisine.type]
+                checked: Array.isArray(_vm.temp)
+                  ? _vm._i(_vm.temp, cuisine.type) > -1
+                  : _vm.temp
               },
               on: {
+                click: function($event) {
+                  return _vm.getRestaurants()
+                },
                 change: function($event) {
-                  var $$a = _vm.temp[cuisine.type],
+                  var $$a = _vm.temp,
                     $$el = $event.target,
                     $$c = $$el.checked ? true : false
                   if (Array.isArray($$a)) {
                     var $$v = cuisine.type,
                       $$i = _vm._i($$a, $$v)
                     if ($$el.checked) {
-                      $$i < 0 &&
-                        _vm.$set(_vm.temp, cuisine.type, $$a.concat([$$v]))
+                      $$i < 0 && (_vm.temp = $$a.concat([$$v]))
                     } else {
                       $$i > -1 &&
-                        _vm.$set(
-                          _vm.temp,
-                          cuisine.type,
-                          $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                        )
+                        (_vm.temp = $$a
+                          .slice(0, $$i)
+                          .concat($$a.slice($$i + 1)))
                     }
                   } else {
-                    _vm.$set(_vm.temp, cuisine.type, $$c)
+                    _vm.temp = $$c
                   }
                 }
               }
@@ -39434,12 +39439,16 @@ var render = function() {
         ])
       }),
       _vm._v(" "),
-      _vm._l(_vm.restaurants, function(restaurant) {
+      _vm._l(_vm.restaurants.results, function(restaurant) {
         return _c(
           "article",
           { key: "res-" + restaurant.id },
           [
             _c("h2", [_vm._v(_vm._s(restaurant.name))]),
+            _vm._v(" "),
+            _c("div", { staticClass: "type" }, [
+              _vm._v(_vm._s(restaurant.type))
+            ]),
             _vm._v(" "),
             _c(
               "router-link",
@@ -56074,8 +56083,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\ManueldG\Desktop\deploy\DeliveeBoo-1\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\ManueldG\Desktop\deploy\DeliveeBoo-1\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\ManueldG\Desktop\DeliveeBoo-1\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\ManueldG\Desktop\DeliveeBoo-1\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
