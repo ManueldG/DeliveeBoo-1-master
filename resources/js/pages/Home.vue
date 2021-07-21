@@ -9,9 +9,10 @@
                     :id="cuisine.type"
                     :value="cuisine.type"
                     v-model="temp"
-                    @click="getRestaurants()"
+                    @change="getRestaurants($event)"
 
                 />
+
 
 
             </li>
@@ -60,8 +61,8 @@ export default {
     },
     methods: {
 
-        getRestaurants() {
-            console.log(this.apiURL+'/'+this.temp.join('-'));
+        getRestaurants: function(e) {
+
             axios
                 .get(this.apiURL+'/'+this.temp.join('-'))
                 .then(res => {
@@ -109,3 +110,5 @@ h2 {
     margin: 10px 0;
 }
 </style>
+
+

@@ -1,17 +1,20 @@
 <template>
     <div class="container">
-        <h1 v-if="restaurant">Dettagli: {{ restaurant.name }}</h1>
-        <div class="mar">
-            <h2 class="mb">Tipologie di cucine:</h2>
-            <Cuisines :cuisines="restaurant.cuisines" />
-        </div>
-        <div class="mar">
-            <img :src="restaurant.image" :alt="restaurant.name" />
-            <p class="mar">{{ restaurant.description }}</p>
-            <div>
-                <h3 class="mb">I nostri piatti</h3>
-                <Plates :plates="restaurant" />
+
+            <h1 >Dettagli: {{ restaurant.name }}</h1>
+            <div class="mar">
+                <h2 class="mb">Tipologie di cucine:</h2>
+                <Cuisines :cuisines="restaurant.cuisines" />
             </div>
+            <div class="mar">
+                <img :src="restaurant.image" :alt="restaurant.name" />
+                <p class="mar">{{ restaurant.description }}</p>
+                <div>
+                    <h3 class="mb">I nostri piatti</h3>
+                    <Plates :plates="{restaurant}" />
+                </div>
+            </div>
+
 
         <!-- Cart -->
         <div class="cart">
@@ -24,7 +27,7 @@
                     <input class="inputNum" type="number" min="1" v-model="item.quantità" @change="updateQuantity($event, item.name, item.unitPrice)">
                     <button @click="add(item.name, item.unitPrice)">+</button>
                     <span class="name">{{item.name}}</span>
-                    <span>€ {{item.price.toFixed(2)}}</span> 
+                    <span>€ {{item.price.toFixed(2)}}</span>
                     <span class="remove" @click="removeAll(item.name, item.price)">X</span>
                 </div>
             </div>
@@ -33,10 +36,10 @@
 
             <!-- Tot -->
             <h3>Tot: €{{tot.toFixed(2)}}</h3>
-                    
+
             <!-- CheckOut Button -->
             <router-link :to="{name: 'checkout'}">Cassa</router-link>
-                    
+
             <!-- Delete Button -->
             <button @click="deleteCart()">Elimina Carrello</button>
         </div>
@@ -53,8 +56,9 @@
                     </li>
                 </ul>
             </div>
-        </div>
     </div>
+
+
 </template>
 
 <script>
@@ -119,11 +123,11 @@ export default {
                 this.tot += order.prezzo;
                 this.store();
                 this.closeDetail();
-            }  
+            }
         },
 
         /**
-         * Check for 
+         * Check for
          */
         checkId(){
             if(Object.keys(this.cart).length != 0){
@@ -206,7 +210,7 @@ export default {
         setTotal(){
             for(let item in this.cart){
                 this.tot+=this.cart[item].prezzo;
-            }; 
+            };
         },
 
         /**
@@ -223,9 +227,9 @@ export default {
             const resp = confirm('Vuoi cancellare il tuo ordine?');
             if(resp){
                 this.cart = {};
-                this.tot = 0; 
+                this.tot = 0;
                 window.localStorage.clear();
-            } 
+            }
         },
     }
 };
