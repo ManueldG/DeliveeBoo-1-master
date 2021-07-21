@@ -6,7 +6,47 @@
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
             crossorigin="anonymous"
         />
-        <div class="col-6 offset-3">
+        <!-- FORM CLIENT -->
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="inputName" class="form-label">Name</label>
+                <input type="name" class="form-control" id="inputName" />
+            </div>
+            <div class="col-md-6">
+                <label for="inputSurname" class="form-label">Surname</label>
+                <input type="Surname" class="form-control" id="inputSurname" />
+            </div>
+            <div class="col-md-6">
+                <label for="inputEmail4" class="form-label">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" />
+            </div>
+            <div class="col-6">
+                <label for="inputAddress" class="form-label">Address</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="inputAddress"
+                    placeholder="1234 Main St"
+                />
+            </div>
+            <div class="col-md-6">
+                <label for="inputCity" class="form-label">City</label>
+                <input type="text" class="form-control" id="inputCity" />
+            </div>
+            <div class="col-md-2">
+                <label for="inputZip" class="form-label">Zip</label>
+                <input type="text" class="form-control" id="inputZip" />
+            </div>
+            <div class="col-md-4">
+                <label for="inputNumber" class="form-label"
+                    >Telephone Number</label
+                >
+                <input type="text" class="form-control" id="inputNumber" />
+            </div>
+        </form>
+
+        <!-- PAYMENT -->
+        <div class="col-6 offset-3 mt-5">
             <div class="card bg-light">
                 <div class="card-header">Payment Information</div>
                 <div class="card-body">
@@ -55,7 +95,7 @@
                 </div>
             </div>
             <button
-                class="btn btn-primary btn-block"
+                class="btn btn-primary btn-block mt-3"
                 @click.prevent="payWithCreditCard"
             >
                 Pay with Credit Card
@@ -68,9 +108,10 @@
 </template>
 
 <script>
+import braintree from "braintree-web";
 export default {
-    name: 'Payment',
-        data() {
+    name: "Payment",
+    data() {
         return {
             hostedFieldInstance: false,
             nonce: "",
@@ -98,7 +139,7 @@ export default {
     mounted() {
         braintree.client
             .create({
-                authorization: "sandbox_w3mbmmkd_mgtff9zhgfck2nfm"
+                authorization: "sandbox_ykgytk45_6mhmdsyyhy26bc24"
             })
             .then(clientInstance => {
                 let options = {
@@ -135,11 +176,11 @@ export default {
                 this.error = err.message;
             });
     }
-}
+};
 </script>
 
 <style>
-    body {
+body {
     padding: 5px;
 }
 </style>
