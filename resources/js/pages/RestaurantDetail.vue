@@ -31,14 +31,12 @@
 <script>
 import Plates from "../components/Plates.vue";
 import Cuisines from "../components/Cuisines.vue";
-import Carrello from "./pages/Carrello.vue"
 import axios from "axios";
 export default {
     name: "RestaurantDetail",
     components: {
         Plates,
         Cuisines,
-        Carrello
     },
     data() {
         return {

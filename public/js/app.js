@@ -5055,13 +5055,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Cart",
   data: function data() {
@@ -5084,16 +5077,6 @@ __webpack_require__.r(__webpack_exports__);
           this.tot += this.cart[item].price;
         }
       }
-    },
-    getRestaurantDetail: function getRestaurantDetail() {
-      var _this = this;
-
-      axios.get("http://127.0.0.1:8000/api/plates/".concat(this.$route.params.name)).then(function (res) {
-        _this.restaurant = res.data;
-        console.log(_this.restaurant);
-      })["catch"](function (err) {
-        console.log(err);
-      });
     }
   }
 });
@@ -5643,9 +5626,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Plates_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/Plates.vue */ "./resources/js/components/Plates.vue");
 /* harmony import */ var _components_Cuisines_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/Cuisines.vue */ "./resources/js/components/Cuisines.vue");
-!(function webpackMissingModule() { var e = new Error("Cannot find module './pages/Carrello.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 //
 //
 //
@@ -5676,7 +5658,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
 
 
 
@@ -5684,8 +5665,7 @@ __webpack_require__.r(__webpack_exports__);
   name: "RestaurantDetail",
   components: {
     Plates: _components_Plates_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    Cuisines: _components_Cuisines_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    Carrello: !(function webpackMissingModule() { var e = new Error("Cannot find module './pages/Carrello.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())
+    Cuisines: _components_Cuisines_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
     return {
@@ -5699,7 +5679,7 @@ __webpack_require__.r(__webpack_exports__);
     getRestaurantDetail: function getRestaurantDetail() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_3___default.a.get("http://127.0.0.1:8000/api/plates/".concat(this.$route.params.name)).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://127.0.0.1:8000/api/plates/".concat(this.$route.params.name)).then(function (res) {
         _this.restaurant = res.data;
         console.log(_this.restaurant);
       })["catch"](function (err) {
@@ -63564,40 +63544,27 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("main", [
-    _c(
-      "div",
-      { staticClass: "container" },
-      [
-        _c("h1", [_vm._v("Cart")]),
-        _vm._v(
-          "\n<<<<<<< HEAD:resources/js/pages/Carrello.vue\n=======\n\n>>>>>>> 3d783ccfb3029f5cde348580685c256c7cb6cce0:resources/js/components/Cart.vue\n            "
-        ),
-        _vm._l(_vm.restaurant, function(item) {
-          return _c("div", { key: item.id }, [
-            _vm._v("\n                " + _vm._s(item) + "\n            ")
-          ])
-        }),
-        _vm._v(" "),
-        Object.keys(_vm.cart).length
-          ? _c(
-              "div",
-              _vm._l(_vm.cart, function(item, index) {
-                return _c("div", { key: index }, [
-                  _c("span", [_vm._v(_vm._s(item.quantita))]),
-                  _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(item.name))]),
-                  _vm._v(" "),
-                  _c("span", [_vm._v(_vm._s(item.price.toFixed(2)) + "€")])
-                ])
-              }),
-              0
-            )
-          : _c("div", [_c("span", [_vm._v("Empty Cart")])]),
-        _vm._v(" "),
-        _c("h3", [_vm._v("Tot: " + _vm._s(_vm.tot.toFixed(2)) + "€")])
-      ],
-      2
-    )
+    _c("div", { staticClass: "container" }, [
+      _c("h1", [_vm._v("Cart")]),
+      _vm._v(" "),
+      Object.keys(_vm.cart).length
+        ? _c(
+            "div",
+            _vm._l(_vm.cart, function(item, index) {
+              return _c("div", { key: index }, [
+                _c("span", [_vm._v(_vm._s(item.quantita))]),
+                _vm._v(" "),
+                _c("span", [_vm._v(_vm._s(item.name))]),
+                _vm._v(" "),
+                _c("span", [_vm._v(_vm._s(item.price.toFixed(2)) + "€")])
+              ])
+            }),
+            0
+          )
+        : _c("div", [_c("span", [_vm._v("Empty Cart")])]),
+      _vm._v(" "),
+      _c("h3", [_vm._v("Tot: " + _vm._s(_vm.tot.toFixed(2)) + "€")])
+    ])
   ])
 }
 var staticRenderFns = []
