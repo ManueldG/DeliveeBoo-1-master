@@ -2,8 +2,7 @@
     <main>
         <div class="container">
             <h1>Cart</h1>
-            <Plates :plates="plates" />
-            <div v-for="item in plates" :key="item.id">
+            <div v-for="item in restaurant" :key="item.id">
                 {{ item }}
             </div>
             <div v-if="Object.keys(cart).length">
