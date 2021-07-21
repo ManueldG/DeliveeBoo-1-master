@@ -33,7 +33,6 @@ export default {
     },
     created() {
         this.getBill();
-        this.getRestaurantDetail();
     },
     methods: {
         getBill() {
@@ -43,19 +42,6 @@ export default {
                     this.tot += this.cart[item].price;
                 }
             }
-        },
-        getRestaurantDetail() {
-            axios
-                .get(
-                    `http://127.0.0.1:8000/api/plates/${this.$route.params.name}`
-                )
-                .then(res => {
-                    this.restaurant = res.data;
-                    console.log(this.restaurant);
-                })
-                .catch(err => {
-                    console.log(err);
-                });
         }
     }
 };
