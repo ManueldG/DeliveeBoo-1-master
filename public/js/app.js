@@ -5137,6 +5137,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Header"
 });
@@ -5177,11 +5182,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Plates",
-  props: {
-    plates: Array
-  }
+  props: ["plates"]
 });
 
 /***/ }),
@@ -5214,8 +5234,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Carrello",
+  props: ["plates"],
   data: function data() {
     return {
       tot: 0,
@@ -5227,8 +5252,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getBill: function getBill() {
-      if (window.localStorage.getItem('cart')) {
-        this.cart = JSON.parse(widnow.localStorage.getItem('cart'));
+      if (window.localStorage.getItem("cart")) {
+        this.cart = JSON.parse(widnow.localStorage.getItem("cart"));
 
         for (var item in this.cart) {
           this.tot += this.cart[item].price;
@@ -63623,9 +63648,16 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("ul", [
         _c("li", { staticClass: "nav-dx" }, [
-          _c("a", { attrs: { href: "/admin" } }, [
+          _c("a", { attrs: { href: "/carrello" } }, [
             _c("i", { staticClass: "fas fa-shopping-cart" }),
             _vm._v("Cart")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("li", { staticClass: "nav-dx" }, [
+          _c("a", { attrs: { href: "/orders" } }, [
+            _c("i", { staticClass: "fas fa-concierge-bell" }),
+            _vm._v("Orders")
           ])
         ]),
         _vm._v(" "),
@@ -63688,6 +63720,24 @@ var render = function() {
             : plate.visibility === 1
             ? _c("span", [_vm._v(" Yes ")])
             : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          plate.visibility === 1
+            ? _c(
+                "button",
+                { staticClass: "btn btn-success", on: { click: _vm.addCart } },
+                [_vm._v("\n                Add to Cart\n            ")]
+              )
+            : _c(
+                "button",
+                {
+                  staticClass: "btn btn-success",
+                  attrs: { disabled: "" },
+                  on: { click: _vm.addCart }
+                },
+                [_vm._v("\n                Add to Cart\n            ")]
+              )
         ])
       ])
     }),
@@ -63717,27 +63767,40 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("main", [
-    _c("h1", [_vm._v("Cart")]),
-    _vm._v(" "),
-    _c("div", { staticClass: "container" }, [
-      Object.keys(_vm.cart).length
-        ? _c(
-            "div",
-            _vm._l(_vm.cart, function(item, index) {
-              return _c("div", { key: index }, [
-                _c("span", [_vm._v(_vm._s(item.quantita))]),
-                _vm._v(" "),
-                _c("span", [_vm._v(_vm._s(item.name))]),
-                _vm._v(" "),
-                _c("span", [_vm._v(_vm._s(item.price.toFixed(2)) + "€")])
-              ])
-            }),
-            0
-          )
-        : _c("div", [_c("span", [_vm._v("Empty Cart")])]),
-      _vm._v(" "),
-      _c("h3", [_vm._v("Tot: " + _vm._s(_vm.tot.toFixed(2)) + "€")])
-    ])
+    _c(
+      "div",
+      { staticClass: "container" },
+      [
+        _c("h1", [_vm._v("Cart")]),
+        _vm._v(" "),
+        _c("Plates", { attrs: { plates: _vm.plates } }),
+        _vm._v(" "),
+        _vm._l(_vm.plates, function(item) {
+          return _c("div", { key: item.id }, [
+            _vm._v("\n            " + _vm._s(item) + "\n        ")
+          ])
+        }),
+        _vm._v(" "),
+        Object.keys(_vm.cart).length
+          ? _c(
+              "div",
+              _vm._l(_vm.cart, function(item, index) {
+                return _c("div", { key: index }, [
+                  _c("span", [_vm._v(_vm._s(item.quantita))]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(item.name))]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(item.price.toFixed(2)) + "€")])
+                ])
+              }),
+              0
+            )
+          : _c("div", [_c("span", [_vm._v("Empty Cart")])]),
+        _vm._v(" "),
+        _c("h3", [_vm._v("Tot: " + _vm._s(_vm.tot.toFixed(2)) + "€")])
+      ],
+      2
+    )
   ])
 }
 var staticRenderFns = []
