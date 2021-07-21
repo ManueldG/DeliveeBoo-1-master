@@ -29,7 +29,6 @@ export default {
     },
     created() {
         this.getBill();
-        this.getRestaurantDetail();
     },
     methods: {
         getBill() {
@@ -39,7 +38,11 @@ export default {
                     this.tot += this.cart[item].price;
                 }
             }
+<<<<<<< HEAD
         },
+=======
+        }
+>>>>>>> ee64cc872a95f74d5eb53a1e384bc71323c84cfe
     }
 };
 </script>

@@ -22,14 +22,14 @@
             <li>
                 <button
                     class="btn btn-success"
-                    @click="addCart"
+                    @click="addCart(plate)"
                     v-if="plate.visibility === 1"
                 >
                     Add to Cart
                 </button>
                 <button
                     class="btn btn-success"
-                    @click="addCart"
+                    @click="addCart(plate)"
                     v-else
                     disabled
                 >
@@ -43,7 +43,23 @@
 <script>
 export default {
     name: "Plates",
-    props: ["plates"]
+    props: ["plates"],
+    data() {
+        return {
+            cart: []
+        };
+    },
+    methods: {
+        addCart(plate) {
+            this.cart.push({
+                name: plate.name,
+                price: plate.price,
+                quantity: 1
+            });
+            console.log(this.cart);
+            // console.log(this.addCart);
+        }
+    }
 };
 </script>
 

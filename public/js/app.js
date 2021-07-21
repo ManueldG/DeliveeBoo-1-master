@@ -5066,7 +5066,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   created: function created() {
     this.getBill();
-    this.getRestaurantDetail();
   },
   methods: {
     getBill: function getBill() {
@@ -5257,7 +5256,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Plates",
-  props: ["plates"]
+  props: ["plates"],
+  data: function data() {
+    return {
+      cart: []
+    };
+  },
+  methods: {
+    addCart: function addCart(plate) {
+      this.cart.push({
+        name: plate.name,
+        price: plate.price,
+        quantity: 1
+      });
+      console.log(this.cart); // console.log(this.addCart);
+    }
+  }
 });
 
 /***/ }),
@@ -63809,7 +63823,14 @@ var render = function() {
           plate.visibility === 1
             ? _c(
                 "button",
-                { staticClass: "btn btn-success", on: { click: _vm.addCart } },
+                {
+                  staticClass: "btn btn-success",
+                  on: {
+                    click: function($event) {
+                      return _vm.addCart(plate)
+                    }
+                  }
+                },
                 [_vm._v("\n                Add to Cart\n            ")]
               )
             : _c(
@@ -63817,7 +63838,11 @@ var render = function() {
                 {
                   staticClass: "btn btn-success",
                   attrs: { disabled: "" },
-                  on: { click: _vm.addCart }
+                  on: {
+                    click: function($event) {
+                      return _vm.addCart(plate)
+                    }
+                  }
                 },
                 [_vm._v("\n                Add to Cart\n            ")]
               )
