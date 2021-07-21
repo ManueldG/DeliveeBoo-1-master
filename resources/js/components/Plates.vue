@@ -19,6 +19,23 @@
                 <span v-if="plate.visibility === 0"> No </span>
                 <span v-else-if="plate.visibility === 1"> Yes </span>
             </li>
+            <li>
+                <button
+                    class="btn btn-success"
+                    @click="addCart"
+                    v-if="plate.visibility === 1"
+                >
+                    Add to Cart
+                </button>
+                <button
+                    class="btn btn-success"
+                    @click="addCart"
+                    v-else
+                    disabled
+                >
+                    Add to Cart
+                </button>
+            </li>
         </ul>
     </div>
 </template>
@@ -26,9 +43,7 @@
 <script>
 export default {
     name: "Plates",
-    props: {
-        plates: Array
-    }
+    props: ["plates"]
 };
 </script>
 
