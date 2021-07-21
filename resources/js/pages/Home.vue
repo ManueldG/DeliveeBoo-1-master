@@ -55,7 +55,7 @@ export default {
         };
     },
     created() {
-        this.getRestaurants();
+        this.getRestaurants([]);
         this.getCuisines();
     },
     methods: {
