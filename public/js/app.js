@@ -5314,6 +5314,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'CheckOut',
@@ -64212,14 +64235,14 @@ var render = function() {
                 {
                   on: {
                     click: function($event) {
-                      _vm.addDish(plate), _vm.$emit("close")
+                      _vm.addPlate(plate), _vm.$emit("close")
                     }
                   }
                 },
                 [
                   _vm._v(
                     "Aggiungi al carrello | TOT: " +
-                      _vm._s(_vm.price.toFixed(2)) +
+                      _vm._s(plate.price.toFixed(2)) +
                       " €"
                   )
                 ]
@@ -64360,6 +64383,8 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "col-6 offset-3" }, [
+        _vm._m(0),
+        _vm._v(" "),
         _c("div", { staticClass: "card bg-light" }, [
           _c("div", { staticClass: "card-header" }, [
             _vm._v("Payment Information")
@@ -64374,7 +64399,7 @@ var render = function() {
                 ])
               : _vm._e(),
             _vm._v(" "),
-            _vm._m(0)
+            _vm._m(1)
           ])
         ]),
         _vm._v(" "),
@@ -64402,6 +64427,114 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "card bg-light" }, [
+      _c("form", [
+        _c("div", { staticClass: "mb-3" }, [
+          _c(
+            "label",
+            { staticClass: "control-table", attrs: { for: "customer_name" } },
+            [_vm._v("Nome*")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              name: "customer_name",
+              id: "customer_name",
+              value: "",
+              required: "",
+              maxlength: "50"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-3" }, [
+          _c(
+            "label",
+            {
+              staticClass: "control-table",
+              attrs: { for: "customer_lastname" }
+            },
+            [_vm._v("Cognome*")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              name: "customer_name",
+              id: "customer_lastname",
+              value: "",
+              required: "",
+              maxlength: "50"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-3" }, [
+          _c(
+            "label",
+            {
+              staticClass: "control-table",
+              attrs: { for: "customer_address" }
+            },
+            [_vm._v("Indirizzo*")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: {
+              id: "customer_address",
+              type: "text",
+              name: "customer_address",
+              value: "",
+              required: "",
+              autocomplete: "address",
+              maxlength: "50",
+              autofocus: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-3" }, [
+          _c(
+            "label",
+            { staticClass: "control-table", attrs: { for: "phone_number" } },
+            [_vm._v("Numero di telefono*")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: {
+              id: "phone_number",
+              type: "number",
+              name: "vat_number",
+              value: "",
+              required: "",
+              autocomplete: "vat_number",
+              minlength: "11",
+              maxlength: "11",
+              autofocus: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary  btn-block mb-3",
+            attrs: { type: "submit" }
+          },
+          [_vm._v("Sign in")]
+        )
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -65010,7 +65143,7 @@ var render = function() {
                       _vm._v(_vm._s(item.name))
                     ]),
                     _vm._v(" "),
-                    _c("span", [_vm._v("€ " + _vm._s(item.prezzo.toFixed(2)))]),
+                    _c("span", [_vm._v("€ " + _vm._s(item.price.toFixed(2)))]),
                     _vm._v(" "),
                     _c(
                       "span",
@@ -65018,7 +65151,7 @@ var render = function() {
                         staticClass: "remove",
                         on: {
                           click: function($event) {
-                            return _vm.removeAll(item.name, item.prezzo)
+                            return _vm.removeAll(item.name, item.price)
                           }
                         }
                       },
