@@ -8,17 +8,20 @@
                     type="checkbox"
                     :id="cuisine.type"
                     :value="cuisine.type"
-                    v-model="temp[cuisine.type]"
+                    v-model="temp"
+                    @click="getRestaurants()"
+
                 />
 
 
             </li>
         </ul>
         <article
-            v-for="restaurant in restaurants"
+            v-for="restaurant in restaurants.results"
             :key="`res-${restaurant.id}`"
         >
             <h2>{{ restaurant.name }}</h2>
+            <div class="type">{{ restaurant.type }}</div>
             <router-link
                 :to="{
                     name: 'restaurant-detail',
@@ -46,7 +49,8 @@ export default {
             searchText: "",
             results: [],
             cuisines: [],
-            temp: []
+            temp: [],
+            query:""
 
         };
     },
@@ -55,9 +59,11 @@ export default {
         this.getCuisines();
     },
     methods: {
+
         getRestaurants() {
+            console.log(this.apiURL+'/'+this.temp.join('-'));
             axios
-                .get(this.apiURL)
+                .get(this.apiURL+'/'+this.temp.join('-'))
                 .then(res => {
                     this.restaurants = res.data;
 
