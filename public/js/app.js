@@ -5032,9 +5032,53 @@ __webpack_require__.r(__webpack_exports__);
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Cart.vue?vue&type=script&lang=js& ***!
   \***************************************************************************************************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/components/Cart.vue: Unexpected token (41:0)\n\n\u001b[0m \u001b[90m 39 |\u001b[39m                 }\u001b[0m\n\u001b[0m \u001b[90m 40 |\u001b[39m             }\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 41 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 42 |\u001b[39m         }\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 43 |\u001b[39m \u001b[33m===\u001b[39m\u001b[33m===\u001b[39m\u001b[33m=\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 44 |\u001b[39m         }\u001b[0m\n    at Parser._raise (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:816:17)\n    at Parser.raiseWithData (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:809:17)\n    at Parser.raise (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:770:17)\n    at Parser.unexpected (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:9893:16)\n    at Parser.parseExprAtom (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11307:20)\n    at Parser.parseExprSubscripts (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10881:23)\n    at Parser.parseUpdate (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10861:21)\n    at Parser.parseMaybeUnary (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10839:23)\n    at Parser.parseExprOps (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10696:23)\n    at Parser.parseMaybeConditional (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10670:23)\n    at Parser.parseMaybeAssign (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10633:21)\n    at Parser.parseExpressionBase (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10573:23)\n    at /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10567:39\n    at Parser.allowInAnd (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12328:16)\n    at Parser.parseExpression (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10567:17)\n    at Parser.parseStatementContent (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12665:23)\n    at Parser.parseStatement (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12534:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:13123:25)\n    at Parser.parseBlockBody (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:13114:10)\n    at Parser.parseBlock (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:13098:10)\n    at Parser.parseFunctionBody (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11989:24)\n    at Parser.parseFunctionBodyAndFinish (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11973:10)\n    at Parser.parseMethod (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11923:10)\n    at Parser.parseObjectMethod (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11851:19)\n    at Parser.parseObjPropValue (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11884:23)\n    at Parser.parsePropertyDefinition (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11808:10)\n    at Parser.parseObjectLike (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11699:25)\n    at Parser.parseExprAtom (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11223:23)\n    at Parser.parseExprSubscripts (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10881:23)\n    at Parser.parseUpdate (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10861:21)\n    at Parser.parseMaybeUnary (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10839:23)\n    at Parser.parseExprOps (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10696:23)\n    at Parser.parseMaybeConditional (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10670:23)\n    at Parser.parseMaybeAssign (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10633:21)\n    at /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10595:39\n    at Parser.allowInAnd (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12334:12)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "Cart",
+  data: function data() {
+    return {
+      tot: 0,
+      cart: [],
+      restaurant: ""
+    };
+  },
+  created: function created() {
+    this.getBill();
+  },
+  methods: {
+    getBill: function getBill() {
+      if (window.localStorage.getItem("cart")) {
+        this.cart = JSON.parse(window.localStorage.getItem("cart"));
+
+        for (var item in this.cart) {
+          this.tot += this.cart[item].price;
+        }
+      }
+    }
+  }
+});
 
 /***/ }),
 
@@ -5225,7 +5269,7 @@ __webpack_require__.r(__webpack_exports__);
         price: plate.price,
         quantity: 1
       });
-      console.log(this.cart); // console.log(this.addCart);
+      console.log(this.addCart);
     }
   }
 });
@@ -5651,7 +5695,6 @@ __webpack_require__.r(__webpack_exports__);
 
       axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://127.0.0.1:8000/api/plates/".concat(this.$route.params.name)).then(function (res) {
         _this.restaurant = res.data;
-        console.log(_this.restaurant);
       })["catch"](function (err) {
         console.log(err);
       });

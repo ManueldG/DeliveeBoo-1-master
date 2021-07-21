@@ -33,16 +33,12 @@ export default {
     methods: {
         getBill() {
             if (window.localStorage.getItem("cart")) {
-                this.cart = JSON.parse(widnow.localStorage.getItem("cart"));
+                this.cart = JSON.parse(window.localStorage.getItem("cart"));
                 for (let item in this.cart) {
                     this.tot += this.cart[item].price;
                 }
             }
-<<<<<<< HEAD
-        },
-=======
         }
->>>>>>> ee64cc872a95f74d5eb53a1e384bc71323c84cfe
     }
 };
 </script>

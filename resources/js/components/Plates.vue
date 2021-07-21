@@ -56,8 +56,7 @@ export default {
                 price: plate.price,
                 quantity: 1
             });
-            console.log(this.cart);
-            // console.log(this.addCart);
+            console.log(this.addCart);
         }
     }
 };
