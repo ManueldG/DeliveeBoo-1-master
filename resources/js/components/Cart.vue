@@ -2,6 +2,10 @@
     <main>
         <div class="container">
             <h1>Cart</h1>
+<<<<<<< HEAD:resources/js/pages/Carrello.vue
+=======
+
+>>>>>>> 3d783ccfb3029f5cde348580685c256c7cb6cce0:resources/js/components/Cart.vue
             <div v-for="item in restaurant" :key="item.id">
                 {{ item }}
             </div>
@@ -22,16 +26,17 @@
 
 <script>
 export default {
-    name: "Carrello",
-    props: ["plates"],
+    name: "Cart",
     data() {
         return {
             tot: 0,
-            cart: []
+            cart: [],
+            restaurant: ""
         };
     },
     created() {
         this.getBill();
+        this.getRestaurantDetail();
     },
     methods: {
         getBill() {
@@ -41,6 +46,19 @@ export default {
                     this.tot += this.cart[item].price;
                 }
             }
+        },
+        getRestaurantDetail() {
+            axios
+                .get(
+                    `http://127.0.0.1:8000/api/plates/${this.$route.params.name}`
+                )
+                .then(res => {
+                    this.restaurant = res.data;
+                    console.log(this.restaurant);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
         }
     }
 };
