@@ -13,28 +13,20 @@
                 {{ plate.description }}
             </li>
 
-            <li><strong>Price: </strong>{{ plate.price }}€</li>
+            <!-- <li><strong>Price: </strong>{{ plate.price }}€</li>
             <li>
                 <strong>Avaiable: </strong>
                 <span v-if="plate.visibility === 0"> No </span>
                 <span v-else-if="plate.visibility === 1"> Yes </span>
+            </li> -->
+            <li v-if=(plate.visibility)>
+                <button @click="less(plate.price)"> - </button>
+                <span>{{quantity}}</span>
+                <button @click="more(plate.price)"> + </button>
+                <button @click="addPlate(plate), $emit('close')" >Aggiungi al carrello | TOT: {{price.toFixed(2)}} €</button>
             </li>
-            <li>
-                <button
-                    class="btn btn-success"
-                    @click="addCart(plate)"
-                    v-if="plate.visibility === 1"
-                >
-                    Add to Cart
-                </button>
-                <button
-                    class="btn btn-success"
-                    @click="addCart(plate)"
-                    v-else
-                    disabled
-                >
-                    Add to Cart
-                </button>
+            <li v-else disabled>
+                <button>Non disponibile</button>
             </li>
         </ul>
     </div>
@@ -46,18 +38,33 @@ export default {
     props: ["plates"],
     data() {
         return {
-            cart: []
+            cart: {},
+            price: this.plates.price,
+            quantity: 1,
         };
     },
     methods: {
-        addCart(plate) {
-            this.cart.push({
-                name: plate.name,
-                price: plate.price,
-                quantity: 1
-            });
-            console.log(this.addCart);
+      addPlate(plates){
+
+      let order={
+        restaurant_id: plates.restaurant_id,
+        name: plates.name,
+        quantità: this.quantity,
+        prezzo: this.price,
+      }
+
+        this.$emit('addToCart', order, plates.name, plates.price);
+      },
+      more(price){
+        this.quantity++;
+        this.price += price;
+      },
+      less(price){
+        if(this.quantity != 1){
+          this.quantity --;
+          this.price -= price;
         }
+      }
     }
 };
 </script>
