@@ -24,8 +24,8 @@
                     <input class="inputNum" type="number" min="1" v-model="item.quantità" @change="updateQuantity($event, item.name, item.unitPrice)">
                     <button @click="add(item.name, item.unitPrice)">+</button>
                     <span class="name">{{item.name}}</span>
-                    <span>€ {{item.prezzo.toFixed(2)}}</span> 
-                    <span class="remove" @click="removeAll(item.name, item.prezzo)">X</span>
+                    <span>€ {{item.price.toFixed(2)}}</span> 
+                    <span class="remove" @click="removeAll(item.name, item.price)">X</span>
                 </div>
             </div>
 
