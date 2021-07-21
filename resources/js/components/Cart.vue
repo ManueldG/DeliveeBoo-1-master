@@ -2,8 +2,8 @@
     <main>
         <div class="container">
             <h1>Cart</h1>
-            <Plates :plates="plates" />
-            <div v-for="item in plates" :key="item.id">
+
+            <div v-for="item in restaurant" :key="item.id">
                 {{ item }}
             </div>
             <div v-if="Object.keys(cart).length">
@@ -23,16 +23,17 @@
 
 <script>
 export default {
-    name: "Carrello",
-    props: ["plates"],
+    name: "Cart",
     data() {
         return {
             tot: 0,
-            cart: []
+            cart: [],
+            restaurant: ""
         };
     },
     created() {
         this.getBill();
+        this.getRestaurantDetail();
     },
     methods: {
         getBill() {
@@ -42,6 +43,19 @@ export default {
                     this.tot += this.cart[item].price;
                 }
             }
+        },
+        getRestaurantDetail() {
+            axios
+                .get(
+                    `http://127.0.0.1:8000/api/plates/${this.$route.params.name}`
+                )
+                .then(res => {
+                    this.restaurant = res.data;
+                    console.log(this.restaurant);
+                })
+                .catch(err => {
+                    console.log(err);
+                });
         }
     }
 };
