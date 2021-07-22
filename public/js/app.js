@@ -65359,22 +65359,25 @@ var render = function() {
       _c("ul", [
         _c("li", [
           _c("strong", [_vm._v("Address: ")]),
-          _vm._v(_vm._s(_vm.restaurant[0].address))
+          _vm._v(_vm._s(_vm.restaurant.results[0].address))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("City: ")]),
-          _vm._v(_vm._s(_vm.restaurant[0].city))
+          _vm._v(_vm._s(_vm.restaurant.results[0].city))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("Cap: ")]),
-          _vm._v(_vm._s(_vm.restaurant[0].cap))
+          _vm._v(_vm._s(_vm.restaurant.results[0].cap))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("Phone number: ")]),
-          _vm._v(_vm._s(_vm.restaurant[0].phone_number) + "\n                ")
+          _vm._v(
+            _vm._s(_vm.restaurant.results[0].phone_number) +
+              "\n                "
+          )
         ])
       ])
     ])

@@ -47,12 +47,12 @@
             <div class="mar">
                 <h3>Contatti</h3>
                 <ul>
-                    <li><strong>Address: </strong>{{ restaurant[0].address }}</li>
-                    <li><strong>City: </strong>{{ restaurant[0].city }}</li>
-                    <li><strong>Cap: </strong>{{ restaurant[0].cap }}</li>
+                    <li><strong>Address: </strong>{{ restaurant.results[0].address }}</li>
+                    <li><strong>City: </strong>{{ restaurant.results[0].city }}</li>
+                    <li><strong>Cap: </strong>{{ restaurant.results[0].cap }}</li>
                     <li>
                         <strong>Phone number: </strong
-                        >{{ restaurant[0].phone_number }}
+                        >{{ restaurant.results[0].phone_number }}
                     </li>
                 </ul>
             </div>
