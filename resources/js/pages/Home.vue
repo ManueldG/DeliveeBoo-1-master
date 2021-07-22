@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img class="img" src="../img/jumbo.jpeg" alt="" />
+        <img class="jumbo" src="../img/jumbo.jpeg" alt="" />
         <div class="container">
             <h1>Homepage</h1>
             <ul v-for="cuisine in cuisines" :key="cuisine.id">
@@ -15,20 +15,41 @@
                     />
                 </li>
             </ul>
-            <article
+
+            <div
+                class="card-rest"
                 v-for="restaurant in restaurants.results"
                 :key="`res-${restaurant.id}`"
             >
-                <h2>{{ restaurant.name }}</h2>
-                <div class="type">{{ restaurant.type }}</div>
-                <router-link
-                    :to="{
-                        name: 'restaurant-detail',
-                        params: { name: restaurant.id }
-                    }"
-                    >Restaurant Detail</router-link
-                >
-            </article>
+                <div class="rest">
+                    <ul>
+                        <li>
+                            <h2>{{ restaurant.name }}</h2>
+                        </li>
+                        <li>
+                            <img
+                                class="img-fluid img"
+                                :src="restaurant.image"
+                                alt=""
+                            />
+                        </li>
+                        <li>
+                            <div class="badge bg-success">
+                                {{ restaurant.type }}
+                            </div>
+                        </li>
+                        <li>
+                            <router-link
+                                :to="{
+                                    name: 'restaurant-detail',
+                                    params: { name: restaurant.id }
+                                }"
+                                >Restaurant Detail</router-link
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -106,7 +127,21 @@ h2 {
     margin: 10px 0;
 }
 
-img {
+.jumbo {
     width: 100%;
+}
+
+.card-rest {
+    display: flex;
+    flex-wrap: wrap;
+
+    .rest {
+        flex-basis: calc(100% / 3 - 20px);
+        margin: 10px;
+
+        img {
+            border-radius: 5px;
+        }
+    }
 }
 </style>

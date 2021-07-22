@@ -5547,6 +5547,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -31844,7 +31865,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".search-bar[data-v-b3c5cf30] {\n  display: flex;\n  justify-content: flex-end;\n}\nh1[data-v-b3c5cf30] {\n  margin: 20px;\n  display: flex;\n  justify-content: center;\n}\nh2[data-v-b3c5cf30] {\n  margin: 10px 0;\n}\nimg[data-v-b3c5cf30] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".search-bar[data-v-b3c5cf30] {\n  display: flex;\n  justify-content: flex-end;\n}\nh1[data-v-b3c5cf30] {\n  margin: 20px;\n  display: flex;\n  justify-content: center;\n}\nh2[data-v-b3c5cf30] {\n  margin: 10px 0;\n}\n.jumbo[data-v-b3c5cf30] {\n  width: 100%;\n}\n.card-rest[data-v-b3c5cf30] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.card-rest .rest[data-v-b3c5cf30] {\n  flex-basis: calc(100% / 3 - 20px);\n  margin: 10px;\n}\n.card-rest .rest img[data-v-b3c5cf30] {\n  border-radius: 5px;\n}", ""]);
 
 // exports
 
@@ -64677,7 +64698,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("img", {
-      staticClass: "img",
+      staticClass: "jumbo",
       attrs: { src: __webpack_require__(/*! ../img/jumbo.jpeg */ "./resources/js/img/jumbo.jpeg"), alt: "" }
     }),
     _vm._v(" "),
@@ -64743,29 +64764,51 @@ var render = function() {
         _vm._v(" "),
         _vm._l(_vm.restaurants.results, function(restaurant) {
           return _c(
-            "article",
-            { key: "res-" + restaurant.id },
+            "div",
+            { key: "res-" + restaurant.id, staticClass: "card-rest" },
             [
-              _c("h2", [_vm._v(_vm._s(restaurant.name))]),
-              _vm._v(" "),
-              _c("div", { staticClass: "type" }, [
-                _vm._v(_vm._s(restaurant.type))
-              ]),
-              _vm._v(" "),
-              _c(
-                "router-link",
-                {
-                  attrs: {
-                    to: {
-                      name: "restaurant-detail",
-                      params: { name: restaurant.id }
-                    }
-                  }
-                },
-                [_vm._v("Restaurant Detail")]
-              )
-            ],
-            1
+              _c("div", { staticClass: "rest" }, [
+                _c("ul", [
+                  _c("li", [_c("h2", [_vm._v(_vm._s(restaurant.name))])]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("img", {
+                      staticClass: "img-fluid img",
+                      attrs: { src: restaurant.image, alt: "" }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("div", { staticClass: "badge bg-success" }, [
+                      _vm._v(
+                        "\n                            " +
+                          _vm._s(restaurant.type) +
+                          "\n                        "
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          attrs: {
+                            to: {
+                              name: "restaurant-detail",
+                              params: { name: restaurant.id }
+                            }
+                          }
+                        },
+                        [_vm._v("Restaurant Detail")]
+                      )
+                    ],
+                    1
+                  )
+                ])
+              ])
+            ]
           )
         })
       ],
