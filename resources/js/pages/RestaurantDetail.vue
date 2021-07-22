@@ -75,11 +75,9 @@ export default {
         return {
             restaurant: '',
             plates: [],
-            plateDetail: {},
             visibility: false,
             cart: {},
             tot: 0,
-            pagination: {},
         };
     },
     created() {
@@ -125,18 +123,15 @@ export default {
             }
         },
 
-        /**
-         * Add Dish to Cart
-         */
         addCart(order, name, unitPrice) {
             if(this.checkId()) {
                 if(this.cart[name]){
-                    this.cart[name].quantità += order.quantità;
-                    this.cart[name].prezzo += order.prezzo;
+                    this.cart[name].quantity += order.quantity;
+                    this.cart[name].price += order.price;
                 } else {
                     this.cart[name] = {...order, unitPrice};
                 }
-                this.tot += order.prezzo;
+                this.tot += order.price;
                 this.store();
                 this.closeDetail();
             }
@@ -147,7 +142,7 @@ export default {
          */
         checkId(){
             if(Object.keys(this.cart).length != 0){
-                if(this.cart[Object.keys(this.cart)[0]].restaurant_id == this.dishDetail.restaurant_id) {
+                if(this.cart[Object.keys(this.cart)[0]].restaurant_id == this.plates.restaurant_id) {
                     return true;
                 }else {
                     const resp = confirm('Puoi ordinare da un solo ristorante. Vuoi cancellare il tuo ordine precedente?');
@@ -168,8 +163,8 @@ export default {
          * Add Button in Cart
          */
         add(name, unit){
-            this.cart[name].quantità ++;
-            this.cart[name].prezzo += unit;
+            this.cart[name].quantity ++;
+            this.cart[name].price += unit;
             this.tot += unit;
             this.store();
         },
@@ -178,11 +173,11 @@ export default {
          * Remove Button in Cart
          */
         remove(name, unit){
-            if(this.cart[name].quantità == 1){
+            if(this.cart[name].quantity == 1){
                 delete this.cart[name];
             } else {
-                this.cart[name].quantità --;
-                this.cart[name].prezzo -= unit;
+                this.cart[name].quantity --;
+                this.cart[name].price -= unit;
             }
             this.tot -= unit;
             this.store();
@@ -206,14 +201,14 @@ export default {
             const value = parseFloat(e.target.value);
             if(value>0){
                 console.log(value);
-                this.cart[name].quantità = value;
-                this.cart[name].prezzo = (value * unit);
+                this.cart[name].quantity = value;
+                this.cart[name].price = (value * unit);
                 this.tot = 0;
                 this.setTotal();
                 this.store();
             } else {
-                this.cart[name].quantità = 1;
-                this.cart[name].prezzo = unit;
+                this.cart[name].quantity = 1;
+                this.cart[name].price = unit;
                 this.tot = 0;
                 this.setTotal();
                 this.store();
@@ -225,7 +220,7 @@ export default {
          */
         setTotal(){
             for(let item in this.cart){
-                this.tot+=this.cart[item].prezzo;
+                this.tot+=this.cart[item].price;
             };
         },
 
