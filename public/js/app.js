@@ -5977,11 +5977,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       restaurant: '',
       plates: [],
-      plateDetail: {},
       visibility: false,
       cart: {},
-      tot: 0,
-      pagination: {}
+      tot: 0
     };
   },
   created: function created() {
@@ -6018,22 +6016,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.setTotal();
       }
     },
-
-    /**
-     * Add Dish to Cart
-     */
     addCart: function addCart(order, name, unitPrice) {
       if (this.checkId()) {
         if (this.cart[name]) {
-          this.cart[name].quantità += order.quantità;
-          this.cart[name].prezzo += order.prezzo;
+          this.cart[name].quantity += order.quantity;
+          this.cart[name].price += order.price;
         } else {
           this.cart[name] = _objectSpread(_objectSpread({}, order), {}, {
             unitPrice: unitPrice
           });
         }
 
-        this.tot += order.prezzo;
+        this.tot += order.price;
         this.store();
         this.closeDetail();
       }
@@ -6044,7 +6038,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
      */
     checkId: function checkId() {
       if (Object.keys(this.cart).length != 0) {
-        if (this.cart[Object.keys(this.cart)[0]].restaurant_id == this.dishDetail.restaurant_id) {
+        if (this.cart[Object.keys(this.cart)[0]].restaurant_id == this.plates.restaurant_id) {
           return true;
         } else {
           var resp = confirm('Puoi ordinare da un solo ristorante. Vuoi cancellare il tuo ordine precedente?');
@@ -6066,8 +6060,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
      * Add Button in Cart
      */
     add: function add(name, unit) {
-      this.cart[name].quantità++;
-      this.cart[name].prezzo += unit;
+      this.cart[name].quantity++;
+      this.cart[name].price += unit;
       this.tot += unit;
       this.store();
     },
@@ -6076,11 +6070,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
      * Remove Button in Cart
      */
     remove: function remove(name, unit) {
-      if (this.cart[name].quantità == 1) {
+      if (this.cart[name].quantity == 1) {
         delete this.cart[name];
       } else {
-        this.cart[name].quantità--;
-        this.cart[name].prezzo -= unit;
+        this.cart[name].quantity--;
+        this.cart[name].price -= unit;
       }
 
       this.tot -= unit;
@@ -6106,14 +6100,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       if (value > 0) {
         console.log(value);
-        this.cart[name].quantità = value;
-        this.cart[name].prezzo = value * unit;
+        this.cart[name].quantity = value;
+        this.cart[name].price = value * unit;
         this.tot = 0;
         this.setTotal();
         this.store();
       } else {
-        this.cart[name].quantità = 1;
-        this.cart[name].prezzo = unit;
+        this.cart[name].quantity = 1;
+        this.cart[name].price = unit;
         this.tot = 0;
         this.setTotal();
         this.store();
@@ -6125,7 +6119,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
      */
     setTotal: function setTotal() {
       for (var item in this.cart) {
-        this.tot += this.cart[item].prezzo;
+        this.tot += this.cart[item].price;
       }
 
       ;
@@ -31917,7 +31911,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody {\n    padding: 5px;\n}\n", ""]);
+exports.push([module.i, "\nbody {\r\n    padding: 5px;\n}\r\n", ""]);
 
 // exports
 
@@ -31936,7 +31930,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody {\n    padding: 5px;\n}\n", ""]);
+exports.push([module.i, "\nbody {\r\n    padding: 5px;\n}\r\n", ""]);
 
 // exports
 
@@ -64348,7 +64342,7 @@ var render = function() {
                             {
                               on: {
                                 click: function($event) {
-                                  _vm.addPlate(plate), _vm.$emit("close")
+                                  _vm.addPlate(_vm.plates), _vm.$emit("close")
                                 }
                               }
                             },
@@ -65211,7 +65205,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v("Dettagli: " + _vm._s(_vm.restaurant.name))]),
+    _c("h1", [_vm._v("Dettagli: " + _vm._s(_vm.restaurant.results[0].name))]),
     _vm._v(" "),
     _c(
       "div",
@@ -65219,7 +65213,9 @@ var render = function() {
       [
         _c("h2", { staticClass: "mb" }, [_vm._v("Tipologie di cucine:")]),
         _vm._v(" "),
-        _c("Cuisines", { attrs: { cuisines: _vm.restaurant.cuisines } })
+        _c("Cuisines", {
+          attrs: { cuisines: _vm.restaurant.results[0].cuisines }
+        })
       ],
       1
     ),
@@ -65230,7 +65226,7 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("p", { staticClass: "mar" }, [
-        _vm._v(_vm._s(_vm.restaurant.description))
+        _vm._v(_vm._s(_vm.restaurant.results[0].description))
       ]),
       _vm._v(" "),
       _c(
@@ -81867,8 +81863,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\ManueldG\Desktop\DeliveeBoo-1\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\ManueldG\Desktop\DeliveeBoo-1\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
