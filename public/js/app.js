@@ -5191,6 +5191,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Plates",
   props: ["plates"],
@@ -5530,6 +5541,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -5550,14 +5562,13 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
-    this.getRestaurants();
+    this.getRestaurants([]);
     this.getCuisines();
   },
   methods: {
-    getRestaurants: function getRestaurants() {
+    getRestaurants: function getRestaurants(e) {
       var _this = this;
 
-      console.log(this.apiURL + '/' + this.temp.join('-'));
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiURL + '/' + this.temp.join('-')).then(function (res) {
         _this.restaurants = res.data;
         /* this.restaurants.forEach(restaurant => {
@@ -5919,6 +5930,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -5985,7 +6000,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
 
     /**
-     * Check for 
+     * Check for
      */
     checkId: function checkId() {
       if (Object.keys(this.cart).length != 0) {
@@ -31862,7 +31877,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody {\n    padding: 5px;\n}\n", ""]);
+exports.push([module.i, "\nbody {\r\n    padding: 5px;\n}\r\n", ""]);
 
 // exports
 
@@ -31881,7 +31896,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody {\n    padding: 5px;\n}\n", ""]);
+exports.push([module.i, "\nbody {\r\n    padding: 5px;\n}\r\n", ""]);
 
 // exports
 
@@ -64190,68 +64205,106 @@ var render = function() {
   return _c(
     "div",
     { staticClass: "menu" },
-    _vm._l(_vm.plates, function(plate) {
-      return _c("ul", { key: "plate-" + plate.id, staticClass: "plate-card" }, [
-        _c("img", { attrs: { src: plate.image, alt: plate.name } }),
-        _vm._v(" "),
-        _c("li", [
-          _vm._v("\n            " + _vm._s(plate.name) + "\n        ")
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _vm._v("\n            " + _vm._s(plate.description) + "\n        ")
-        ]),
-        _vm._v(" "),
-        plate.visibility
-          ? _c("li", [
-              _c(
-                "button",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.less(plate.price)
-                    }
-                  }
-                },
-                [_vm._v(" - ")]
-              ),
-              _vm._v(" "),
-              _c("span", [_vm._v(_vm._s(_vm.quantity))]),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  on: {
-                    click: function($event) {
-                      return _vm.more(plate.price)
-                    }
-                  }
-                },
-                [_vm._v(" + ")]
-              ),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  on: {
-                    click: function($event) {
-                      _vm.addPlate(plate), _vm.$emit("close")
-                    }
-                  }
-                },
-                [
-                  _vm._v(
-                    "Aggiungi al carrello | TOT: " +
-                      _vm._s(plate.price.toFixed(2)) +
-                      " €"
-                  )
-                ]
-              )
-            ])
-          : _c("li", { attrs: { disabled: "" } }, [
-              _c("button", [_vm._v("Non disponibile")])
-            ])
-      ])
+    _vm._l(_vm.plates, function(pla) {
+      return _c(
+        "div",
+        { key: "pla-" + pla.id },
+        _vm._l(pla, function(plate) {
+          return _c(
+            "div",
+            { key: "plate-" + plate.id, staticClass: "plate-card" },
+            [
+              plate.visibility
+                ? _c("ul", [
+                    _c("img", { attrs: { src: plate.image, alt: plate.name } }),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(plate.restaurant) +
+                          "\n            "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(plate.description) +
+                          "\n            "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("strong", [_vm._v("Price: ")]),
+                      _vm._v(_vm._s(plate.price) + "€")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("strong", [_vm._v("Avaiable: ")]),
+                      _vm._v(" "),
+                      plate.visibility === 0
+                        ? _c("span", [_vm._v(" No ")])
+                        : plate.visibility === 1
+                        ? _c("span", [_vm._v(" Yes ")])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    plate.visibility
+                      ? _c("li", [
+                          _c(
+                            "button",
+                            {
+                              on: {
+                                click: function($event) {
+                                  return _vm.less(plate.price)
+                                }
+                              }
+                            },
+                            [_vm._v(" - ")]
+                          ),
+                          _vm._v(" "),
+                          _c("span", [_vm._v(_vm._s(_vm.quantity))]),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              on: {
+                                click: function($event) {
+                                  return _vm.more(plate.price)
+                                }
+                              }
+                            },
+                            [_vm._v(" + ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              on: {
+                                click: function($event) {
+                                  _vm.addPlate(plate), _vm.$emit("close")
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Aggiungi al carrello | TOT: " +
+                                  _vm._s(plate.price.toFixed(2)) +
+                                  " €"
+                              )
+                            ]
+                          )
+                        ])
+                      : _c("li", { attrs: { disabled: "" } }, [
+                          _c("button", [_vm._v("Non disponibile")])
+                        ])
+                  ])
+                : _vm._e()
+            ]
+          )
+        }),
+        0
+      )
     }),
     0
   )
@@ -64621,28 +64674,30 @@ var render = function() {
                   : _vm.temp
               },
               on: {
-                click: function($event) {
-                  return _vm.getRestaurants()
-                },
-                change: function($event) {
-                  var $$a = _vm.temp,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? true : false
-                  if (Array.isArray($$a)) {
-                    var $$v = cuisine.type,
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 && (_vm.temp = $$a.concat([$$v]))
+                change: [
+                  function($event) {
+                    var $$a = _vm.temp,
+                      $$el = $event.target,
+                      $$c = $$el.checked ? true : false
+                    if (Array.isArray($$a)) {
+                      var $$v = cuisine.type,
+                        $$i = _vm._i($$a, $$v)
+                      if ($$el.checked) {
+                        $$i < 0 && (_vm.temp = $$a.concat([$$v]))
+                      } else {
+                        $$i > -1 &&
+                          (_vm.temp = $$a
+                            .slice(0, $$i)
+                            .concat($$a.slice($$i + 1)))
+                      }
                     } else {
-                      $$i > -1 &&
-                        (_vm.temp = $$a
-                          .slice(0, $$i)
-                          .concat($$a.slice($$i + 1)))
+                      _vm.temp = $$c
                     }
-                  } else {
-                    _vm.temp = $$c
+                  },
+                  function($event) {
+                    return _vm.getRestaurants($event)
                   }
-                }
+                ]
               }
             })
           ])
@@ -65041,9 +65096,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _vm.restaurant
-      ? _c("h1", [_vm._v("Dettagli: " + _vm._s(_vm.restaurant.name))])
-      : _vm._e(),
+    _c("h1", [_vm._v("Dettagli: " + _vm._s(_vm.restaurant.name))]),
     _vm._v(" "),
     _c(
       "div",
@@ -65070,143 +65123,143 @@ var render = function() {
         [
           _c("h3", { staticClass: "mb" }, [_vm._v("I nostri piatti")]),
           _vm._v(" "),
-          _c("Plates", { attrs: { plates: _vm.restaurant } })
+          _c("Plates", { attrs: { plates: { restaurant: _vm.restaurant } } })
         ],
         1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "cart" },
-        [
-          _c("h2", [_vm._v("Il tuo Carrello")]),
-          _vm._v(" "),
-          Object.keys(_vm.cart).length
-            ? _c(
-                "div",
-                _vm._l(_vm.cart, function(item, index) {
-                  return _c("div", { key: index }, [
-                    _c(
-                      "button",
-                      {
-                        on: {
-                          click: function($event) {
-                            return _vm.remove(item.name, item.unitPrice)
-                          }
-                        }
-                      },
-                      [_vm._v("-")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: item.quantità,
-                          expression: "item.quantità"
-                        }
-                      ],
-                      staticClass: "inputNum",
-                      attrs: { type: "number", min: "1" },
-                      domProps: { value: item.quantità },
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "cart" },
+      [
+        _c("h2", [_vm._v("Il tuo Carrello")]),
+        _vm._v(" "),
+        Object.keys(_vm.cart).length
+          ? _c(
+              "div",
+              _vm._l(_vm.cart, function(item, index) {
+                return _c("div", { key: index }, [
+                  _c(
+                    "button",
+                    {
                       on: {
-                        change: function($event) {
-                          return _vm.updateQuantity(
-                            $event,
-                            item.name,
-                            item.unitPrice
-                          )
-                        },
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.$set(item, "quantità", $event.target.value)
+                        click: function($event) {
+                          return _vm.remove(item.name, item.unitPrice)
                         }
                       }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "button",
+                    },
+                    [_vm._v("-")]
+                  ),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
                       {
-                        on: {
-                          click: function($event) {
-                            return _vm.add(item.name, item.unitPrice)
-                          }
-                        }
+                        name: "model",
+                        rawName: "v-model",
+                        value: item.quantità,
+                        expression: "item.quantità"
+                      }
+                    ],
+                    staticClass: "inputNum",
+                    attrs: { type: "number", min: "1" },
+                    domProps: { value: item.quantità },
+                    on: {
+                      change: function($event) {
+                        return _vm.updateQuantity(
+                          $event,
+                          item.name,
+                          item.unitPrice
+                        )
                       },
-                      [_vm._v("+")]
-                    ),
-                    _vm._v(" "),
-                    _c("span", { staticClass: "name" }, [
-                      _vm._v(_vm._s(item.name))
-                    ]),
-                    _vm._v(" "),
-                    _c("span", [_vm._v("€ " + _vm._s(item.price.toFixed(2)))]),
-                    _vm._v(" "),
-                    _c(
-                      "span",
-                      {
-                        staticClass: "remove",
-                        on: {
-                          click: function($event) {
-                            return _vm.removeAll(item.name, item.price)
-                          }
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
                         }
-                      },
-                      [_vm._v("X")]
-                    )
-                  ])
-                }),
-                0
-              )
-            : _c("div", [_vm._v("Il carrello è vuoto")]),
-          _vm._v(" "),
-          _c("h3", [_vm._v("Tot: €" + _vm._s(_vm.tot.toFixed(2)))]),
-          _vm._v(" "),
-          _c("router-link", { attrs: { to: { name: "checkout" } } }, [
-            _vm._v("Cassa")
-          ]),
-          _vm._v(" "),
-          _c(
-            "button",
-            {
-              on: {
-                click: function($event) {
-                  return _vm.deleteCart()
-                }
-              }
-            },
-            [_vm._v("Elimina Carrello")]
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "mar" }, [
-        _c("h3", [_vm._v("Contatti")]),
+                        _vm.$set(item, "quantità", $event.target.value)
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      on: {
+                        click: function($event) {
+                          return _vm.add(item.name, item.unitPrice)
+                        }
+                      }
+                    },
+                    [_vm._v("+")]
+                  ),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "name" }, [
+                    _vm._v(_vm._s(item.name))
+                  ]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("€ " + _vm._s(item.price.toFixed(2)))]),
+                  _vm._v(" "),
+                  _c(
+                    "span",
+                    {
+                      staticClass: "remove",
+                      on: {
+                        click: function($event) {
+                          return _vm.removeAll(item.name, item.price)
+                        }
+                      }
+                    },
+                    [_vm._v("X")]
+                  )
+                ])
+              }),
+              0
+            )
+          : _c("div", [_vm._v("Il carrello è vuoto")]),
         _vm._v(" "),
-        _c("ul", [
-          _c("li", [
-            _c("strong", [_vm._v("Address: ")]),
-            _vm._v(_vm._s(_vm.restaurant.address))
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("strong", [_vm._v("City: ")]),
-            _vm._v(_vm._s(_vm.restaurant.city))
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("strong", [_vm._v("Cap: ")]),
-            _vm._v(_vm._s(_vm.restaurant.cap))
-          ]),
-          _vm._v(" "),
-          _c("li", [
-            _c("strong", [_vm._v("Phone number: ")]),
-            _vm._v(_vm._s(_vm.restaurant.phone_number) + "\n                ")
-          ])
+        _c("h3", [_vm._v("Tot: €" + _vm._s(_vm.tot.toFixed(2)))]),
+        _vm._v(" "),
+        _c("router-link", { attrs: { to: { name: "checkout" } } }, [
+          _vm._v("Cassa")
+        ]),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            on: {
+              click: function($event) {
+                return _vm.deleteCart()
+              }
+            }
+          },
+          [_vm._v("Elimina Carrello")]
+        )
+      ],
+      1
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "mar" }, [
+      _c("h3", [_vm._v("Contatti")]),
+      _vm._v(" "),
+      _c("ul", [
+        _c("li", [
+          _c("strong", [_vm._v("Address: ")]),
+          _vm._v(_vm._s(_vm.restaurant.address))
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("strong", [_vm._v("City: ")]),
+          _vm._v(_vm._s(_vm.restaurant.city))
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("strong", [_vm._v("Cap: ")]),
+          _vm._v(_vm._s(_vm.restaurant.cap))
+        ]),
+        _vm._v(" "),
+        _c("li", [
+          _c("strong", [_vm._v("Phone number: ")]),
+          _vm._v(_vm._s(_vm.restaurant.phone_number) + "\n                ")
         ])
       ])
     ])
@@ -81685,8 +81738,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\ManueldG\Desktop\DeliveeBoo-1\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\ManueldG\Desktop\DeliveeBoo-1\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
