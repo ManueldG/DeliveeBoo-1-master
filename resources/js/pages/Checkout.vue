@@ -5,8 +5,6 @@
         <h2>Il tuo Carrello</h2>
         <div v-if="Object.keys(cart).length" >
             <div v-for="(item, index) in cart" :key="index">
-                
-                <!-- <span >{{item.quantità}}</span> -->
                 <button  @click="remove(item.name, item.unitPrice)">-</button>
                 <input class="inputNum" type="number" min="1" v-model="item.quantità" @change="updateQuantity($event, item.name, item.unitPrice)">
                 <button @click="add(item.name, item.unitPrice)">+</button>
@@ -21,12 +19,6 @@
         <button @click="deleteCart()">Elimina Carrello</button>
     </div>
       <div class="container">
-        <!-- <link
-            rel="stylesheet"
-            href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-            crossorigin="anonymous"
-        /> -->
         <div class="col-6 offset-3">
 
             <div class="card bg-light">
