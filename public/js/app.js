@@ -5226,7 +5226,7 @@ __webpack_require__.r(__webpack_exports__);
         quantità: this.quantity,
         prezzo: this.price
       };
-      this.$emit('addToCart', order, plates.name, plates.price);
+      this.$emit("addToCart", order, plates.name, plates.price);
     },
     more: function more(price) {
       this.quantity++;
@@ -31856,7 +31856,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".menu[data-v-220a4070] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.menu .plate-card[data-v-220a4070] {\n  background: white;\n  flex-basis: calc(100% / 4 - 20px);\n  margin-right: 10px;\n  padding: 20px;\n  border-radius: 15px;\n  border: 1px solid #ccc;\n}\n.menu .plate-card img[data-v-220a4070] {\n  width: 100%;\n  height: 200px;\n}", ""]);
+exports.push([module.i, ".menu[data-v-220a4070] {\n  display: flex;\n}\n.plate-card[data-v-220a4070] {\n  display: flex;\n  flex-wrap: wrap;\n}\nul[data-v-220a4070] {\n  margin-right: 10px;\n  padding: 20px;\n  border-radius: 15px;\n  border: 1px solid #ccc;\n}\nul img[data-v-220a4070] {\n  width: 100%;\n  height: 200px;\n}", ""]);
 
 // exports
 
@@ -31913,7 +31913,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody {\n    padding: 5px;\n}\n", ""]);
+exports.push([module.i, "\nbody {\r\n    padding: 5px;\n}\r\n", ""]);
 
 // exports
 
@@ -31932,7 +31932,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\nbody {\n    padding: 5px;\n}\n", ""]);
+exports.push([module.i, "\nbody {\r\n    padding: 5px;\n}\r\n", ""]);
 
 // exports
 
@@ -64266,107 +64266,115 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "menu" },
+    {},
     _vm._l(_vm.plates, function(pla) {
-      return _c(
-        "div",
-        { key: "pla-" + pla.id },
-        _vm._l(pla, function(plate) {
-          return _c(
-            "div",
-            { key: "plate-" + plate.id, staticClass: "plate-card" },
-            [
-              plate.visibility
-                ? _c("ul", [
-                    _c("img", { attrs: { src: plate.image, alt: plate.name } }),
-                    _vm._v(" "),
-                    _c("li", [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(plate.restaurant) +
-                          "\n            "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(plate.description) +
-                          "\n            "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("strong", [_vm._v("Price: ")]),
-                      _vm._v(_vm._s(plate.price) + "€")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("strong", [_vm._v("Avaiable: ")]),
+      return _c("div", { key: "pla-" + pla.id }, [
+        _c(
+          "div",
+          { staticClass: "menu" },
+          _vm._l(pla, function(plate) {
+            return _c(
+              "div",
+              { key: "plate-" + plate.id, staticClass: "plate-card" },
+              [
+                plate.visibility
+                  ? _c("ul", [
+                      _c("img", {
+                        attrs: { src: plate.image, alt: plate.name }
+                      }),
                       _vm._v(" "),
-                      plate.visibility === 0
-                        ? _c("span", [_vm._v(" No ")])
-                        : plate.visibility === 1
-                        ? _c("span", [_vm._v(" Yes ")])
-                        : _vm._e()
-                    ]),
-                    _vm._v(" "),
-                    plate.visibility
-                      ? _c("li", [
-                          _c(
-                            "button",
-                            {
-                              on: {
-                                click: function($event) {
-                                  return _vm.less(plate.price)
-                                }
-                              }
-                            },
-                            [_vm._v(" - ")]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v(_vm._s(_vm.quantity))]),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              on: {
-                                click: function($event) {
-                                  return _vm.more(plate.price)
-                                }
-                              }
-                            },
-                            [_vm._v(" + ")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              on: {
-                                click: function($event) {
-                                  _vm.addPlate(plate), _vm.$emit("close")
-                                }
-                              }
-                            },
-                            [
+                      _c("li", [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(plate.restaurant) +
+                            "\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(plate.description) +
+                            "\n                    "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("strong", [_vm._v("Price: ")]),
+                        _vm._v(_vm._s(plate.price) + "€")
+                      ]),
+                      _vm._v(" "),
+                      _c("li", [
+                        _c("strong", [_vm._v("Avaiable: ")]),
+                        _vm._v(" "),
+                        plate.visibility === 0
+                          ? _c("span", [_vm._v(" No ")])
+                          : plate.visibility === 1
+                          ? _c("span", [
                               _vm._v(
-                                "Aggiungi al carrello | TOT: " +
-                                  _vm._s(plate.price.toFixed(2)) +
-                                  " €"
+                                "\n                            Yes\n                        "
                               )
-                            ]
-                          )
-                        ])
-                      : _c("li", { attrs: { disabled: "" } }, [
-                          _c("button", [_vm._v("Non disponibile")])
-                        ])
-                  ])
-                : _vm._e()
-            ]
-          )
-        }),
-        0
-      )
+                            ])
+                          : _vm._e()
+                      ]),
+                      _vm._v(" "),
+                      plate.visibility
+                        ? _c("li", [
+                            _c(
+                              "button",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    return _vm.less(plate.price)
+                                  }
+                                }
+                              },
+                              [_vm._v("-")]
+                            ),
+                            _vm._v(" "),
+                            _c("span", [_vm._v(_vm._s(_vm.quantity))]),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    return _vm.more(plate.price)
+                                  }
+                                }
+                              },
+                              [_vm._v("+")]
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                on: {
+                                  click: function($event) {
+                                    _vm.addPlate(plate), _vm.$emit("close")
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                            Aggiungi al carrello | TOT:\n                            " +
+                                    _vm._s(plate.price.toFixed(2)) +
+                                    " €\n                        "
+                                )
+                              ]
+                            )
+                          ])
+                        : _c("li", { attrs: { disabled: "" } }, [
+                            _c("button", [_vm._v("Non disponibile")])
+                          ])
+                    ])
+                  : _vm._e()
+              ]
+            )
+          }),
+          0
+        )
+      ])
     }),
     0
   )
@@ -81840,8 +81848,8 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\mauro\Desktop\Progetto finale\DeliveeBoo\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\mauro\Desktop\Progetto finale\DeliveeBoo\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
