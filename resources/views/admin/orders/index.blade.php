@@ -26,7 +26,7 @@
                     <tr>
                         <td>{{$order->created_at}}</td>
                         <td>{{$order->customer_name}} {{$order->customer_lastname}}</td>
-                        <td>€{{number_format($order->tot_paid, 2)}}</td>   
+                        <td>€{{number_format($order->tot, 2)}}</td>   
                         <td>
                             <a class="btn btn-primary " href="{{route('admin.orders.show', $order->id)}}">Show Details</a>
                         </td> 
