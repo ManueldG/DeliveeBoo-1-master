@@ -11,8 +11,8 @@
                 <input class="inputNum" type="number" min="1" v-model="item.quantità" @change="updateQuantity($event, item.name, item.unitPrice)">
                 <button @click="add(item.name, item.unitPrice)">+</button>
                 <span class="name">{{item.name}}</span>
-                <span>€ {{item.prezzo.toFixed(2)}}</span> 
-                <span class="remove" @click="removeAll(item.name, item.prezzo)">X</span>
+                <span>€ {{item.price.toFixed(2)}}</span> 
+                <span class="remove" @click="removeAll(item.name, item.price)">X</span>
 
             </div>
         </div>
@@ -165,14 +165,14 @@ export default {
                 this.cart = JSON.parse(window.localStorage.getItem('cart'));
 
                 for(let item in this.cart){
-                    this.tot+=this.cart[item].prezzo;
+                    this.tot+=this.cart[item].price;
 
                 };
             }
         },
         add(name, unit){
             this.cart[name].quantità ++;
-            this.cart[name].prezzo += unit;
+            this.cart[name].price += unit;
             this.tot += unit;
             this.store();
         },
@@ -181,7 +181,7 @@ export default {
                 delete this.cart[name];
             } else {
                 this.cart[name].quantità --;
-                this.cart[name].prezzo -= unit;
+                this.cart[name].price -= unit;
             }
             this.tot -= unit;
             this.store();
@@ -198,13 +198,13 @@ export default {
             if(value>0){
                 console.log(value);
                 this.cart[name].quantità = value;
-                this.cart[name].prezzo = (value * unit);
+                this.cart[name].price = (value * unit);
                 this.tot = 0;
                 this.setTotal();
                 this.store();
             } else {
                 this.cart[name].quantità = 1;
-                this.cart[name].prezzo = unit;
+                this.cart[name].price = unit;
                 this.tot = 0;
                 this.setTotal();
                 this.store();
@@ -212,7 +212,7 @@ export default {
         },
         setTotal(){
             for(let item in this.cart){
-                this.tot+=this.cart[item].prezzo;
+                this.tot+=this.cart[item].price;
             }; 
         },
         store(){
