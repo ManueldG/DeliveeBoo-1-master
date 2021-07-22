@@ -5208,62 +5208,25 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Plates",
   props: ["plates"],
   data: function data() {
     return {
       cart: {},
-      price: this.plates.price,
+      price: this.plate.price,
       quantity: 1
     };
   },
   methods: {
-    addPlate: function addPlate(plates) {
+    addPlate: function addPlate(plate) {
       var order = {
-        restaurant_id: plates.restaurant_id,
-        name: plates.name,
+        restaurant_id: plate.restaurant_id,
+        name: plate.name,
         quantità: this.quantity,
         prezzo: this.price
       };
-      this.$emit("addToCart", order, plates.name, plates.price);
+      this.$emit('addCart', order, plate.name, plate.price);
     },
     more: function more(price) {
       this.quantity++;
@@ -5454,7 +5417,7 @@ __webpack_require__.r(__webpack_exports__);
         this.cart = JSON.parse(window.localStorage.getItem('cart'));
 
         for (var item in this.cart) {
-          this.tot += this.cart[item].prezzo;
+          this.tot += this.cart[item].price;
         }
 
         ;
@@ -5462,7 +5425,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     add: function add(name, unit) {
       this.cart[name].quantità++;
-      this.cart[name].prezzo += unit;
+      this.cart[name].price += unit;
       this.tot += unit;
       this.store();
     },
@@ -5471,7 +5434,7 @@ __webpack_require__.r(__webpack_exports__);
         delete this.cart[name];
       } else {
         this.cart[name].quantità--;
-        this.cart[name].prezzo -= unit;
+        this.cart[name].price -= unit;
       }
 
       this.tot -= unit;
@@ -5490,13 +5453,13 @@ __webpack_require__.r(__webpack_exports__);
       if (value > 0) {
         console.log(value);
         this.cart[name].quantità = value;
-        this.cart[name].prezzo = value * unit;
+        this.cart[name].price = value * unit;
         this.tot = 0;
         this.setTotal();
         this.store();
       } else {
         this.cart[name].quantità = 1;
-        this.cart[name].prezzo = unit;
+        this.cart[name].price = unit;
         this.tot = 0;
         this.setTotal();
         this.store();
@@ -5504,7 +5467,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     setTotal: function setTotal() {
       for (var item in this.cart) {
-        this.tot += this.cart[item].prezzo;
+        this.tot += this.cart[item].price;
       }
 
       ;
@@ -31890,7 +31853,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".menu[data-v-220a4070] {\n  display: flex;\n}\n.plate-card[data-v-220a4070] {\n  display: flex;\n  flex-wrap: wrap;\n}\nul[data-v-220a4070] {\n  margin-right: 10px;\n  padding: 20px;\n  border-radius: 15px;\n  border: 1px solid #ccc;\n}\nul img[data-v-220a4070] {\n  width: 100%;\n  height: 200px;\n}", ""]);
+exports.push([module.i, ".menu[data-v-220a4070] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.menu .plate-card[data-v-220a4070] {\n  background: white;\n  flex-basis: calc(100% / 4 - 20px);\n  margin-right: 10px;\n  padding: 20px;\n  border-radius: 15px;\n  border: 1px solid #ccc;\n}\n.menu .plate-card img[data-v-220a4070] {\n  width: 100%;\n  height: 200px;\n}", ""]);
 
 // exports
 
@@ -64294,8 +64257,119 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function () {}
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "menu" },
+    _vm._l(_vm.plates, function(pla) {
+      return _c(
+        "div",
+        { key: "pla-" + pla.id },
+        _vm._l(pla, function(plate) {
+          return _c(
+            "div",
+            { key: "plate-" + plate.id, staticClass: "plate-card" },
+            [
+              plate.visibility
+                ? _c("ul", [
+                    _c("img", { attrs: { src: plate.image, alt: plate.name } }),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(plate.restaurant) +
+                          "\n            "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _vm._v(
+                        "\n                " +
+                          _vm._s(plate.description) +
+                          "\n            "
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("strong", [_vm._v("Price: ")]),
+                      _vm._v(_vm._s(plate.price) + "€")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("strong", [_vm._v("Avaiable: ")]),
+                      _vm._v(" "),
+                      plate.visibility === 0
+                        ? _c("span", [_vm._v(" No ")])
+                        : plate.visibility === 1
+                        ? _c("span", [_vm._v(" Yes ")])
+                        : _vm._e()
+                    ]),
+                    _vm._v(" "),
+                    plate.visibility
+                      ? _c("li", [
+                          _c(
+                            "button",
+                            {
+                              on: {
+                                click: function($event) {
+                                  return _vm.less(plate.price)
+                                }
+                              }
+                            },
+                            [_vm._v(" - ")]
+                          ),
+                          _vm._v(" "),
+                          _c("span", [_vm._v(_vm._s(_vm.quantity))]),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              on: {
+                                click: function($event) {
+                                  return _vm.more(plate.price)
+                                }
+                              }
+                            },
+                            [_vm._v(" + ")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "button",
+                            {
+                              on: {
+                                click: function($event) {
+                                  return _vm.addPlate(plate)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "Aggiungi al carrello | TOT: " +
+                                  _vm._s(plate.price.toFixed(2)) +
+                                  " €"
+                              )
+                            ]
+                          )
+                        ])
+                      : _c("li", { attrs: { disabled: "" } }, [
+                          _c("button", [_vm._v("Non disponibile")])
+                        ])
+                  ])
+                : _vm._e()
+            ]
+          )
+        }),
+        0
+      )
+    }),
+    0
+  )
+}
 var staticRenderFns = []
+render._withStripped = true
 
 
 
@@ -64384,7 +64458,7 @@ var render = function() {
                   _vm._v(_vm._s(item.name))
                 ]),
                 _vm._v(" "),
-                _c("span", [_vm._v("€ " + _vm._s(item.prezzo.toFixed(2)))]),
+                _c("span", [_vm._v("€ " + _vm._s(item.price.toFixed(2)))]),
                 _vm._v(" "),
                 _c(
                   "span",
@@ -64392,7 +64466,7 @@ var render = function() {
                     staticClass: "remove",
                     on: {
                       click: function($event) {
-                        return _vm.removeAll(item.name, item.prezzo)
+                        return _vm.removeAll(item.name, item.price)
                       }
                     }
                   },
@@ -65233,6 +65307,8 @@ var render = function() {
                   _c("span", { staticClass: "name" }, [
                     _vm._v(_vm._s(item.name))
                   ]),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("€ " + _vm._s(item.price))]),
                   _vm._v(" "),
                   _c(
                     "span",
