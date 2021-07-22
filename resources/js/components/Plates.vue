@@ -1,35 +1,46 @@
 <template>
-    <div class="menu">
-        <ul
+
+    <div class="menu" >
+        <div
+            v-for="pla in plates"
+            :key="`pla-${pla.id}`"
+        >
+
+        <div
             class="plate-card"
-            v-for="plate in plates"
+            v-for="plate in pla"
             :key="`plate-${plate.id}`"
         >
-            <img :src="plate.image" :alt="plate.name" />
-            <li>
-                {{ plate.name }}
-            </li>
-            <li>
-                {{ plate.description }}
-            </li>
+            <ul v-if="plate.visibility">
+                <img :src="plate.image" :alt="plate.name" />
+                <li>
+                    {{ plate.restaurant }}
+                </li>
+                <li>
+                    {{ plate.description }}
+                </li>
 
-            <!-- <li><strong>Price: </strong>{{ plate.price }}€</li>
-            <li>
-                <strong>Avaiable: </strong>
-                <span v-if="plate.visibility === 0"> No </span>
-                <span v-else-if="plate.visibility === 1"> Yes </span>
-            </li> -->
-            <li v-if=(plate.visibility)>
-                <button @click="less(plate.price)"> - </button>
-                <span>{{quantity}}</span>
-                <button @click="more(plate.price)"> + </button>
-                <button @click="addPlate(plate), $emit('close')" >Aggiungi al carrello | TOT: {{price.toFixed(2)}} €</button>
-            </li>
-            <li v-else disabled>
-                <button>Non disponibile</button>
-            </li>
-        </ul>
+                 <li><strong>Price: </strong>{{ plate.price }}€</li>
+                <li>
+                    <strong>Avaiable: </strong>
+                    <span v-if="plate.visibility === 0"> No </span>
+                    <span v-else-if="plate.visibility === 1"> Yes </span>
+                </li>
+                <li v-if=(plate.visibility)>
+                    <button @click="less(plate.price)"> - </button>
+                    <span>{{quantity}}</span>
+                    <button @click="more(plate.price)"> + </button>
+                    <button @click="addPlate(plate), $emit('close')" >Aggiungi al carrello | TOT: {{plate.price.toFixed(2)}} €</button>
+                </li>
+                <li v-else disabled>
+                    <button>Non disponibile</button>
+                </li>
+            </ul>
+        </div>
+        </div>
     </div>
+
+
 </template>
 
 <script>
