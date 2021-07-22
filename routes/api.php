@@ -15,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::namespace('Api')->group(function() {
+    Route::get('/restaurants', 'RestaurantController@index');
+    Route::get('/restaurants/id/{id}', 'RestaurantController@id');
+    Route::get('/restaurants/{cuisine?}', 'RestaurantController@cuisine');
 
-    Route::get('/restaurants/id/{id}', 'RestaurantController@index');
-    Route::get('/restaurants/{cuisine?}', 'RestaurantController@show');
+
     //Route::get('/restaurants/{name?}/plates/{plate?}/cuisine/{cuisine?}', 'RestaurantController@show');
     Route::get('/cuisines', 'CuisineController@index');
     Route::get('/orders', 'OrderController@index');
