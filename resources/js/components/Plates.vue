@@ -30,7 +30,7 @@
                     <button @click="less(plate.price)"> - </button>
                     <span>{{quantity}}</span>
                     <button @click="more(plate.price)"> + </button>
-                    <button @click="addPlate(plate), $emit('close')" >Aggiungi al carrello | TOT: {{plate.price.toFixed(2)}} €</button>
+                    <button @click="addPlate(plates), $emit('close')" >Aggiungi al carrello | TOT: {{plate.price.toFixed(2)}} €</button>
                 </li>
                 <li v-else disabled>
                     <button>Non disponibile</button>
