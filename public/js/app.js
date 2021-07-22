@@ -5354,6 +5354,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'CheckOut',
@@ -64573,7 +64585,7 @@ var staticRenderFns = [
             "label",
             {
               staticClass: "control-table",
-              attrs: { for: "customer_lastname" }
+              attrs: { for: "customer_last_name" }
             },
             [_vm._v("Cognome*")]
           ),
@@ -64582,11 +64594,53 @@ var staticRenderFns = [
             staticClass: "form-control",
             attrs: {
               type: "text",
-              name: "customer_name",
-              id: "customer_lastname",
+              name: "customer_last_name",
+              id: "customer_last_name",
               value: "",
               required: "",
               maxlength: "50"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-3" }, [
+          _c(
+            "label",
+            { staticClass: "control-table", attrs: { for: "customer_email" } },
+            [_vm._v("Email*")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              name: "customer_email",
+              id: "customer_email",
+              value: "",
+              required: "",
+              maxlength: "50"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-3" }, [
+          _c(
+            "label",
+            { staticClass: "control-table", attrs: { for: "customer_phone" } },
+            [_vm._v("Numero di Telefono*")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: {
+              id: "customer_phone",
+              type: "text",
+              name: "customer_phone",
+              value: "",
+              required: "",
+              autocomplete: "address",
+              maxlength: "50",
+              autofocus: ""
             }
           })
         ]),
@@ -64609,8 +64663,9 @@ var staticRenderFns = [
               name: "customer_address",
               value: "",
               required: "",
-              autocomplete: "address",
-              maxlength: "50",
+              autocomplete: "vat_number",
+              minlength: "11",
+              maxlength: "11",
               autofocus: ""
             }
           })
@@ -64619,16 +64674,42 @@ var staticRenderFns = [
         _c("div", { staticClass: "mb-3" }, [
           _c(
             "label",
-            { staticClass: "control-table", attrs: { for: "phone_number" } },
-            [_vm._v("Numero di telefono*")]
+            { staticClass: "control-table", attrs: { for: "date" } },
+            [_vm._v("Date*")]
           ),
           _vm._v(" "),
           _c("input", {
             staticClass: "form-control",
             attrs: {
-              id: "phone_number",
-              type: "number",
-              name: "vat_number",
+              id: "date",
+              type: "text",
+              name: "date",
+              value: "",
+              required: "",
+              autocomplete: "vat_number",
+              minlength: "11",
+              maxlength: "11",
+              autofocus: ""
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-3" }, [
+          _c(
+            "label",
+            {
+              staticClass: "control-table",
+              attrs: { for: "scheduled_delivery" }
+            },
+            [_vm._v("Scheduled Delivery*")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: {
+              id: "scheduled_delivery",
+              type: "text",
+              name: "scheduled_delivery",
               value: "",
               required: "",
               autocomplete: "vat_number",
