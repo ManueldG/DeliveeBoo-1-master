@@ -5588,7 +5588,7 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
-    this.getRestaurants([]);
+    this.getRestaurants();
     this.getCuisines();
   },
   methods: {
@@ -5971,7 +5971,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   data: function data() {
     return {
-      restaurant: "",
+      restaurant: '',
       plates: [],
       plateDetail: {},
       visibility: false,
@@ -5982,14 +5982,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   created: function created() {
     this.getRestaurantDetail();
+    this.getPlate();
     this.popCart();
   },
   methods: {
-    getRestaurantDetail: function getRestaurantDetail() {
+    getPlate: function getPlate() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://127.0.0.1:8000/api/plates/".concat(this.$route.params.name)).then(function (res) {
-        _this.restaurant = res.data;
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://127.0.0.1:8000/api/plates/".concat(parseInt(this.$route.params.name))).then(function (res) {
+        _this.plates = res.data;
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    getRestaurantDetail: function getRestaurantDetail() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:8000/api/restaurants/id/".concat(parseInt(this.$route.params.name))).then(function (res) {
+        _this2.restaurant = res.data;
       })["catch"](function (err) {
         console.log(err);
       });
@@ -65204,7 +65214,7 @@ var render = function() {
         [
           _c("h3", { staticClass: "mb" }, [_vm._v("I nostri piatti")]),
           _vm._v(" "),
-          _c("Plates", { attrs: { plates: { restaurant: _vm.restaurant } } })
+          _c("Plates", { attrs: { plates: { plates: _vm.plates } } })
         ],
         1
       )
@@ -65325,22 +65335,22 @@ var render = function() {
       _c("ul", [
         _c("li", [
           _c("strong", [_vm._v("Address: ")]),
-          _vm._v(_vm._s(_vm.restaurant.address))
+          _vm._v(_vm._s(_vm.restaurant[0].address))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("City: ")]),
-          _vm._v(_vm._s(_vm.restaurant.city))
+          _vm._v(_vm._s(_vm.restaurant[0].city))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("Cap: ")]),
-          _vm._v(_vm._s(_vm.restaurant.cap))
+          _vm._v(_vm._s(_vm.restaurant[0].cap))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("Phone number: ")]),
-          _vm._v(_vm._s(_vm.restaurant.phone_number) + "\n                ")
+          _vm._v(_vm._s(_vm.restaurant[0].phone_number) + "\n                ")
         ])
       ])
     ])
