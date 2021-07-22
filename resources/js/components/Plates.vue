@@ -33,7 +33,7 @@
                     <button @click="addPlate(plate)" >Aggiungi al carrello | TOT: {{plate.price.toFixed(2)}} €</button>
                 </li>
                 <li v-else disabled>
-                    <button>Non disponibile</button>
+                    <button>Non disponibile1</button>
                 </li>
             </ul>
         </div>
