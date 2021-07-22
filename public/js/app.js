@@ -5977,11 +5977,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       restaurant: '',
       plates: [],
-      plateDetail: {},
       visibility: false,
       cart: {},
-      tot: 0,
-      pagination: {}
+      tot: 0
     };
   },
   created: function created() {
@@ -6018,22 +6016,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.setTotal();
       }
     },
-
-    /**
-     * Add Dish to Cart
-     */
     addCart: function addCart(order, name, unitPrice) {
       if (this.checkId()) {
         if (this.cart[name]) {
-          this.cart[name].quantità += order.quantità;
-          this.cart[name].prezzo += order.prezzo;
+          this.cart[name].quantity += order.quantity;
+          this.cart[name].price += order.price;
         } else {
           this.cart[name] = _objectSpread(_objectSpread({}, order), {}, {
             unitPrice: unitPrice
           });
         }
 
-        this.tot += order.prezzo;
+        this.tot += order.price;
         this.store();
         this.closeDetail();
       }
@@ -6044,7 +6038,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
      */
     checkId: function checkId() {
       if (Object.keys(this.cart).length != 0) {
-        if (this.cart[Object.keys(this.cart)[0]].restaurant_id == this.dishDetail.restaurant_id) {
+        if (this.cart[Object.keys(this.cart)[0]].restaurant_id == this.plates.restaurant_id) {
           return true;
         } else {
           var resp = confirm('Puoi ordinare da un solo ristorante. Vuoi cancellare il tuo ordine precedente?');
@@ -6066,8 +6060,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
      * Add Button in Cart
      */
     add: function add(name, unit) {
-      this.cart[name].quantità++;
-      this.cart[name].prezzo += unit;
+      this.cart[name].quantity++;
+      this.cart[name].price += unit;
       this.tot += unit;
       this.store();
     },
@@ -6076,11 +6070,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
      * Remove Button in Cart
      */
     remove: function remove(name, unit) {
-      if (this.cart[name].quantità == 1) {
+      if (this.cart[name].quantity == 1) {
         delete this.cart[name];
       } else {
-        this.cart[name].quantità--;
-        this.cart[name].prezzo -= unit;
+        this.cart[name].quantity--;
+        this.cart[name].price -= unit;
       }
 
       this.tot -= unit;
@@ -6106,14 +6100,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       if (value > 0) {
         console.log(value);
-        this.cart[name].quantità = value;
-        this.cart[name].prezzo = value * unit;
+        this.cart[name].quantity = value;
+        this.cart[name].price = value * unit;
         this.tot = 0;
         this.setTotal();
         this.store();
       } else {
-        this.cart[name].quantità = 1;
-        this.cart[name].prezzo = unit;
+        this.cart[name].quantity = 1;
+        this.cart[name].price = unit;
         this.tot = 0;
         this.setTotal();
         this.store();
@@ -6125,7 +6119,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
      */
     setTotal: function setTotal() {
       for (var item in this.cart) {
-        this.tot += this.cart[item].prezzo;
+        this.tot += this.cart[item].price;
       }
 
       ;
@@ -64348,7 +64342,7 @@ var render = function() {
                             {
                               on: {
                                 click: function($event) {
-                                  _vm.addPlate(plate), _vm.$emit("close")
+                                  _vm.addPlate(_vm.plates), _vm.$emit("close")
                                 }
                               }
                             },
