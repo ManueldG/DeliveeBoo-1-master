@@ -5574,7 +5574,7 @@ __webpack_require__.r(__webpack_exports__);
     getRestaurants: function getRestaurants(e) {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiURL + "/" + (this.temp ? this.temp.join("-") : '')).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiURL + "/" + this.temp.join("-")).then(function (res) {
         _this.restaurants = res.data;
         /* this.restaurants.forEach(restaurant => {
             restaurant.types.forEach(type => {
@@ -65292,22 +65292,25 @@ var render = function() {
       _c("ul", [
         _c("li", [
           _c("strong", [_vm._v("Address: ")]),
-          _vm._v(_vm._s(_vm.restaurant[0].address))
+          _vm._v(_vm._s(_vm.restaurant.results[0].address))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("City: ")]),
-          _vm._v(_vm._s(_vm.restaurant[0].city))
+          _vm._v(_vm._s(_vm.restaurant.results[0].city))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("Cap: ")]),
-          _vm._v(_vm._s(_vm.restaurant[0].cap))
+          _vm._v(_vm._s(_vm.restaurant.results[0].cap))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("Phone number: ")]),
-          _vm._v(_vm._s(_vm.restaurant[0].phone_number) + "\n                ")
+          _vm._v(
+            _vm._s(_vm.restaurant.results[0].phone_number) +
+              "\n                "
+          )
         ])
       ])
     ])
