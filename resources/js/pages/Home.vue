@@ -1,36 +1,35 @@
 <template>
-    <div class="container">
-        <h1>Homepage</h1>
-        <ul v-for="cuisine in cuisines" :key="cuisine.id">
-            <li>
-                <label :for="cuisine.type">{{ cuisine.type }}</label>
-                <input
-                    type="checkbox"
-                    :id="cuisine.type"
-                    :value="cuisine.type"
-                    v-model="temp"
-                    @change="getRestaurants($event)"
-
-                />
-
-
-
-            </li>
-        </ul>
-        <article
-            v-for="restaurant in restaurants.results"
-            :key="`res-${restaurant.id}`"
-        >
-            <h2>{{ restaurant.name }}</h2>
-            <div class="type">{{ restaurant.type }}</div>
-            <router-link
-                :to="{
-                    name: 'restaurant-detail',
-                    params: { name: restaurant.id }
-                }"
-                >Restaurant Detail</router-link
+    <div>
+        <img class="img" src="../img/jumbo.jpeg" alt="" />
+        <div class="container">
+            <h1>Homepage</h1>
+            <ul v-for="cuisine in cuisines" :key="cuisine.id">
+                <li>
+                    <label :for="cuisine.type">{{ cuisine.type }}</label>
+                    <input
+                        type="checkbox"
+                        :id="cuisine.type"
+                        :value="cuisine.type"
+                        v-model="temp"
+                        @change="getRestaurants($event)"
+                    />
+                </li>
+            </ul>
+            <article
+                v-for="restaurant in restaurants.results"
+                :key="`res-${restaurant.id}`"
             >
-        </article>
+                <h2>{{ restaurant.name }}</h2>
+                <div class="type">{{ restaurant.type }}</div>
+                <router-link
+                    :to="{
+                        name: 'restaurant-detail',
+                        params: { name: restaurant.id }
+                    }"
+                    >Restaurant Detail</router-link
+                >
+            </article>
+        </div>
     </div>
 </template>
 
@@ -51,20 +50,17 @@ export default {
             results: [],
             cuisines: [],
             temp: [],
-            query:""
-
+            query: ""
         };
     },
     created() {
-        this.getRestaurants([]);
+        this.getRestaurants();
         this.getCuisines();
     },
     methods: {
-
         getRestaurants: function(e) {
-
             axios
-                .get(this.apiURL+'/'+this.temp.join('-'))
+                .get(this.apiURL + "/" + this.temp.join("-"))
                 .then(res => {
                     this.restaurants = res.data;
 
@@ -109,6 +105,8 @@ h1 {
 h2 {
     margin: 10px 0;
 }
+
+img {
+    width: 100%;
+}
 </style>
-
-

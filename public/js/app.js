@@ -5015,6 +5015,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -5541,7 +5547,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -5562,14 +5567,14 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   created: function created() {
-    this.getRestaurants([]);
+    this.getRestaurants();
     this.getCuisines();
   },
   methods: {
     getRestaurants: function getRestaurants(e) {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiURL + '/' + this.temp.join('-')).then(function (res) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get(this.apiURL + "/" + this.temp.join("-")).then(function (res) {
         _this.restaurants = res.data;
         /* this.restaurants.forEach(restaurant => {
             restaurant.types.forEach(type => {
@@ -5945,7 +5950,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   data: function data() {
     return {
-      restaurant: "",
+      restaurant: '',
       plates: [],
       plateDetail: {},
       visibility: false,
@@ -5956,14 +5961,24 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   },
   created: function created() {
     this.getRestaurantDetail();
+    this.getPlate();
     this.popCart();
   },
   methods: {
-    getRestaurantDetail: function getRestaurantDetail() {
+    getPlate: function getPlate() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://127.0.0.1:8000/api/plates/".concat(this.$route.params.name)).then(function (res) {
-        _this.restaurant = res.data;
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://127.0.0.1:8000/api/plates/".concat(parseInt(this.$route.params.name))).then(function (res) {
+        _this.plates = res.data;
+      })["catch"](function (err) {
+        console.log(err);
+      });
+    },
+    getRestaurantDetail: function getRestaurantDetail() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_2___default.a.get("http://localhost:8000/api/restaurants/id/".concat(parseInt(this.$route.params.name))).then(function (res) {
+        _this2.restaurant = res.data;
       })["catch"](function (err) {
         console.log(err);
       });
@@ -31744,7 +31759,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: \"Nunito\", sans-serif;\n}\nbody {\n  background: lightgray;\n}\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n  min-height: 100vh;\n}\nul {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}\nul li {\n  margin: 10px 0;\n}", ""]);
+exports.push([module.i, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: \"Raleway\", sans-serif;\n}\nbody {\n  background: lightgray;\n}\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n  min-height: 100vh;\n}\nul {\n  list-style-type: none;\n  padding: 0;\n  margin: 0;\n}\nul li {\n  margin: 10px 0;\n}", ""]);
 
 // exports
 
@@ -31801,7 +31816,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "header[data-v-1f42fb90] {\n  background: white;\n  margin-bottom: 50px;\n  line-height: 3;\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px solid #ccc;\n}\nheader ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n}\nheader ul li[data-v-1f42fb90] {\n  padding-right: 15px;\n}\nheader ul li img[data-v-1f42fb90] {\n  width: 150px;\n}\nheader ul li a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #000;\n}\nheader ul .nav-dx[data-v-1f42fb90] {\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  padding: 0 15px;\n  margin-right: 10px;\n}\nheader ul .nav-dx i[data-v-1f42fb90] {\n  margin-right: 10px;\n  color: #00a396;\n}", ""]);
+exports.push([module.i, "header[data-v-1f42fb90] {\n  background: white;\n  line-height: 3;\n  display: flex;\n  justify-content: space-between;\n  border-bottom: 1px solid #ccc;\n}\nheader ul[data-v-1f42fb90] {\n  list-style: none;\n  display: flex;\n}\nheader ul li[data-v-1f42fb90] {\n  padding-right: 15px;\n}\nheader ul li img[data-v-1f42fb90] {\n  width: 150px;\n}\nheader ul li a[data-v-1f42fb90] {\n  text-decoration: none;\n  color: #000;\n}\nheader ul .nav-dx[data-v-1f42fb90] {\n  border: 1px solid #ccc;\n  border-radius: 5px;\n  padding: 0 15px;\n  margin-right: 10px;\n}\nheader ul .nav-dx i[data-v-1f42fb90] {\n  margin-right: 10px;\n  color: #00a396;\n}", ""]);
 
 // exports
 
@@ -31839,7 +31854,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".search-bar[data-v-b3c5cf30] {\n  display: flex;\n  justify-content: flex-end;\n}\nh1[data-v-b3c5cf30] {\n  margin: 20px;\n  display: flex;\n  justify-content: center;\n}\nh2[data-v-b3c5cf30] {\n  margin: 10px 0;\n}", ""]);
+exports.push([module.i, ".search-bar[data-v-b3c5cf30] {\n  display: flex;\n  justify-content: flex-end;\n}\nh1[data-v-b3c5cf30] {\n  margin: 20px;\n  display: flex;\n  justify-content: center;\n}\nh2[data-v-b3c5cf30] {\n  margin: 10px 0;\n}\nimg[data-v-b3c5cf30] {\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -63990,7 +64005,33 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("Header"), _vm._v(" "), _c("router-view"), _vm._v(" "), _c("Footer")],
+    [
+      _c("link", {
+        attrs: { rel: "preconnect", href: "https://fonts.googleapis.com" }
+      }),
+      _vm._v(" "),
+      _c("link", {
+        attrs: {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+          crossorigin: ""
+        }
+      }),
+      _vm._v(" "),
+      _c("link", {
+        attrs: {
+          href:
+            "https://fonts.googleapis.com/css2?family=Raleway:wght@500;800&display=swap",
+          rel: "stylesheet"
+        }
+      }),
+      _vm._v(" "),
+      _c("Header"),
+      _vm._v(" "),
+      _c("router-view"),
+      _vm._v(" "),
+      _c("Footer")
+    ],
     1
   )
 }
@@ -64158,7 +64199,7 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("ul", [
         _c("li", { staticClass: "nav-dx" }, [
-          _c("a", { attrs: { href: "/cart" } }, [
+          _c("a", { attrs: { href: "/checkout" } }, [
             _c("i", { staticClass: "fas fa-shopping-cart" }),
             _vm._v("Cart")
           ])
@@ -64644,96 +64685,103 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container" },
-    [
-      _c("h1", [_vm._v("Homepage")]),
-      _vm._v(" "),
-      _vm._l(_vm.cuisines, function(cuisine) {
-        return _c("ul", { key: cuisine.id }, [
-          _c("li", [
-            _c("label", { attrs: { for: cuisine.type } }, [
-              _vm._v(_vm._s(cuisine.type))
-            ]),
-            _vm._v(" "),
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.temp,
-                  expression: "temp"
-                }
-              ],
-              attrs: { type: "checkbox", id: cuisine.type },
-              domProps: {
-                value: cuisine.type,
-                checked: Array.isArray(_vm.temp)
-                  ? _vm._i(_vm.temp, cuisine.type) > -1
-                  : _vm.temp
-              },
-              on: {
-                change: [
-                  function($event) {
-                    var $$a = _vm.temp,
-                      $$el = $event.target,
-                      $$c = $$el.checked ? true : false
-                    if (Array.isArray($$a)) {
-                      var $$v = cuisine.type,
-                        $$i = _vm._i($$a, $$v)
-                      if ($$el.checked) {
-                        $$i < 0 && (_vm.temp = $$a.concat([$$v]))
+  return _c("div", [
+    _c("img", {
+      staticClass: "img",
+      attrs: { src: __webpack_require__(/*! ../img/jumbo.jpeg */ "./resources/js/img/jumbo.jpeg"), alt: "" }
+    }),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "container" },
+      [
+        _c("h1", [_vm._v("Homepage")]),
+        _vm._v(" "),
+        _vm._l(_vm.cuisines, function(cuisine) {
+          return _c("ul", { key: cuisine.id }, [
+            _c("li", [
+              _c("label", { attrs: { for: cuisine.type } }, [
+                _vm._v(_vm._s(cuisine.type))
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.temp,
+                    expression: "temp"
+                  }
+                ],
+                attrs: { type: "checkbox", id: cuisine.type },
+                domProps: {
+                  value: cuisine.type,
+                  checked: Array.isArray(_vm.temp)
+                    ? _vm._i(_vm.temp, cuisine.type) > -1
+                    : _vm.temp
+                },
+                on: {
+                  change: [
+                    function($event) {
+                      var $$a = _vm.temp,
+                        $$el = $event.target,
+                        $$c = $$el.checked ? true : false
+                      if (Array.isArray($$a)) {
+                        var $$v = cuisine.type,
+                          $$i = _vm._i($$a, $$v)
+                        if ($$el.checked) {
+                          $$i < 0 && (_vm.temp = $$a.concat([$$v]))
+                        } else {
+                          $$i > -1 &&
+                            (_vm.temp = $$a
+                              .slice(0, $$i)
+                              .concat($$a.slice($$i + 1)))
+                        }
                       } else {
-                        $$i > -1 &&
-                          (_vm.temp = $$a
-                            .slice(0, $$i)
-                            .concat($$a.slice($$i + 1)))
+                        _vm.temp = $$c
                       }
-                    } else {
-                      _vm.temp = $$c
+                    },
+                    function($event) {
+                      return _vm.getRestaurants($event)
                     }
-                  },
-                  function($event) {
-                    return _vm.getRestaurants($event)
-                  }
-                ]
-              }
-            })
-          ])
-        ])
-      }),
-      _vm._v(" "),
-      _vm._l(_vm.restaurants.results, function(restaurant) {
-        return _c(
-          "article",
-          { key: "res-" + restaurant.id },
-          [
-            _c("h2", [_vm._v(_vm._s(restaurant.name))]),
-            _vm._v(" "),
-            _c("div", { staticClass: "type" }, [
-              _vm._v(_vm._s(restaurant.type))
-            ]),
-            _vm._v(" "),
-            _c(
-              "router-link",
-              {
-                attrs: {
-                  to: {
-                    name: "restaurant-detail",
-                    params: { name: restaurant.id }
-                  }
+                  ]
                 }
-              },
-              [_vm._v("Restaurant Detail")]
-            )
-          ],
-          1
-        )
-      })
-    ],
-    2
-  )
+              })
+            ])
+          ])
+        }),
+        _vm._v(" "),
+        _vm._l(_vm.restaurants.results, function(restaurant) {
+          return _c(
+            "article",
+            { key: "res-" + restaurant.id },
+            [
+              _c("h2", [_vm._v(_vm._s(restaurant.name))]),
+              _vm._v(" "),
+              _c("div", { staticClass: "type" }, [
+                _vm._v(_vm._s(restaurant.type))
+              ]),
+              _vm._v(" "),
+              _c(
+                "router-link",
+                {
+                  attrs: {
+                    to: {
+                      name: "restaurant-detail",
+                      params: { name: restaurant.id }
+                    }
+                  }
+                },
+                [_vm._v("Restaurant Detail")]
+              )
+            ],
+            1
+          )
+        })
+      ],
+      2
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -65123,7 +65171,7 @@ var render = function() {
         [
           _c("h3", { staticClass: "mb" }, [_vm._v("I nostri piatti")]),
           _vm._v(" "),
-          _c("Plates", { attrs: { plates: { restaurant: _vm.restaurant } } })
+          _c("Plates", { attrs: { plates: { plates: _vm.plates } } })
         ],
         1
       )
@@ -65244,22 +65292,22 @@ var render = function() {
       _c("ul", [
         _c("li", [
           _c("strong", [_vm._v("Address: ")]),
-          _vm._v(_vm._s(_vm.restaurant.address))
+          _vm._v(_vm._s(_vm.restaurant[0].address))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("City: ")]),
-          _vm._v(_vm._s(_vm.restaurant.city))
+          _vm._v(_vm._s(_vm.restaurant[0].city))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("Cap: ")]),
-          _vm._v(_vm._s(_vm.restaurant.cap))
+          _vm._v(_vm._s(_vm.restaurant[0].cap))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("Phone number: ")]),
-          _vm._v(_vm._s(_vm.restaurant.phone_number) + "\n                ")
+          _vm._v(_vm._s(_vm.restaurant[0].phone_number) + "\n                ")
         ])
       ])
     ])
@@ -81171,6 +81219,17 @@ module.exports = "/images/banner.png?e5954d5865db5516b0c2bd50a67aa9cc";
 /***/ (function(module, exports) {
 
 module.exports = "/images/delive.png?0920308bdc3ba69b4b4b8c55221b39b0";
+
+/***/ }),
+
+/***/ "./resources/js/img/jumbo.jpeg":
+/*!*************************************!*\
+  !*** ./resources/js/img/jumbo.jpeg ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/jumbo.jpeg?1057f75fb02117f5959b91c7c0642957";
 
 /***/ }),
 
