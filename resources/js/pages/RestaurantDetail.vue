@@ -1,14 +1,14 @@
 <template>
     <div class="container">
 
-            <h1 >Dettagli: {{ restaurant.name }}</h1>
+            <h1 >Dettagli: {{ restaurant.results[0].name }}</h1>
             <div class="mar">
                 <h2 class="mb">Tipologie di cucine:</h2>
-                <Cuisines :cuisines="restaurant.cuisines" />
+                <Cuisines :cuisines="restaurant.results[0].cuisines" />
             </div>
             <div class="mar">
                 <img :src="restaurant.image" :alt="restaurant.name" />
-                <p class="mar">{{ restaurant.description }}</p>
+                <p class="mar">{{ restaurant.results[0].description }}</p>
                 <div>
                     <h3 class="mb">I nostri piatti</h3>
                     <Plates @addCart="addCart" :plates="{plates}" />

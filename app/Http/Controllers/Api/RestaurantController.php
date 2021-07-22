@@ -50,9 +50,11 @@ class RestaurantController extends Controller
                 ->select('restaurants.id','restaurants.name','restaurants.description','restaurants.image','restaurants.address','restaurants.city','restaurants.cap','restaurants.phone_number')
                 ->distinct()
                 ->limit(5)
-                ->whereIn('cuisines.type',$str)
+                ->where('cuisines.type',$str)
                 ->get();
             //$restaurant = Restaurant::where('name', $name)->with(['cuisines','plates'])->first();
+            foreach($restaurants as $restaurant)
+            $restaurant->cuisine=$str;
 
             return response()->json(['success' => true,
             'results' => $restaurants]);

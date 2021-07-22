@@ -65204,7 +65204,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("h1", [_vm._v("Dettagli: " + _vm._s(_vm.restaurant.name))]),
+    _c("h1", [_vm._v("Dettagli: " + _vm._s(_vm.restaurant.results[0].name))]),
     _vm._v(" "),
     _c(
       "div",
@@ -65212,7 +65212,9 @@ var render = function() {
       [
         _c("h2", { staticClass: "mb" }, [_vm._v("Tipologie di cucine:")]),
         _vm._v(" "),
-        _c("Cuisines", { attrs: { cuisines: _vm.restaurant.cuisines } })
+        _c("Cuisines", {
+          attrs: { cuisines: _vm.restaurant.results[0].cuisines }
+        })
       ],
       1
     ),
@@ -65223,7 +65225,7 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("p", { staticClass: "mar" }, [
-        _vm._v(_vm._s(_vm.restaurant.description))
+        _vm._v(_vm._s(_vm.restaurant.results[0].description))
       ]),
       _vm._v(" "),
       _c(
