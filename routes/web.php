@@ -22,6 +22,8 @@ Route::prefix('admin')->namespace('Admin')->middleware('auth')->name('admin.')->
     
     Route::resource('/restaurants', 'RestaurantController');
 
+    Route::resource('/orders', 'OrderController');
+
     Route::resource('/plates', 'PlateController');
 });
 
