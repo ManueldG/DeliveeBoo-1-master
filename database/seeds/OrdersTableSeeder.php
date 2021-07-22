@@ -21,8 +21,6 @@ class OrdersTableSeeder extends Seeder
             $new_order->customer_email = 'lorem@email.com';
             $new_order->customer_phone = '123456789';
             $new_order->customer_address = 'via del customer';
-            $new_order->date = '2021-07-12 08:03:30';
-            $new_order->scheduled_delivery = '2021-07-12 10:03:30';
             $new_order->tot = 99.99;
 
             $new_order->save();

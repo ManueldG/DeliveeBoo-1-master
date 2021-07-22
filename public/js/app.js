@@ -5208,6 +5208,43 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Plates",
   props: ["plates"],
@@ -5254,6 +5291,10 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var braintree_web__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! braintree-web */ "./node_modules/braintree-web/dist/browser/index.js");
 /* harmony import */ var braintree_web__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(braintree_web__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
 //
 //
 //
@@ -5973,11 +6014,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     return {
       restaurant: '',
       plates: [],
-      plateDetail: {},
       visibility: false,
       cart: {},
-      tot: 0,
-      pagination: {}
+      tot: 0
     };
   },
   created: function created() {
@@ -6014,24 +6053,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.setTotal();
       }
     },
-
-    /**
-     * Add Dish to Cart
-     */
     addCart: function addCart(order, name, unitPrice) {
       if (this.checkId()) {
         if (this.cart[name]) {
-          this.cart[name].quantità += order.quantità;
-          this.cart[name].prezzo += order.prezzo;
+          this.cart[name].quantity += order.quantity;
+          this.cart[name].price += order.price;
         } else {
           this.cart[name] = _objectSpread(_objectSpread({}, order), {}, {
             unitPrice: unitPrice
           });
         }
 
-        this.tot += order.prezzo;
+        this.tot += order.price;
         this.store();
-        this.closeDetail();
       }
     },
 
@@ -6040,7 +6074,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
      */
     checkId: function checkId() {
       if (Object.keys(this.cart).length != 0) {
-        if (this.cart[Object.keys(this.cart)[0]].restaurant_id == this.dishDetail.restaurant_id) {
+        if (this.cart[Object.keys(this.cart)[0]].restaurant_id == this.plates.restaurant_id) {
           return true;
         } else {
           var resp = confirm('Puoi ordinare da un solo ristorante. Vuoi cancellare il tuo ordine precedente?');
@@ -6062,8 +6096,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
      * Add Button in Cart
      */
     add: function add(name, unit) {
-      this.cart[name].quantità++;
-      this.cart[name].prezzo += unit;
+      this.cart[name].quantity++;
+      this.cart[name].price += unit;
       this.tot += unit;
       this.store();
     },
@@ -6072,11 +6106,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
      * Remove Button in Cart
      */
     remove: function remove(name, unit) {
-      if (this.cart[name].quantità == 1) {
+      if (this.cart[name].quantity == 1) {
         delete this.cart[name];
       } else {
-        this.cart[name].quantità--;
-        this.cart[name].prezzo -= unit;
+        this.cart[name].quantity--;
+        this.cart[name].price -= unit;
       }
 
       this.tot -= unit;
@@ -6102,14 +6136,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       if (value > 0) {
         console.log(value);
-        this.cart[name].quantità = value;
-        this.cart[name].prezzo = value * unit;
+        this.cart[name].quantity = value;
+        this.cart[name].price = value * unit;
         this.tot = 0;
         this.setTotal();
         this.store();
       } else {
-        this.cart[name].quantità = 1;
-        this.cart[name].prezzo = unit;
+        this.cart[name].quantity = 1;
+        this.cart[name].price = unit;
         this.tot = 0;
         this.setTotal();
         this.store();
@@ -6121,7 +6155,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
      */
     setTotal: function setTotal() {
       for (var item in this.cart) {
-        this.tot += this.cart[item].prezzo;
+        this.tot += this.cart[item].price;
       }
 
       ;
@@ -64260,127 +64294,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    {},
-    _vm._l(_vm.plates, function(pla) {
-      return _c("div", { key: "pla-" + pla.id }, [
-        _c(
-          "div",
-          { staticClass: "menu" },
-          _vm._l(pla, function(plate) {
-            return _c(
-              "div",
-              { key: "plate-" + plate.id, staticClass: "plate-card" },
-              [
-                plate.visibility
-                  ? _c("ul", [
-                      _c("img", {
-                        attrs: { src: plate.image, alt: plate.name }
-                      }),
-                      _vm._v(" "),
-                      _c("li", [
-                        _vm._v(
-                          "\n                        " +
-                            _vm._s(plate.restaurant) +
-                            "\n                    "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _vm._v(
-                          "\n                        " +
-                            _vm._s(plate.description) +
-                            "\n                    "
-                        )
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("strong", [_vm._v("Price: ")]),
-                        _vm._v(_vm._s(plate.price) + "€")
-                      ]),
-                      _vm._v(" "),
-                      _c("li", [
-                        _c("strong", [_vm._v("Avaiable: ")]),
-                        _vm._v(" "),
-                        plate.visibility === 0
-                          ? _c("span", [_vm._v(" No ")])
-                          : plate.visibility === 1
-                          ? _c("span", [
-                              _vm._v(
-                                "\n                            Yes\n                        "
-                              )
-                            ])
-                          : _vm._e()
-                      ]),
-                      _vm._v(" "),
-                      plate.visibility
-                        ? _c("li", [
-                            _c(
-                              "button",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    return _vm.less(plate.price)
-                                  }
-                                }
-                              },
-                              [_vm._v("-")]
-                            ),
-                            _vm._v(" "),
-                            _c("span", [_vm._v(_vm._s(_vm.quantity))]),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    return _vm.more(plate.price)
-                                  }
-                                }
-                              },
-                              [_vm._v("+")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "button",
-                              {
-                                on: {
-                                  click: function($event) {
-                                    _vm.addPlate(plate), _vm.$emit("close")
-                                  }
-                                }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                            Aggiungi al carrello | TOT:\n                            " +
-                                    _vm._s(plate.price.toFixed(2)) +
-                                    " €\n                        "
-                                )
-                              ]
-                            )
-                          ])
-                        : _c("li", { attrs: { disabled: "" } }, [
-                            _c("button", [_vm._v("Non disponibile")])
-                          ])
-                    ])
-                  : _vm._e()
-              ]
-            )
-          }),
-          0
-        )
-      ])
-    }),
-    0
-  )
-}
+var render = function () {}
 var staticRenderFns = []
-render._withStripped = true
 
 
 
@@ -64581,7 +64496,7 @@ var staticRenderFns = [
             "label",
             {
               staticClass: "control-table",
-              attrs: { for: "customer_lastname" }
+              attrs: { for: "customer_last_name" }
             },
             [_vm._v("Cognome*")]
           ),
@@ -64590,11 +64505,53 @@ var staticRenderFns = [
             staticClass: "form-control",
             attrs: {
               type: "text",
-              name: "customer_name",
-              id: "customer_lastname",
+              name: "customer_last_name",
+              id: "customer_last_name",
               value: "",
               required: "",
               maxlength: "50"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-3" }, [
+          _c(
+            "label",
+            { staticClass: "control-table", attrs: { for: "customer_email" } },
+            [_vm._v("Email*")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: {
+              type: "text",
+              name: "customer_email",
+              id: "customer_email",
+              value: "",
+              required: "",
+              maxlength: "50"
+            }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "mb-3" }, [
+          _c(
+            "label",
+            { staticClass: "control-table", attrs: { for: "customer_phone" } },
+            [_vm._v("Numero di Telefono*")]
+          ),
+          _vm._v(" "),
+          _c("input", {
+            staticClass: "form-control",
+            attrs: {
+              id: "customer_phone",
+              type: "text",
+              name: "customer_phone",
+              value: "",
+              required: "",
+              autocomplete: "address",
+              maxlength: "50",
+              autofocus: ""
             }
           })
         ]),
@@ -64615,28 +64572,6 @@ var staticRenderFns = [
               id: "customer_address",
               type: "text",
               name: "customer_address",
-              value: "",
-              required: "",
-              autocomplete: "address",
-              maxlength: "50",
-              autofocus: ""
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "mb-3" }, [
-          _c(
-            "label",
-            { staticClass: "control-table", attrs: { for: "phone_number" } },
-            [_vm._v("Numero di telefono*")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              id: "phone_number",
-              type: "number",
-              name: "vat_number",
               value: "",
               required: "",
               autocomplete: "vat_number",
@@ -65222,7 +65157,10 @@ var render = function() {
         [
           _c("h3", { staticClass: "mb" }, [_vm._v("I nostri piatti")]),
           _vm._v(" "),
-          _c("Plates", { attrs: { plates: { plates: _vm.plates } } })
+          _c("Plates", {
+            attrs: { plates: { plates: _vm.plates } },
+            on: { addCart: _vm.addCart }
+          })
         ],
         1
       )
@@ -65296,8 +65234,6 @@ var render = function() {
                     _vm._v(_vm._s(item.name))
                   ]),
                   _vm._v(" "),
-                  _c("span", [_vm._v("€ " + _vm._s(item.price.toFixed(2)))]),
-                  _vm._v(" "),
                   _c(
                     "span",
                     {
@@ -65343,22 +65279,25 @@ var render = function() {
       _c("ul", [
         _c("li", [
           _c("strong", [_vm._v("Address: ")]),
-          _vm._v(_vm._s(_vm.restaurant[0].address))
+          _vm._v(_vm._s(_vm.restaurant.results[0].address))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("City: ")]),
-          _vm._v(_vm._s(_vm.restaurant[0].city))
+          _vm._v(_vm._s(_vm.restaurant.results[0].city))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("Cap: ")]),
-          _vm._v(_vm._s(_vm.restaurant[0].cap))
+          _vm._v(_vm._s(_vm.restaurant.results[0].cap))
         ]),
         _vm._v(" "),
         _c("li", [
           _c("strong", [_vm._v("Phone number: ")]),
-          _vm._v(_vm._s(_vm.restaurant[0].phone_number) + "\n                ")
+          _vm._v(
+            _vm._s(_vm.restaurant.results[0].phone_number) +
+              "\n                "
+          )
         ])
       ])
     ])

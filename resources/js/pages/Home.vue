@@ -81,7 +81,7 @@ export default {
     methods: {
         getRestaurants: function(e) {
             axios
-                .get(this.apiURL + "/" + this.temp.join("-"))
+                .get(this.apiURL + "/" + (this.temp.join("-")) )
                 .then(res => {
                     this.restaurants = res.data;
 

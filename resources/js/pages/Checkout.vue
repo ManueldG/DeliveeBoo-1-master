@@ -36,16 +36,20 @@
                     <input type="text" name="customer_name" class="form-control" id="customer_name" value="" required maxlength="50">
                 </div>
                 <div class="mb-3">
-                    <label for="customer_lastname" class="control-table">Cognome*</label>
-                    <input type="text" name="customer_name" class="form-control" id="customer_lastname" value="" required maxlength="50">
+                    <label for="customer_last_name" class="control-table">Cognome*</label>
+                    <input type="text" name="customer_last_name" class="form-control" id="customer_last_name" value="" required maxlength="50">
+                </div>
+                <div class="mb-3">
+                    <label for="customer_email" class="control-table">Email*</label>
+                    <input type="text" name="customer_email" class="form-control" id="customer_email" value="" required maxlength="50">
+                </div>
+                <div class="mb-3">
+                    <label for="customer_phone" class="control-table">Numero di Telefono*</label>
+                    <input id="customer_phone" type="text" class="form-control" name="customer_phone" value="" required autocomplete="address" maxlength="50" autofocus>
                 </div>
                 <div class="mb-3">
                     <label for="customer_address" class="control-table">Indirizzo*</label>
-                    <input id="customer_address" type="text" class="form-control" name="customer_address" value="" required autocomplete="address" maxlength="50" autofocus>
-                </div>
-                <div class="mb-3">
-                    <label for="phone_number" class="control-table">Numero di telefono*</label>
-                    <input id="phone_number" type="number" class="form-control" name="vat_number" value="" required autocomplete="vat_number" minlength="11" maxlength="11" autofocus>
+                    <input id="customer_address" type="text" class="form-control" name="customer_address" value="" required autocomplete="vat_number" minlength="11" maxlength="11" autofocus>
                 </div>
                 <button type="submit" class="btn btn-primary  btn-block mb-3">Sign in</button>
             </form>
