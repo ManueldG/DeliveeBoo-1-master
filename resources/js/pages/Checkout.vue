@@ -51,14 +51,6 @@
                     <label for="customer_address" class="control-table">Indirizzo*</label>
                     <input id="customer_address" type="text" class="form-control" name="customer_address" value="" required autocomplete="vat_number" minlength="11" maxlength="11" autofocus>
                 </div>
-                <div class="mb-3">
-                    <label for="date" class="control-table">Date*</label>
-                    <input id="date" type="text" class="form-control" name="date" value="" required autocomplete="vat_number" minlength="11" maxlength="11" autofocus>
-                </div>
-                <div class="mb-3">
-                    <label for="scheduled_delivery" class="control-table">Scheduled Delivery*</label>
-                    <input id="scheduled_delivery" type="text" class="form-control" name="scheduled_delivery" value="" required autocomplete="vat_number" minlength="11" maxlength="11" autofocus>
-                </div>
                 <button type="submit" class="btn btn-primary  btn-block mb-3">Sign in</button>
             </form>
             </div>

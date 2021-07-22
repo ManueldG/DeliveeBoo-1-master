@@ -5358,14 +5358,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'CheckOut',
@@ -64661,55 +64653,6 @@ var staticRenderFns = [
               id: "customer_address",
               type: "text",
               name: "customer_address",
-              value: "",
-              required: "",
-              autocomplete: "vat_number",
-              minlength: "11",
-              maxlength: "11",
-              autofocus: ""
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "mb-3" }, [
-          _c(
-            "label",
-            { staticClass: "control-table", attrs: { for: "date" } },
-            [_vm._v("Date*")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              id: "date",
-              type: "text",
-              name: "date",
-              value: "",
-              required: "",
-              autocomplete: "vat_number",
-              minlength: "11",
-              maxlength: "11",
-              autofocus: ""
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "mb-3" }, [
-          _c(
-            "label",
-            {
-              staticClass: "control-table",
-              attrs: { for: "scheduled_delivery" }
-            },
-            [_vm._v("Scheduled Delivery*")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            staticClass: "form-control",
-            attrs: {
-              id: "scheduled_delivery",
-              type: "text",
-              name: "scheduled_delivery",
               value: "",
               required: "",
               autocomplete: "vat_number",

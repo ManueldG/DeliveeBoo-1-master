@@ -22,10 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('customer_email',50)->nullable(false);
             $table->string('customer_phone',15)->nullable(false);
             $table->string('customer_address',30)->nullable(false);
-            $table->dateTime('date',0)->nullable(false);
-            $table->dateTime('scheduled_delivery',0)->nullable(false);
             $table->float('tot',6,2)->nullable(false);
-
             $table->timestamps();
         });
     }
