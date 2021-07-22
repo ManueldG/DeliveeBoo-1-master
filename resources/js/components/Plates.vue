@@ -30,7 +30,7 @@
                     <button @click="less(plate.price)"> - </button>
                     <span>{{quantity}}</span>
                     <button @click="more(plate.price)"> + </button>
-                    <button @click="addPlate(plates)" >Aggiungi al carrello | TOT: {{plate.price.toFixed(2)}} €</button>
+                    <button @click="addPlate(plate)" >Aggiungi al carrello | TOT: {{plate.price.toFixed(2)}} €</button>
                 </li>
                 <li v-else disabled>
                     <button>Non disponibile</button>
@@ -50,21 +50,21 @@ export default {
     data() {
         return {
             cart: {},
-            price: this.plates.price,
+            price: this.plate.price,
             quantity: 1,
         };
     },
     methods: {
-      addPlate(plates){
+      addPlate(plate){
 
       let order={
-        restaurant_id: plates.restaurant_id,
-        name: plates.name,
+        restaurant_id: plate.restaurant_id,
+        name: plate.name,
         quantità: this.quantity,
         prezzo: this.price,
       }
 
-        this.$emit('addCart', order, plates.name, plates.price);
+        this.$emit('addCart', order, plate.name, plate.price);
       },
       more(price){
         this.quantity++;

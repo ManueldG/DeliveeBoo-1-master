@@ -24,7 +24,7 @@
             <div v-if="Object.keys(cart).length" >
                 <div v-for="(item, index) in cart" :key="index">
                     <button  @click="remove(item.name, item.unitPrice)">-</button>
-                    <input class="inputNum" type="number" min="1" v-model="item.quantità" @change="updateQuantity($event, item.name, item.unitPrice)">
+                    <input class="inputNum" type="number" min="1" v-model="item.quantity" @change="updateQuantity($event, item.name, item.unitPrice)">
                     <button @click="add(item.name, item.unitPrice)">+</button>
                     <span class="name">{{item.name}}</span>
                     <!-- <span>€ {{item.price.toFixed(2)}}</span> -->
