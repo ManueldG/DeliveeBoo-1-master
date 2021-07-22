@@ -5158,88 +5158,10 @@ __webpack_require__.r(__webpack_exports__);
 /*!*****************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Plates.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Plates",
-  props: ["plates"],
-  data: function data() {
-    return {
-      cart: {},
-      price: this.plates.price,
-      quantity: 1
-    };
-  },
-  methods: {
-    addPlate: function addPlate(plates) {
-      var order = {
-        restaurant_id: plates.restaurant_id,
-        name: plates.name,
-        quantità: this.quantity,
-        prezzo: this.price
-      };
-      this.$emit('addToCart', order, plates.name, plates.price);
-    },
-    more: function more(price) {
-      this.quantity++;
-      this.price += price;
-    },
-    less: function less(price) {
-      if (this.quantity != 1) {
-        this.quantity--;
-        this.price -= price;
-      }
-    }
-  }
-});
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/resources/js/components/Plates.vue: Unexpected token (94:0)\n\n\u001b[0m \u001b[90m 92 |\u001b[39m         \u001b[36mreturn\u001b[39m {\u001b[0m\n\u001b[0m \u001b[90m 93 |\u001b[39m             cart\u001b[33m:\u001b[39m {}\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 94 |\u001b[39m \u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<<\u001b[39m\u001b[33m<\u001b[39m \u001b[33mHEAD\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 95 |\u001b[39m             price\u001b[33m:\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mplate\u001b[33m.\u001b[39mprice\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 96 |\u001b[39m             quantity\u001b[33m:\u001b[39m \u001b[35m1\u001b[39m\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 97 |\u001b[39m         }\u001b[33m;\u001b[39m\u001b[0m\n    at Parser._raise (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:816:17)\n    at Parser.raiseWithData (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:809:17)\n    at Parser.raise (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:770:17)\n    at Parser.unexpected (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:9893:16)\n    at Parser.parseIdentifierName (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12106:18)\n    at Parser.parseIdentifier (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12084:23)\n    at Parser.parseMaybePrivateName (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11378:19)\n    at Parser.parsePropertyName (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11898:151)\n    at Parser.parsePropertyDefinition (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11783:22)\n    at Parser.parseObjectLike (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11699:25)\n    at Parser.parseExprAtom (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11223:23)\n    at Parser.parseExprSubscripts (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10881:23)\n    at Parser.parseUpdate (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10861:21)\n    at Parser.parseMaybeUnary (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10839:23)\n    at Parser.parseExprOps (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10696:23)\n    at Parser.parseMaybeConditional (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10670:23)\n    at Parser.parseMaybeAssign (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10633:21)\n    at Parser.parseExpressionBase (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10573:23)\n    at /Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10567:39\n    at Parser.allowInAnd (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12328:16)\n    at Parser.parseExpression (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10567:17)\n    at Parser.parseReturnStatement (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12912:28)\n    at Parser.parseStatementContent (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12582:21)\n    at Parser.parseStatement (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:12534:17)\n    at Parser.parseBlockOrModuleBlockBody (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:13123:25)\n    at Parser.parseBlockBody (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:13114:10)\n    at Parser.parseBlock (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:13098:10)\n    at Parser.parseFunctionBody (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11989:24)\n    at Parser.parseFunctionBodyAndFinish (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11973:10)\n    at Parser.parseMethod (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11923:10)\n    at Parser.parseObjectMethod (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11851:19)\n    at Parser.parseObjPropValue (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11884:23)\n    at Parser.parsePropertyDefinition (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11808:10)\n    at Parser.parseObjectLike (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11699:25)\n    at Parser.parseExprAtom (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:11223:23)\n    at Parser.parseExprSubscripts (/Users/alfonsobuononato/Desktop/progetto finale/DeliveeBoo/node_modules/@babel/parser/lib/index.js:10881:23)");
 
 /***/ }),
 
@@ -6029,7 +5951,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
         this.tot += order.price;
         this.store();
-        this.closeDetail();
       }
     },
 
@@ -31854,7 +31775,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".menu[data-v-220a4070] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.menu .plate-card[data-v-220a4070] {\n  background: white;\n  flex-basis: calc(100% / 4 - 20px);\n  margin-right: 10px;\n  padding: 20px;\n  border-radius: 15px;\n  border: 1px solid #ccc;\n}\n.menu .plate-card img[data-v-220a4070] {\n  width: 100%;\n  height: 200px;\n}", ""]);
+exports.push([module.i, ".menu[data-v-220a4070] {\n  display: flex;\n}\n.plate-card[data-v-220a4070] {\n  display: flex;\n  flex-wrap: wrap;\n}\nul[data-v-220a4070] {\n  margin-right: 10px;\n  padding: 20px;\n  border-radius: 15px;\n  border: 1px solid #ccc;\n}\nul img[data-v-220a4070] {\n  width: 100%;\n  height: 200px;\n}", ""]);
 
 // exports
 
@@ -64258,119 +64179,8 @@ render._withStripped = true
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "menu" },
-    _vm._l(_vm.plates, function(pla) {
-      return _c(
-        "div",
-        { key: "pla-" + pla.id },
-        _vm._l(pla, function(plate) {
-          return _c(
-            "div",
-            { key: "plate-" + plate.id, staticClass: "plate-card" },
-            [
-              plate.visibility
-                ? _c("ul", [
-                    _c("img", { attrs: { src: plate.image, alt: plate.name } }),
-                    _vm._v(" "),
-                    _c("li", [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(plate.restaurant) +
-                          "\n            "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _vm._v(
-                        "\n                " +
-                          _vm._s(plate.description) +
-                          "\n            "
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("strong", [_vm._v("Price: ")]),
-                      _vm._v(_vm._s(plate.price) + "€")
-                    ]),
-                    _vm._v(" "),
-                    _c("li", [
-                      _c("strong", [_vm._v("Avaiable: ")]),
-                      _vm._v(" "),
-                      plate.visibility === 0
-                        ? _c("span", [_vm._v(" No ")])
-                        : plate.visibility === 1
-                        ? _c("span", [_vm._v(" Yes ")])
-                        : _vm._e()
-                    ]),
-                    _vm._v(" "),
-                    plate.visibility
-                      ? _c("li", [
-                          _c(
-                            "button",
-                            {
-                              on: {
-                                click: function($event) {
-                                  return _vm.less(plate.price)
-                                }
-                              }
-                            },
-                            [_vm._v(" - ")]
-                          ),
-                          _vm._v(" "),
-                          _c("span", [_vm._v(_vm._s(_vm.quantity))]),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              on: {
-                                click: function($event) {
-                                  return _vm.more(plate.price)
-                                }
-                              }
-                            },
-                            [_vm._v(" + ")]
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              on: {
-                                click: function($event) {
-                                  _vm.addPlate(_vm.plates), _vm.$emit("close")
-                                }
-                              }
-                            },
-                            [
-                              _vm._v(
-                                "Aggiungi al carrello | TOT: " +
-                                  _vm._s(plate.price.toFixed(2)) +
-                                  " €"
-                              )
-                            ]
-                          )
-                        ])
-                      : _c("li", { attrs: { disabled: "" } }, [
-                          _c("button", [_vm._v("Non disponibile")])
-                        ])
-                  ])
-                : _vm._e()
-            ]
-          )
-        }),
-        0
-      )
-    }),
-    0
-  )
-}
+var render = function () {}
 var staticRenderFns = []
-render._withStripped = true
 
 
 
@@ -65232,7 +65042,10 @@ var render = function() {
         [
           _c("h3", { staticClass: "mb" }, [_vm._v("I nostri piatti")]),
           _vm._v(" "),
-          _c("Plates", { attrs: { plates: { plates: _vm.plates } } })
+          _c("Plates", {
+            attrs: { plates: { plates: _vm.plates } },
+            on: { addCart: _vm.addCart }
+          })
         ],
         1
       )
@@ -65266,13 +65079,13 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: item.quantità,
-                        expression: "item.quantità"
+                        value: item.quantity,
+                        expression: "item.quantity"
                       }
                     ],
                     staticClass: "inputNum",
                     attrs: { type: "number", min: "1" },
-                    domProps: { value: item.quantità },
+                    domProps: { value: item.quantity },
                     on: {
                       change: function($event) {
                         return _vm.updateQuantity(
@@ -65285,7 +65098,7 @@ var render = function() {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(item, "quantità", $event.target.value)
+                        _vm.$set(item, "quantity", $event.target.value)
                       }
                     }
                   }),
@@ -65305,8 +65118,6 @@ var render = function() {
                   _c("span", { staticClass: "name" }, [
                     _vm._v(_vm._s(item.name))
                   ]),
-                  _vm._v(" "),
-                  _c("span", [_vm._v("€ " + _vm._s(item.price.toFixed(2)))]),
                   _vm._v(" "),
                   _c(
                     "span",
@@ -81181,14 +80992,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!********************************************!*\
   !*** ./resources/js/components/Plates.vue ***!
   \********************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Plates_vue_vue_type_template_id_220a4070_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Plates.vue?vue&type=template&id=220a4070&scoped=true& */ "./resources/js/components/Plates.vue?vue&type=template&id=220a4070&scoped=true&");
 /* harmony import */ var _Plates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Plates.vue?vue&type=script&lang=js& */ "./resources/js/components/Plates.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _Plates_vue_vue_type_style_index_0_id_220a4070_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Plates.vue?vue&type=style&index=0&id=220a4070&scoped=true&lang=scss& */ "./resources/js/components/Plates.vue?vue&type=style&index=0&id=220a4070&scoped=true&lang=scss&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _Plates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _Plates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _Plates_vue_vue_type_style_index_0_id_220a4070_scoped_true_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Plates.vue?vue&type=style&index=0&id=220a4070&scoped=true&lang=scss& */ "./resources/js/components/Plates.vue?vue&type=style&index=0&id=220a4070&scoped=true&lang=scss&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -81220,13 +81032,15 @@ component.options.__file = "resources/js/components/Plates.vue"
 /*!*********************************************************************!*\
   !*** ./resources/js/components/Plates.vue?vue&type=script&lang=js& ***!
   \*********************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Plates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Plates.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Plates.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Plates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Plates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Plates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Plates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Plates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Plates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
 
 /***/ }),
 
