@@ -1,5 +1,11 @@
 <template>
     <div>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;800&display=swap"
+            rel="stylesheet"
+        />
         <Header />
         <router-view></router-view>
         <Footer />
@@ -23,7 +29,7 @@ export default {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Nunito", sans-serif;
+    font-family: "Raleway", sans-serif;
 }
 
 body {

@@ -9,7 +9,7 @@
         </ul>
         <ul>
             <li class="nav-dx">
-                <a href="/cart"><i class="fas fa-shopping-cart"></i>Cart</a>
+                <a href="/checkout"><i class="fas fa-shopping-cart"></i>Cart</a>
             </li>
             <li class="nav-dx">
                 <a href="/orders"
@@ -32,7 +32,6 @@ export default {
 <style scoped lang="scss">
 header {
     background: white;
-    margin-bottom: 50px;
     line-height: 3;
     display: flex;
     justify-content: space-between;
