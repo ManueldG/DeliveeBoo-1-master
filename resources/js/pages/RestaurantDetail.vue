@@ -11,7 +11,7 @@
                 <p class="mar">{{ restaurant.description }}</p>
                 <div>
                     <h3 class="mb">I nostri piatti</h3>
-                    <Plates :plates="{restaurant}" />
+                    <Plates :plates="{plates}" />
                 </div>
             </div>
 
@@ -47,12 +47,12 @@
             <div class="mar">
                 <h3>Contatti</h3>
                 <ul>
-                    <li><strong>Address: </strong>{{ restaurant.address }}</li>
-                    <li><strong>City: </strong>{{ restaurant.city }}</li>
-                    <li><strong>Cap: </strong>{{ restaurant.cap }}</li>
+                    <li><strong>Address: </strong>{{ restaurant[0].address }}</li>
+                    <li><strong>City: </strong>{{ restaurant[0].city }}</li>
+                    <li><strong>Cap: </strong>{{ restaurant[0].cap }}</li>
                     <li>
                         <strong>Phone number: </strong
-                        >{{ restaurant.phone_number }}
+                        >{{ restaurant[0].phone_number }}
                     </li>
                 </ul>
             </div>
@@ -73,7 +73,7 @@ export default {
     },
     data() {
         return {
-            restaurant: "",
+            restaurant: '',
             plates: [],
             plateDetail: {},
             visibility: false,
@@ -84,13 +84,29 @@ export default {
     },
     created() {
         this.getRestaurantDetail();
+
+        this.getPlate();
+
         this.popCart();
     },
     methods: {
+
+        getPlate() {
+            axios
+                .get(
+                    `http://127.0.0.1:8000/api/plates/${parseInt(this.$route.params.name)}`
+                )
+                .then(res => {
+                    this.plates = res.data;
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        },
         getRestaurantDetail() {
             axios
                 .get(
-                    `http://127.0.0.1:8000/api/plates/${this.$route.params.name}`
+                    `http://localhost:8000/api/restaurants/id/${parseInt(this.$route.params.name)}`
                 )
                 .then(res => {
                     this.restaurant = res.data;

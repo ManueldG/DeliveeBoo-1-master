@@ -10,8 +10,8 @@ use Illuminate\Support\Facades\DB;
 
 class RestaurantController extends Controller
 {
-    public function index(){
-        $restaurants = Restaurant::with(['cuisines'])->get();
+    public function index($id){
+        $restaurants = Restaurant::where('id', $id)->first()->get();
 
         return response()->json($restaurants);
     }
@@ -27,6 +27,7 @@ class RestaurantController extends Controller
             ->join('restaurants', 'restaurants.id', '=', 'cuisine_restaurant.restaurant_id')
             ->join('cuisines', 'cuisines.id', '=', 'cuisine_restaurant.cuisine_id')
             ->select('restaurants.id','restaurants.name','restaurants.description','restaurants.image','restaurants.address','restaurants.city','restaurants.cap','restaurants.phone_number','cuisines.type')
+            ->distinct()
             ->whereIn('cuisines.type',$id)
             ->get();
 
