@@ -81795,7 +81795,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_Payment_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/Payment.vue */ "./resources/js/pages/Payment.vue");
 /* harmony import */ var _pages_RestaurantDetail_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/RestaurantDetail.vue */ "./resources/js/pages/RestaurantDetail.vue");
 /* harmony import */ var _pages_Checkout_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/Checkout.vue */ "./resources/js/pages/Checkout.vue");
-/* harmony import */ var _pages_Orders_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./pages/Orders.vue */ "./resources/js/pages/Orders.vue");
+/* harmony import */ var _pages_Orders_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/Orders.vue */ "./resources/js/pages/Orders.vue");
 /* harmony import */ var _pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/NotFound.vue */ "./resources/js/pages/NotFound.vue");
 //DIPENDENZE
 
@@ -81829,7 +81829,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   }, {
     path: "/orders",
     name: "orders",
-    component: _pages_Orders_vue__WEBPACK_IMPORTED_MODULE_8__["default"]
+    component: _pages_Orders_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   }, {
     path: "*",
     component: _pages_NotFound_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
