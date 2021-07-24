@@ -74,7 +74,7 @@ class RestaurantController extends Controller
 
                 ->get();
 
-
+/*risposta  */
 
         return response()->json(['success' => true,
             'results' => $restaurants]);
